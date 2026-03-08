@@ -332,3 +332,50 @@ body {
   .mw-actions { flex-direction: column; }
   .mw-btn { width: 100%; }
 }
+
+
+.mw-map-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.mw-map-reset-btn {
+  border: 1.5px solid var(--mw-border);
+  background: var(--mw-surface);
+  color: var(--mw-primary);
+  border-radius: 999px;
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: .15s ease;
+}
+
+.mw-map-reset-btn:hover {
+  border-color: var(--mw-primary);
+  background: var(--mw-surface-2);
+}
+
+@media (max-width: 680px) {
+  .mw-map-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .mw-map-hint {
+    margin-bottom: 0;
+  }
+
+  .mw-map-reset-btn {
+    width: 100%;
+  }
+
+  .mw-map {
+    height: 360px;
+  }
+}

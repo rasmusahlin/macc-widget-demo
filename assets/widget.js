@@ -15,6 +15,8 @@
   let locations = [], stops = [], map, clusterGroup;
   let markerById = new Map();
   let mapMoveTimer = null;
+  let relevantStopsByLocation = new Map();
+  let activeLocations = [];
 
   const normalize = (str = '') => str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
   const esc = (s = '') => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
@@ -41,13 +43,32 @@
     return services.includes(state.service);
   }
 
-  function getRelevantStops(locId) {
+  function buildStopCache() {
     const n = now();
-    return stops
-      .filter(s => s.locationId === locId && s.status === 'scheduled' && stopMatchesFilter(s.services || []))
-      .map(s => ({ ...s, _start: new Date(s.start), _end: new Date(s.end) }))
-      .filter(s => s._end >= n)
-      .sort((a, b) => a._start - b._start);
+    relevantStopsByLocation = new Map();
+
+    for (const s of stops) {
+      if (s.status !== 'scheduled') continue;
+      const start = new Date(s.start);
+      const end = new Date(s.end);
+      if (end < n) continue;
+      const enriched = { ...s, _start: start, _end: end };
+      if (!relevantStopsByLocation.has(s.locationId)) relevantStopsByLocation.set(s.locationId, []);
+      relevantStopsByLocation.get(s.locationId).push(enriched);
+    }
+
+    relevantStopsByLocation.forEach(arr => arr.sort((a, b) => a._start - b._start));
+    activeLocations = locations.filter(l => l.active);
+  }
+
+  function getRelevantStops(locId) {
+    const base = relevantStopsByLocation.get(locId) || [];
+    return base.filter(s => stopMatchesFilter(s.services || []));
+  }
+
+  function getNextStop(locId) {
+    const relevant = getRelevantStops(locId);
+    return relevant[0] || null;
   }
 
   function textMatch(loc, qNorm) {
@@ -62,7 +83,10 @@
     if (pm) {
       try {
         const r = await fetch(`https://nominatim.openstreetmap.org/search?postalcode=${pm[1]}&country=SE&format=json&limit=1`, { headers: { 'Accept-Language': 'sv' } });
-        if (r.ok) { const d = await r.json(); if (d[0]) return { lat: +d[0].lat, lon: +d[0].lon, label: d[0].display_name.split(',')[0] }; }
+        if (r.ok) {
+          const d = await r.json();
+          if (d[0]) return { lat: +d[0].lat, lon: +d[0].lon, label: d[0].display_name.split(',')[0] };
+        }
       } catch {}
     }
     const r = await fetch(`https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=1&lang=sv`);
@@ -79,7 +103,7 @@
   function rankLocations(forceAll = false) {
     const n = now();
     const qNorm = normalize(state.query);
-    let pool = locations.filter(l => l.active && locationMatchesFilter(l));
+    let pool = activeLocations.filter(locationMatchesFilter);
     const center = getRankCenter();
 
     if (!center && qNorm) {
@@ -103,35 +127,29 @@
     }
 
     const enriched = pool.map(l => {
-      const stops = getRelevantStops(l.id);
-      const next = stops[0] || null;
+      const locStops = getRelevantStops(l.id);
+      const next = locStops[0] || null;
       const hoursToNext = next ? Math.max(0, (next._start - n) / 36e5) : 9999;
       const distScore = l._distanceKm ?? 999;
       const score = center ? distScore : hoursToNext;
-      return { ...l, _next: next, _upcomingStops: stops.slice(0,2), _score: score };
+      return { ...l, _next: next, _upcomingStops: locStops.slice(0,2), _score: score };
     });
 
     return { ranked: enriched.sort((a,b) => a._score - b._score), showingAll };
   }
 
   function locationCard(loc) {
-    // Address line
-    const addressHtml = loc.address
-      ? `<div class="mw-card-address">${esc(loc.address)}</div>`
-      : '';
+    const addressHtml = loc.address ? `<div class="mw-card-address">${esc(loc.address)}</div>` : '';
 
-    // Distance badge
     const distHtml = (state.searchPoint || state.mapCenter) && loc._distanceKm != null
       ? `<span class="mw-dist">${loc._distanceKm.toFixed(1)} km</span>`
       : '';
 
-    // Service badges — show all services the location offers (excluding 'bada' internal tag)
     const svcBadges = (loc.services || [])
       .filter(s => s !== 'bada')
       .map(s => `<span class="mw-badge mw-badge--${s}">${servicePill(s)}</span>`)
       .join('');
 
-    // Upcoming times (up to 2)
     let timesHtml;
     if (loc._upcomingStops.length) {
       timesHtml = `<div class="mw-times">
@@ -147,11 +165,10 @@
 
     const hasNext = loc._upcomingStops.length > 0;
     const hasVaccin = (loc.services||[]).includes('vaccin') || (loc.services||[]).includes('bada');
-    const hasProv   = (loc.services||[]).includes('provtagning') || (loc.services||[]).includes('bada');
+    const hasProv = (loc.services||[]).includes('provtagning') || (loc.services||[]).includes('bada');
 
     let actionsHtml;
     if (state.service === 'alla' && hasVaccin && hasProv) {
-      // Both services — merge to one button if URLs are the same
       const vUrl = loc.bookVaccinUrl || loc.readMoreUrl;
       const pUrl = loc.bookProvtagningUrl || loc.readMoreUrl;
       const sameUrl = vUrl === pUrl;
@@ -205,17 +222,13 @@
 
   function markerIcon(hasNext) {
     const color = hasNext ? '#d7263d' : '#0d6973';
-    const pulse = hasNext
-      ? `<div class="mw-marker-pulse" style="background:${color}"></div>`
-      : '';
+    const pulse = hasNext ? `<div class="mw-marker-pulse" style="background:${color}"></div>` : '';
     const html = `
       <div class="mw-marker-wrap">
         ${pulse}
         <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z"
-                fill="${color}"/>
-          <path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z"
-                fill="url(#pin-grad-${hasNext?'red':'teal'})" opacity="0.35"/>
+          <path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z" fill="${color}"/>
+          <path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z" fill="url(#pin-grad-${hasNext?'red':'teal'})" opacity="0.35"/>
           <circle cx="14" cy="14" r="6" fill="white" opacity="0.95"/>
           ${hasNext
             ? `<path d="M14 10v4l2.5 2.5" stroke="${color}" stroke-width="2" stroke-linecap="round"/>`
@@ -242,6 +255,31 @@
     });
   }
 
+  function fitMapToActiveLocations() {
+    if (!map || !activeLocations.length) return;
+    const coords = activeLocations.map(l => [l.lat, l.lon]);
+    const isMobile = window.innerWidth <= 680;
+    map.fitBounds(L.latLngBounds(coords), {
+      paddingTopLeft: isMobile ? [18, 18] : [36, 36],
+      paddingBottomRight: isMobile ? [18, 18] : [36, 36],
+      maxZoom: isMobile ? 6 : 7
+    });
+  }
+
+  function ensureAllMarkers() {
+    if (!clusterGroup) return;
+    clusterGroup.clearLayers();
+    markerById = new Map();
+
+    activeLocations.forEach(loc => {
+      const next = getNextStop(loc.id);
+      const marker = L.marker([loc.lat, loc.lon], { icon: markerIcon(!!next) });
+      marker.bindPopup(popupHtml({ ...loc, _next: next }));
+      clusterGroup.addLayer(marker);
+      markerById.set(loc.id, marker);
+    });
+  }
+
   function renderMap(ranked) {
     const mapEl = document.getElementById('macc-widget-map');
     const fresh = !map || !mapEl || map.getContainer() !== mapEl;
@@ -250,7 +288,14 @@
       if (map) { try { map.remove(); } catch {} }
       map = L.map('macc-widget-map', { scrollWheelZoom: false }).setView([56.5, 13.5], 6);
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(map);
-      clusterGroup = L.markerClusterGroup({ showCoverageOnHover: false, spiderfyOnMaxZoom: true });
+      clusterGroup = L.markerClusterGroup({
+        showCoverageOnHover: false,
+        spiderfyOnMaxZoom: true,
+        maxClusterRadius: 45,
+        chunkedLoading: true,
+        chunkInterval: 120,
+        chunkDelay: 25,
+      });
       map.addLayer(clusterGroup);
 
       let mapReady = false;
@@ -264,70 +309,39 @@
           if (root) refreshList(root);
         }, 350);
       });
-      // Allow moveend to fire after initial fitBounds settles
+
       setTimeout(() => { mapReady = true; }, 800);
+      window.addEventListener('resize', () => {
+        if (!map) return;
+        clearTimeout(window.__maccResizeTimer);
+        window.__maccResizeTimer = setTimeout(() => {
+          map.invalidateSize();
+          if (!state.searchPoint && !state.mapCenter) fitMapToActiveLocations();
+        }, 120);
+      });
     }
 
-    clusterGroup.clearLayers();
-    markerById = new Map();
-
-    // Always show ALL active locations as markers — list shows the relevant subset
-    const allActive = locations.filter(l => l.active);
-    allActive.forEach(loc => {
-      const relevant = getRelevantStops(loc.id);
-      const next = relevant[0] || null;
-      const m = L.marker([loc.lat, loc.lon], { icon: markerIcon(!!next) });
-      m.bindPopup(popupHtml({ ...loc, _next: next }));
-      clusterGroup.addLayer(m);
-      markerById.set(loc.id, m);
-    });
+    ensureAllMarkers();
 
     if (!state.mapCenter) {
       if (state.searchPoint) {
         map.setView([state.searchPoint.lat, state.searchPoint.lon], 10);
       } else {
-        // Fit to all active locations so full Sweden cluster is visible
-        const allCoords = allActive.map(l => [l.lat, l.lon]);
-        if (allCoords.length) map.fitBounds(L.latLngBounds(allCoords).pad(0.05), { maxZoom: 7 });
+        requestAnimationFrame(() => {
+          map.invalidateSize();
+          fitMapToActiveLocations();
+          setTimeout(() => {
+            map.invalidateSize();
+            fitMapToActiveLocations();
+          }, 160);
+        });
       }
-    }
-  }
-
-  function refreshList(root) {
-    const { ranked, showingAll } = rankLocations();
-
-    // Sync markers: remove stale, add new
-    // Only prune/sync markers when user has searched or panned — otherwise keep all visible
-    if (state.searchPoint || state.mapCenter) {
-      const newIds = new Set(ranked.map(l => l.id));
-      markerById.forEach((m, id) => {
-        if (!newIds.has(id)) { clusterGroup.removeLayer(m); markerById.delete(id); }
-      });
-      ranked.forEach(loc => {
-        if (markerById.has(loc.id)) {
-          const m = markerById.get(loc.id);
-          m.setIcon(markerIcon(!!loc._next));
-          m.setPopupContent(popupHtml(loc));
-        } else {
-          const m = L.marker([loc.lat, loc.lon], { icon: markerIcon(!!loc._next) });
-          m.bindPopup(popupHtml(loc));
-          clusterGroup.addLayer(m);
-          markerById.set(loc.id, m);
-        }
-      });
-    }
-
-    // Update list
-    const leftEl = root.querySelector('.mw-left');
-    if (leftEl) {
-      leftEl.innerHTML = buildListHtml(ranked, showingAll);
-      bindListEvents(root, ranked);
     }
   }
 
   function buildContextLine() {
     if (state.mapCenter && state.searchPoint) return `Visar orter nära kartans mittpunkt. <button class="mw-link-btn" data-reset-map>Återgå till sökning</button>`;
-    if (state.mapCenter) return `Visar orter nära kartans mittpunkt.`;
+    if (state.mapCenter) return `Visar orter nära kartans mittpunkt. <button class="mw-link-btn" data-show-sweden>Visa alla orter</button>`;
     if (state.searchLabel) return `Visar träffar nära <strong>${esc(state.searchLabel)}</strong>`;
     return 'Visar alla platser.';
   }
@@ -344,6 +358,42 @@
     return `<div class="mw-context">${buildContextLine()}</div><div class="mw-card-list">${cardsHtml}</div>`;
   }
 
+  function refreshList(root) {
+    const { ranked, showingAll } = rankLocations();
+    const leftEl = root.querySelector('.mw-left');
+    if (leftEl) {
+      leftEl.innerHTML = buildListHtml(ranked, showingAll);
+      bindListEvents(root, ranked);
+    }
+  }
+
+  function resetToSearch(root) {
+    state.mapCenter = null;
+    refreshList(root);
+    if (state.searchPoint) {
+      map.setView([state.searchPoint.lat, state.searchPoint.lon], 10);
+    } else {
+      requestAnimationFrame(() => {
+        map.invalidateSize();
+        fitMapToActiveLocations();
+      });
+    }
+  }
+
+  function showAllLocations(root) {
+    state.mapCenter = null;
+    state.searchPoint = null;
+    state.searchLabel = '';
+    state.query = '';
+    const input = root.querySelector('[data-search-input]');
+    if (input) input.value = '';
+    refreshList(root);
+    requestAnimationFrame(() => {
+      map.invalidateSize();
+      fitMapToActiveLocations();
+    });
+  }
+
   function bindListEvents(root, ranked) {
     root.querySelectorAll('[data-location-id]').forEach(card => {
       card.addEventListener('click', e => {
@@ -352,15 +402,24 @@
         if (m) { map.setView(m.getLatLng(), 12); m.openPopup(); }
       });
     });
+
     root.querySelector('[data-show-all]')?.addEventListener('click', () => {
       const { ranked } = rankLocations(true);
       const leftEl = root.querySelector('.mw-left');
-      if (leftEl) { leftEl.innerHTML = buildListHtml(ranked, true); bindListEvents(root, ranked); }
+      if (leftEl) {
+        leftEl.innerHTML = buildListHtml(ranked, true);
+        bindListEvents(root, ranked);
+      }
     });
-    root.querySelector('[data-reset-map]')?.addEventListener('click', () => {
-      state.mapCenter = null;
-      refreshList(root);
-      if (state.searchPoint) map.setView([state.searchPoint.lat, state.searchPoint.lon], 10);
+
+    root.querySelector('[data-reset-map]')?.addEventListener('click', () => resetToSearch(root));
+    root.querySelector('[data-show-sweden]')?.addEventListener('click', () => showAllLocations(root));
+    root.querySelector('[data-reset-map-btn]')?.addEventListener('click', () => {
+      if (state.searchPoint) {
+        resetToSearch(root);
+      } else {
+        showAllLocations(root);
+      }
     });
   }
 
@@ -395,7 +454,10 @@
         <div class="mw-main">
           <div class="mw-left">${buildListHtml(ranked, showingAll)}</div>
           <div class="mw-right">
-            <div class="mw-map-hint">Flytta kartan för att uppdatera listan</div>
+            <div class="mw-map-toolbar">
+              <div class="mw-map-hint">Sök först efter ort. Om du inte hittar rätt kan du flytta kartan.</div>
+              <button class="mw-map-reset-btn" type="button" data-reset-map-btn>${state.searchPoint ? 'Återgå till sökning' : 'Visa alla orter'}</button>
+            </div>
             <div id="macc-widget-map" class="mw-map"></div>
           </div>
         </div>
@@ -429,7 +491,6 @@
     state.mapCenter = null;
     if (!query) { state.searchPoint = null; state.searchLabel = ''; render(root); return; }
 
-    // Local match first (instant)
     const qNorm = normalize(query);
     const local = locations.find(l => textMatch(l, qNorm));
     if (local) {
@@ -439,7 +500,6 @@
       return;
     }
 
-    // Remote geocode
     state.searching = true;
     const btn = root.querySelector('[data-search-btn]');
     if (btn) { btn.disabled = true; btn.textContent = 'Söker…'; btn.classList.add('is-loading'); }
@@ -466,6 +526,7 @@
     ]);
     locations = (await lr.json()).locations || [];
     stops = (await sr.json()).stops || [];
+    buildStopCache();
     render(root);
   }
 
