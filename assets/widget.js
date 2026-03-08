@@ -1,416 +1,402 @@
 (() => {
   const state = {
-    service: 'vaccin',
+    service: 'alla',
     query: '',
-    sort: 'nearest',
     searchPoint: null,
     searchLabel: '',
-    selectedLocationId: null
-  };
-
-  const DOMAINS = {
-    geocode: 'https://photon.komoot.io/api/'
+    mapCenter: null,
+    searching: false,
   };
 
   const fmtDate = new Intl.DateTimeFormat('sv-SE', { weekday: 'short', day: 'numeric', month: 'short' });
   const fmtTime = new Intl.DateTimeFormat('sv-SE', { hour: '2-digit', minute: '2-digit' });
-  const fmtDayTime = (start, end) => `${fmtDate.format(start)} ${fmtTime.format(start)}–${fmtTime.format(end)}`;
+  const fmtDayTime = (s, e) => `${fmtDate.format(s)} ${fmtTime.format(s)}–${fmtTime.format(e)}`;
 
-  let locations = [];
-  let stops = [];
-  let map, clusterGroup;
+  let locations = [], stops = [], map, clusterGroup;
   let markerById = new Map();
+  let mapMoveTimer = null;
 
   const normalize = (str = '') => str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
-  const serviceLabel = (service) => ({ vaccin: 'Vaccinering', provtagning: 'Provtagning', bada: 'Båda' }[service] || service);
-  const servicePill = (service) => ({ vaccin: 'Vaccinering', provtagning: 'Provtagning' }[service] || service);
-  const sortLabel = (sort) => ({ nearest: 'Närmast', upcoming: 'Kommande' }[sort] || sort);
-  const esc = (s='') => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+  const esc = (s = '') => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+  const servicePill = (s) => ({ vaccin: 'Vaccinering', provtagning: 'Provtagning' }[s] || s);
+  const filterLabel = (s) => ({ alla: 'Alla tjänster', vaccin: 'Enbart vaccinering', provtagning: 'Enbart provtagning' }[s] || s);
+
+  function now() { return new Date(); }
 
   function haversineKm(lat1, lon1, lat2, lon2) {
-    const toRad = d => d * Math.PI / 180;
-    const R = 6371;
-    const dLat = toRad(lat2 - lat1);
-    const dLon = toRad(lon2 - lon1);
-    const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+    const R = 6371, r = d => d * Math.PI / 180;
+    const dLat = r(lat2 - lat1), dLon = r(lon2 - lon1);
+    const a = Math.sin(dLat/2)**2 + Math.cos(r(lat1))*Math.cos(r(lat2))*Math.sin(dLon/2)**2;
     return 2 * R * Math.asin(Math.sqrt(a));
   }
 
-  function nowRef() {
-    return new Date('2026-03-06T12:00:00+01:00');
+  function locationMatchesFilter(loc) {
+    if (state.service === 'alla') return true;
+    return (loc.services || []).includes(state.service);
   }
 
-  function getBookUrl(loc) {
-    if (state.service === 'provtagning') return loc.bookProvtagningUrl || loc.bookVaccinUrl || loc.readMoreUrl;
-    if (state.service === 'bada') return loc.bookVaccinUrl || loc.bookProvtagningUrl || loc.readMoreUrl;
-    return loc.bookVaccinUrl || loc.bookProvtagningUrl || loc.readMoreUrl;
-  }
-
-  function serviceMatches(entityServices = []) {
-    if (state.service === 'bada') return entityServices.includes('vaccin') || entityServices.includes('provtagning') || entityServices.includes('bada');
-    if (entityServices.includes('bada')) return true; // 'bada' means both vaccin and provtagning
-    return entityServices.includes(state.service);
+  function stopMatchesFilter(services = []) {
+    if (state.service === 'alla') return services.some(s => ['vaccin','provtagning','bada'].includes(s));
+    if (services.includes('bada')) return true;
+    return services.includes(state.service);
   }
 
   function getRelevantStops(locId) {
-    const now = nowRef();
+    const n = now();
     return stops
-      .filter(s => s.locationId === locId && s.status === 'scheduled' && serviceMatches(s.services || []))
+      .filter(s => s.locationId === locId && s.status === 'scheduled' && stopMatchesFilter(s.services || []))
       .map(s => ({ ...s, _start: new Date(s.start), _end: new Date(s.end) }))
-      .filter(s => s._end >= now)
+      .filter(s => s._end >= n)
       .sort((a, b) => a._start - b._start);
-  }
-
-  function getNextStop(locId) {
-    return getRelevantStops(locId)[0] || null;
   }
 
   function textMatch(loc, qNorm) {
     if (!qNorm) return true;
-    const postalNorm = normalize((loc.postalCode || '').replace(/\s/g, ''));
-    const hay = [loc.name, loc.city, loc.postalCode, loc.address, postalNorm, ...(loc.searchTerms || [])].map(normalize);
+    const pn = normalize((loc.postalCode || '').replace(/\s/g, ''));
+    const hay = [loc.name, loc.city, loc.postalCode, loc.address, pn, ...(loc.searchTerms || [])].map(normalize);
     return hay.some(v => v.includes(qNorm));
   }
 
   async function geocode(query) {
-    // If query looks like a Swedish postal code (5 digits, optionally with space after 3rd)
-    const postalMatch = query.replace(/\s/g, '').match(/^(\d{5})$/);
-    if (postalMatch) {
+    const pm = query.replace(/\s/g,'').match(/^(\d{5})$/);
+    if (pm) {
       try {
-        const pc = postalMatch[1];
-        const pcUrl = `https://nominatim.openstreetmap.org/search?postalcode=${pc}&country=SE&format=json&limit=1`;
-        const pcRes = await fetch(pcUrl, { headers: { 'Accept-Language': 'sv' } });
-        if (pcRes.ok) {
-          const pcData = await pcRes.json();
-          if (pcData && pcData[0]) {
-            return { lat: parseFloat(pcData[0].lat), lon: parseFloat(pcData[0].lon), label: pcData[0].display_name.split(',')[0] || query };
-          }
-        }
+        const r = await fetch(`https://nominatim.openstreetmap.org/search?postalcode=${pm[1]}&country=SE&format=json&limit=1`, { headers: { 'Accept-Language': 'sv' } });
+        if (r.ok) { const d = await r.json(); if (d[0]) return { lat: +d[0].lat, lon: +d[0].lon, label: d[0].display_name.split(',')[0] }; }
       } catch {}
     }
-    const url = `${DOMAINS.geocode}?q=${encodeURIComponent(query)}&limit=1&lang=sv`;
-    const res = await fetch(url);
-    if (!res.ok) throw new Error('Geocoding failed');
-    const data = await res.json();
-    const feature = data.features && data.features[0];
-    if (!feature) return null;
-    const [lon, lat] = feature.geometry.coordinates;
-    return { lat, lon, label: feature.properties.name || query };
+    const r = await fetch(`https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=1&lang=sv`);
+    if (!r.ok) throw new Error('fail');
+    const d = await r.json();
+    const f = d.features?.[0];
+    if (!f) return null;
+    const [lon, lat] = f.geometry.coordinates;
+    return { lat, lon, label: f.properties.name || query };
   }
 
-  function buildSearchPoint(query) {
-    const qNorm = normalize(query);
-    if (!qNorm) return null;
-    const exact = locations.find(loc => textMatch(loc, qNorm));
-    if (exact) return { lat: exact.lat, lon: exact.lon, label: exact.name, source: 'local' };
-    return null;
-  }
+  function getRankCenter() { return state.mapCenter || state.searchPoint; }
 
-  function rankLocations() {
-    const now = nowRef();
+  function rankLocations(forceAll = false) {
+    const n = now();
     const qNorm = normalize(state.query);
-    let pool = locations.filter(loc => loc.active && serviceMatches(loc.services || []));
+    let pool = locations.filter(l => l.active && locationMatchesFilter(l));
+    const center = getRankCenter();
 
-    // Important: if we have a searchPoint, search should be distance-driven, not text-restrictive.
-    // Text matching should only be used when we do not have a resolved point.
-    if (!state.searchPoint && qNorm) {
-      const textFiltered = pool.filter(loc => textMatch(loc, qNorm));
-      if (textFiltered.length) pool = textFiltered;
+    if (!center && qNorm) {
+      const tf = pool.filter(l => textMatch(l, qNorm));
+      if (tf.length) pool = tf;
     }
 
-    if (state.searchPoint) {
-      pool = pool.map(loc => ({
-        ...loc,
-        _distanceKm: haversineKm(state.searchPoint.lat, state.searchPoint.lon, loc.lat, loc.lon)
-      }));
-
-      let radius = 50;
-      let local = pool.filter(loc => loc._distanceKm <= radius);
-      if (local.length < 3) {
-        radius = 100;
-        local = pool.filter(loc => loc._distanceKm <= radius);
-      }
-      if (local.length) {
+    let showingAll = false;
+    if (center) {
+      pool = pool.map(l => ({ ...l, _distanceKm: haversineKm(center.lat, center.lon, l.lat, l.lon) }));
+      let local = pool.filter(l => l._distanceKm <= 50);
+      if (local.length < 3) local = pool.filter(l => l._distanceKm <= 100);
+      if (local.length && !forceAll) {
         pool = local;
       } else {
-        // hard fallback: if still empty, take nearest 8
-        pool = [...pool].sort((a,b) => a._distanceKm - b._distanceKm).slice(0, 8);
+        showingAll = true;
+        pool = [...pool].sort((a,b) => a._distanceKm - b._distanceKm).slice(0, 12);
       }
     } else {
-      pool = pool.map(loc => ({ ...loc, _distanceKm: null }));
+      pool = pool.map(l => ({ ...l, _distanceKm: null }));
     }
 
-    const enriched = pool.map(loc => {
-      const next = getNextStop(loc.id);
-      const hoursToNext = next ? Math.max(0, (next._start - now) / 36e5) : 9999;
-      const distanceScore = loc._distanceKm == null ? 999 : loc._distanceKm;
-      // When a searchPoint is set, sort purely by distance so the searched location always comes first.
-      const score = state.searchPoint
-        ? distanceScore
-        : state.sort === 'upcoming'
-          ? (hoursToNext * 0.65) + (distanceScore * 0.35)
-          : (distanceScore * 0.6) + (hoursToNext * 0.4);
-      return { ...loc, _next: next, _score: score };
+    const enriched = pool.map(l => {
+      const stops = getRelevantStops(l.id);
+      const next = stops[0] || null;
+      const hoursToNext = next ? Math.max(0, (next._start - n) / 36e5) : 9999;
+      const distScore = l._distanceKm ?? 999;
+      const score = center ? distScore : hoursToNext;
+      return { ...l, _next: next, _upcomingStops: stops.slice(0,2), _score: score };
     });
 
-    return enriched.sort((a, b) => a._score - b._score || (a._distanceKm ?? 9999) - (b._distanceKm ?? 9999));
-  }
-
-  function getNearbyStops(rankedLocations) {
-    const ids = new Set(rankedLocations.slice(0, 8).map(l => l.id));
-    return stops
-      .filter(s => s.status === 'scheduled' && ids.has(s.locationId) && serviceMatches(s.services || []))
-      .map(s => ({ ...s, _start: new Date(s.start), _end: new Date(s.end), _loc: rankedLocations.find(l => l.id === s.locationId) }))
-      .filter(s => s._end >= nowRef())
-      .sort((a, b) => a._start - b._start)
-      .slice(0, 6);
+    return { ranked: enriched.sort((a,b) => a._score - b._score), showingAll };
   }
 
   function locationCard(loc) {
-    const nextHtml = loc._next
-      ? `<div class="macc-widget__next"><span class="macc-widget__next-label">Nästa öppettid</span><div class="macc-widget__next-time">${fmtDayTime(loc._next._start, loc._next._end)}</div></div>`
-      : `<div class="macc-widget__next"><span class="macc-widget__next-label">Nästa öppettid</span><div class="macc-widget__next-time">Ingen planerad tid just nu</div></div>`;
+    // Address line
+    const addressHtml = loc.address
+      ? `<div class="mw-card-address">${esc(loc.address)}</div>`
+      : '';
 
-    const distanceHtml = state.searchPoint && loc._distanceKm != null
-      ? `<div class="macc-widget__distance">${loc._distanceKm.toFixed(1)} km från ${esc(state.searchLabel)}</div>`
-      : `<div class="macc-widget__distance">${esc(loc.city)}</div>`;
+    // Distance badge
+    const distHtml = (state.searchPoint || state.mapCenter) && loc._distanceKm != null
+      ? `<span class="mw-dist">${loc._distanceKm.toFixed(1)} km</span>`
+      : '';
+
+    // Service badges — show all services the location offers (excluding 'bada' internal tag)
+    const svcBadges = (loc.services || [])
+      .filter(s => s !== 'bada')
+      .map(s => `<span class="mw-badge mw-badge--${s}">${servicePill(s)}</span>`)
+      .join('');
+
+    // Upcoming times (up to 2)
+    let timesHtml;
+    if (loc._upcomingStops.length) {
+      timesHtml = `<div class="mw-times">
+        <span class="mw-times-label">Nästa öppettid</span>
+        ${loc._upcomingStops.map((s,i) => `<div class="mw-time${i>0?' mw-time--dim':''}">${fmtDayTime(s._start, s._end)}</div>`).join('')}
+      </div>`;
+    } else {
+      timesHtml = `<div class="mw-times mw-times--empty">
+        <span class="mw-times-label">Nästa öppettid</span>
+        <div class="mw-time mw-time--none">Ingen planerad tid just nu</div>
+      </div>`;
+    }
+
+    const hasNext = loc._upcomingStops.length > 0;
+    const hasVaccin = (loc.services||[]).includes('vaccin') || (loc.services||[]).includes('bada');
+    const hasProv   = (loc.services||[]).includes('provtagning') || (loc.services||[]).includes('bada');
+
+    let actionsHtml;
+    if (state.service === 'alla' && hasVaccin && hasProv) {
+      // Both services → two book buttons when there are upcoming times
+      const vUrl = loc.bookVaccinUrl || loc.readMoreUrl;
+      const pUrl = loc.bookProvtagningUrl || loc.readMoreUrl;
+      actionsHtml = hasNext
+        ? `<a class="mw-btn mw-btn--primary" href="${esc(vUrl)}" target="_blank" rel="noopener">Boka vaccinering</a>
+           <a class="mw-btn mw-btn--outline" href="${esc(pUrl)}" target="_blank" rel="noopener">Boka provtagning</a>
+           <a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>`
+        : `<a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Se öppettider</a>`;
+    } else if (state.service === 'vaccin' || (state.service === 'alla' && hasVaccin)) {
+      const url = hasNext ? (loc.bookVaccinUrl || loc.readMoreUrl) : loc.readMoreUrl;
+      actionsHtml = `<a class="mw-btn mw-btn--primary" href="${esc(url)}" target="_blank" rel="noopener">${hasNext ? 'Boka vaccinering' : 'Se öppettider'}</a>
+                     <a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>`;
+    } else {
+      const url = hasNext ? (loc.bookProvtagningUrl || loc.readMoreUrl) : loc.readMoreUrl;
+      actionsHtml = `<a class="mw-btn mw-btn--primary" href="${esc(url)}" target="_blank" rel="noopener">${hasNext ? 'Boka provtagning' : 'Se öppettider'}</a>
+                     <a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>`;
+    }
 
     return `
-      <article class="macc-widget__card" data-location-id="${esc(loc.id)}">
-        <div class="macc-widget__card-top">
-          <div>
-            <h3 class="macc-widget__card-title">${esc(loc.name)}</h3>
+      <article class="mw-card" data-location-id="${esc(loc.id)}">
+        <div class="mw-card-head">
+          <div class="mw-card-title-group">
+            <h3 class="mw-card-title">${esc(loc.name)}</h3>
+            ${addressHtml}
           </div>
-          ${distanceHtml}
+          <div class="mw-card-right">
+            ${distHtml}
+            <div class="mw-badges">${svcBadges}</div>
+          </div>
         </div>
-        <div class="macc-widget__badges">${loc.services.map(s => `<span class="macc-widget__badge">${servicePill(s)}</span>`).join('')}</div>
-        ${nextHtml}
-        <div class="macc-widget__subtle">Drop-in i mån av tid erbjuds under öppettiderna. Tidsbokning rekommenderas.</div>
-        <div class="macc-widget__actions">
-          <a class="macc-widget__btn macc-widget__btn--primary" href="${esc(getBookUrl(loc))}" target="_blank" rel="noopener">${state.service === 'provtagning' ? 'Boka provtagning' : state.service === 'vaccin' ? 'Boka vaccinering' : 'Boka tid'}</a>
-          <a class="macc-widget__btn macc-widget__btn--secondary" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>
-        </div>
+        ${timesHtml}
+        <div class="mw-actions">${actionsHtml}</div>
       </article>`;
   }
 
-  function stopCard(stop) {
-    return `<article class="macc-widget__stop-card">
-      <div class="macc-widget__stop-date">${fmtDayTime(stop._start, stop._end)}</div>
-      <div><strong>${esc(stop._loc.name)}</strong></div>
-      <div class="macc-widget__subtle">${esc(stop.displayNote || 'Drop-in i mån av tid erbjuds under öppettiderna.')}</div>
-      <div class="macc-widget__actions">
-        <a class="macc-widget__btn macc-widget__btn--primary" href="${esc(getBookUrl(stop._loc))}" target="_blank" rel="noopener">${state.service === 'provtagning' ? 'Boka provtagning' : state.service === 'vaccin' ? 'Boka vaccinering' : 'Boka tid'}</a>
-        <a class="macc-widget__btn macc-widget__btn--secondary" href="${esc(stop._loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>
-      </div>
-    </article>`;
-  }
-
   function popupHtml(loc) {
-    const next = loc._next;
-    const nextStr = next ? fmtDayTime(next._start, next._end) : 'Ingen planerad tid just nu';
-    return `<div class="macc-widget__popup-title">${esc(loc.name)}</div>
-      <div class="macc-widget__popup-meta">${esc(loc.city)}${loc._distanceKm != null ? ` • ${loc._distanceKm.toFixed(1)} km` : ''}</div>
-      <div class="macc-widget__subtle" style="margin-bottom:10px"><strong>Nästa öppettid:</strong> ${esc(nextStr)}</div>
-      <div class="macc-widget__popup-actions">
-        <a href="${esc(getBookUrl(loc))}" target="_blank" rel="noopener">Boka</a>
+    const next = loc._next || getRelevantStops(loc.id)[0];
+    const nextStr = next ? fmtDayTime(next._start, next._end) : 'Ingen planerad tid';
+    const bookUrl = loc.bookVaccinUrl || loc.bookProvtagningUrl || loc.readMoreUrl;
+    return `<div class="mw-popup-title">${esc(loc.name)}</div>
+      <div class="mw-popup-addr">${esc(loc.address || loc.city)}</div>
+      <div class="mw-popup-next">${esc(nextStr)}</div>
+      <div class="mw-popup-actions">
+        <a href="${esc(next ? bookUrl : loc.readMoreUrl)}" target="_blank" rel="noopener">${next ? 'Boka tid' : 'Se öppettider'}</a>
         <a href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>
       </div>`;
   }
 
-  function createMarkerIcon(active) {
-    const bg = active ? '#d7263d' : '#0d6973';
+  function markerIcon(hasNext) {
+    const bg = hasNext ? '#d7263d' : '#0d6973';
     return L.divIcon({
       className: '',
-      html: `<div style="width:18px;height:18px;border-radius:999px;background:${bg};border:3px solid #fff;box-shadow:0 8px 18px rgba(0,0,0,.18)"></div>`,
-      iconSize: [18, 18],
-      iconAnchor: [9, 9]
+      html: `<div style="width:18px;height:18px;border-radius:50%;background:${bg};border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.25)"></div>`,
+      iconSize: [18,18], iconAnchor: [9,9]
     });
   }
 
-  function renderMap(rankedLocations) {
-    // Root is re-rendered on every state change, so the map container is recreated.
-    // Recreate Leaflet map safely whenever the old container is gone.
+  function renderMap(ranked) {
     const mapEl = document.getElementById('macc-widget-map');
-    const needsFreshMap = !map || !mapEl || map.getContainer() !== mapEl;
+    const fresh = !map || !mapEl || map.getContainer() !== mapEl;
 
-    if (needsFreshMap) {
-      if (map) {
-        try { map.remove(); } catch {}
-      }
+    if (fresh) {
+      if (map) { try { map.remove(); } catch {} }
       map = L.map('macc-widget-map', { scrollWheelZoom: false }).setView([56.5, 13.5], 6);
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(map);
       clusterGroup = L.markerClusterGroup({ showCoverageOnHover: false, spiderfyOnMaxZoom: true });
       map.addLayer(clusterGroup);
+
+      map.on('moveend', () => {
+        clearTimeout(mapMoveTimer);
+        mapMoveTimer = setTimeout(() => {
+          const c = map.getCenter();
+          state.mapCenter = { lat: c.lat, lon: c.lng };
+          const root = document.getElementById('macc-booking-widget');
+          if (root) refreshList(root);
+        }, 350);
+      });
     }
 
     clusterGroup.clearLayers();
     markerById = new Map();
-
-    rankedLocations.forEach(loc => {
-      const marker = L.marker([loc.lat, loc.lon], { icon: createMarkerIcon(!!loc._next) });
-      marker.bindPopup(popupHtml(loc));
-      marker.on('click', () => { state.selectedLocationId = loc.id; });
-      clusterGroup.addLayer(marker);
-      markerById.set(loc.id, marker);
+    ranked.forEach(loc => {
+      const m = L.marker([loc.lat, loc.lon], { icon: markerIcon(!!loc._next) });
+      m.bindPopup(popupHtml(loc));
+      clusterGroup.addLayer(m);
+      markerById.set(loc.id, m);
     });
 
-    if (rankedLocations.length) {
+    if (!state.mapCenter && ranked.length) {
       if (state.searchPoint) {
-        // Zoom tightly to the search point so the searched city fills the map.
         map.setView([state.searchPoint.lat, state.searchPoint.lon], 10);
       } else {
-        const bounds = L.latLngBounds(rankedLocations.map(loc => [loc.lat, loc.lon]));
-        map.fitBounds(bounds.pad(0.1), { maxZoom: rankedLocations.length === 1 ? 13 : 10 });
+        map.fitBounds(L.latLngBounds(ranked.map(l => [l.lat, l.lon])).pad(0.1), { maxZoom: ranked.length === 1 ? 13 : 8 });
       }
     }
   }
 
-  function bindEvents(root) {
-    root.querySelectorAll('[data-service]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        state.service = btn.dataset.service;
-        render(root);
+  function refreshList(root) {
+    const { ranked, showingAll } = rankLocations();
+    const leftEl = root.querySelector('.mw-left');
+    if (leftEl) {
+      leftEl.innerHTML = buildListHtml(ranked, showingAll);
+      bindListEvents(root, ranked);
+    }
+    ranked.forEach(loc => {
+      const m = markerById.get(loc.id);
+      if (m) { m.setIcon(markerIcon(!!loc._next)); m.setPopupContent(popupHtml(loc)); }
+    });
+  }
+
+  function buildContextLine() {
+    if (state.mapCenter && state.searchPoint) return `Visar orter nära kartans mittpunkt. <button class="mw-link-btn" data-reset-map>Återgå till sökning</button>`;
+    if (state.mapCenter) return `Visar orter nära kartans mittpunkt.`;
+    if (state.searchLabel) return `Visar träffar nära <strong>${esc(state.searchLabel)}</strong>`;
+    return 'Visar alla platser.';
+  }
+
+  function buildListHtml(ranked, showingAll) {
+    let cardsHtml;
+    if (ranked.length === 0) {
+      cardsHtml = `<div class="mw-empty">Inga träffar för vald kombination. <button class="mw-link-btn" data-show-all>Visa alla orter i närheten</button></div>`;
+    } else if (showingAll) {
+      cardsHtml = `<div class="mw-fallback-note">Inga träffar inom 100 km — visar närmaste alternativ.</div>${ranked.map(locationCard).join('')}`;
+    } else {
+      cardsHtml = ranked.map(locationCard).join('');
+    }
+    return `<div class="mw-context">${buildContextLine()}</div><div class="mw-card-list">${cardsHtml}</div>`;
+  }
+
+  function bindListEvents(root, ranked) {
+    root.querySelectorAll('[data-location-id]').forEach(card => {
+      card.addEventListener('click', e => {
+        if (e.target.closest('a,button')) return;
+        const m = markerById.get(card.dataset.locationId);
+        if (m) { map.setView(m.getLatLng(), 12); m.openPopup(); }
       });
     });
-    root.querySelectorAll('[data-sort]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        state.sort = btn.dataset.sort;
-        render(root);
-      });
+    root.querySelector('[data-show-all]')?.addEventListener('click', () => {
+      const { ranked } = rankLocations(true);
+      const leftEl = root.querySelector('.mw-left');
+      if (leftEl) { leftEl.innerHTML = buildListHtml(ranked, true); bindListEvents(root, ranked); }
     });
-    root.querySelector('[data-search-btn]').addEventListener('click', async () => runSearch(root));
-    root.querySelector('[data-search-input]').addEventListener('keydown', async (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        await runSearch(root);
-      }
+    root.querySelector('[data-reset-map]')?.addEventListener('click', () => {
+      state.mapCenter = null;
+      refreshList(root);
+      if (state.searchPoint) map.setView([state.searchPoint.lat, state.searchPoint.lon], 10);
     });
+  }
+
+  function render(root) {
+    const { ranked, showingAll } = rankLocations();
+    root.innerHTML = `
+      <div class="macc-widget">
+        <section class="mw-controls">
+          <div class="mw-controls-row">
+            <div class="mw-filter-group">
+              ${['alla','vaccin','provtagning'].map(s => `
+                <button class="mw-filter-btn${state.service===s?' is-active':''}" data-service="${s}">${filterLabel(s)}</button>
+              `).join('')}
+            </div>
+            <div class="mw-search-group">
+              <div class="mw-search-wrap">
+                <span class="mw-search-icon">⌕</span>
+                <input class="mw-search-input" data-search-input placeholder="Sök ort, adress eller postnummer" value="${esc(state.query)}" />
+                <button class="mw-geo-btn" data-geo-btn title="Använd min plats">📍</button>
+              </div>
+              <button class="mw-search-btn${state.searching?' is-loading':''}" data-search-btn ${state.searching?'disabled':''}>
+                ${state.searching?'Söker…':'Sök'}
+              </button>
+            </div>
+          </div>
+        </section>
+        <div class="mw-main">
+          <div class="mw-left">${buildListHtml(ranked, showingAll)}</div>
+          <div class="mw-right">
+            <div class="mw-map-hint">Flytta kartan för att uppdatera listan</div>
+            <div id="macc-widget-map" class="mw-map"></div>
+          </div>
+        </div>
+      </div>`;
+
+    renderMap(ranked);
+
+    root.querySelectorAll('[data-service]').forEach(btn =>
+      btn.addEventListener('click', () => { state.service = btn.dataset.service; state.mapCenter = null; render(root); })
+    );
+    root.querySelector('[data-search-btn]').addEventListener('click', () => runSearch(root));
+    root.querySelector('[data-search-input]').addEventListener('keydown', e => { if (e.key==='Enter') { e.preventDefault(); runSearch(root); } });
     root.querySelector('[data-geo-btn]').addEventListener('click', () => {
       if (!navigator.geolocation) return;
       navigator.geolocation.getCurrentPosition(pos => {
         state.searchPoint = { lat: pos.coords.latitude, lon: pos.coords.longitude };
         state.searchLabel = 'din plats';
+        state.mapCenter = null;
         state.query = '';
         root.querySelector('[data-search-input]').value = '';
         render(root);
       });
     });
-    root.querySelectorAll('[data-location-id]').forEach(card => {
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('a')) return;
-        const id = card.dataset.locationId;
-        const marker = markerById.get(id);
-        if (marker) {
-          map.setView(marker.getLatLng(), 11);
-          marker.openPopup();
-        }
-      });
-    });
+    bindListEvents(root, ranked);
   }
 
   async function runSearch(root) {
     const input = root.querySelector('[data-search-input]');
     const query = input.value.trim();
     state.query = query;
-    if (!query) {
-      state.searchPoint = null;
-      state.searchLabel = '';
+    state.mapCenter = null;
+    if (!query) { state.searchPoint = null; state.searchLabel = ''; render(root); return; }
+
+    // Local match first (instant)
+    const qNorm = normalize(query);
+    const local = locations.find(l => textMatch(l, qNorm));
+    if (local) {
+      state.searchPoint = { lat: local.lat, lon: local.lon, label: local.name };
+      state.searchLabel = local.name;
       render(root);
       return;
     }
 
-    const localPoint = buildSearchPoint(query);
-    if (localPoint) {
-      state.searchPoint = localPoint;
-      state.searchLabel = localPoint.label;
-      render(root);
-      return;
-    }
+    // Remote geocode
+    state.searching = true;
+    const btn = root.querySelector('[data-search-btn]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Söker…'; btn.classList.add('is-loading'); }
 
     try {
-      const geocoded = await geocode(query);
-      if (geocoded) {
-        state.searchPoint = geocoded;
-        state.searchLabel = geocoded.label || query;
-      } else {
-        state.searchPoint = null;
-        state.searchLabel = query;
-      }
+      const geo = await geocode(query);
+      state.searchPoint = geo || null;
+      state.searchLabel = geo ? (geo.label || query) : query;
     } catch {
       state.searchPoint = null;
       state.searchLabel = query;
+    } finally {
+      state.searching = false;
     }
     render(root);
-  }
-
-  function render(root) {
-    const ranked = rankLocations();
-    const nearbyStops = getNearbyStops(ranked);
-
-    root.innerHTML = `
-      <div class="macc-widget">
-        <section class="macc-widget__panel macc-widget__controls">
-          <div class="macc-widget__service-row">
-            ${['vaccin','provtagning','bada'].map(service => `<button class="macc-widget__service-btn ${state.service === service ? 'is-active' : ''}" data-service="${service}">${serviceLabel(service)}</button>`).join('')}
-          </div>
-          <div class="macc-widget__search-grid">
-            <div class="macc-widget__search-wrap">
-              <span class="macc-widget__search-icon">⌕</span>
-              <input class="macc-widget__search-input" data-search-input placeholder="Sök ort, postnummer eller mottagning" value="${esc(state.query)}" />
-            </div>
-            <button class="macc-widget__search-btn" data-search-btn>Sök</button>
-            <button class="macc-widget__geo-btn" data-geo-btn>Min plats</button>
-          </div>
-          <div class="macc-widget__meta-row">
-            <div class="macc-widget__context">${state.searchLabel ? `Visar träffar nära <strong>${esc(state.searchLabel)}</strong>` : 'Visar relevanta platser för vald tjänst.'}</div>
-            <div class="macc-widget__sort-row">
-              ${['nearest','upcoming'].map(sort => `<button class="macc-widget__sort-btn ${state.sort === sort ? 'is-active' : ''}" data-sort="${sort}">${sortLabel(sort)}</button>`).join('')}
-            </div>
-          </div>
-        </section>
-
-        <div class="macc-widget__main">
-          <div class="macc-widget__left">
-            <section class="macc-widget__section">
-              <h2>Platser nära dig</h2>
-              <p class="macc-widget__section-sub">Sökresultatet sorteras efter avstånd och nästa relevanta öppettid.</p>
-              <div class="macc-widget__card-list">
-                ${ranked.length ? ranked.map(locationCard).join('') : `<div class="macc-widget__empty">Inga träffar för vald kombination just nu.</div>`}
-              </div>
-            </section>
-            <section class="macc-widget__section" style="margin-top:18px">
-              <h2>Kommande stopp nära dig</h2>
-              <p class="macc-widget__section-sub">Endast de mest relevanta tillfällena nära din sökning visas här.</p>
-              <div class="macc-widget__stop-list">
-                ${nearbyStops.length ? nearbyStops.map(stopCard).join('') : `<div class="macc-widget__empty">Inga kommande stopp nära din sökning just nu.</div>`}
-              </div>
-            </section>
-          </div>
-          <div class="macc-widget__right">
-            <section class="macc-widget__section macc-widget__map-shell">
-              <h2>Karta</h2>
-              <p class="macc-widget__section-sub">Kartan visar samma filtrerade platser som listan.</p>
-              <div id="macc-widget-map" class="macc-widget__map"></div>
-            </section>
-          </div>
-        </div>
-      </div>`;
-
-    renderMap(ranked);
-    bindEvents(root);
   }
 
   async function init() {
     const root = document.getElementById('macc-booking-widget');
     if (!root) return;
-    const [locRes, stopRes] = await Promise.all([
+    const [lr, sr] = await Promise.all([
       fetch('./assets/macc-locations.json', { cache: 'no-store' }),
       fetch('./assets/macc-stops.json', { cache: 'no-store' })
     ]);
-    const locJson = await locRes.json();
-    const stopJson = await stopRes.json();
-    locations = locJson.locations || [];
-    stops = stopJson.stops || [];
+    locations = (await lr.json()).locations || [];
+    stops = (await sr.json()).stops || [];
     render(root);
   }
 
