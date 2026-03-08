@@ -266,9 +266,17 @@
 
     clusterGroup.clearLayers();
     markerById = new Map();
-    ranked.forEach(loc => {
-      const m = L.marker([loc.lat, loc.lon], { icon: markerIcon(!!loc._next) });
-      m.bindPopup(popupHtml(loc));
+
+    // On initial load (no center, no search): show ALL active locations on map
+    const mapLocs = (state.searchPoint || state.mapCenter)
+      ? ranked
+      : locations.filter(l => l.active);
+
+    mapLocs.forEach(loc => {
+      const relevant = getRelevantStops(loc.id);
+      const next = relevant[0] || null;
+      const m = L.marker([loc.lat, loc.lon], { icon: markerIcon(!!next) });
+      m.bindPopup(popupHtml({ ...loc, _next: next }));
       clusterGroup.addLayer(m);
       markerById.set(loc.id, m);
     });

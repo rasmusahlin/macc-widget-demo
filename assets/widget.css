@@ -326,8 +326,10 @@ body {
   .mw-controls { padding: 14px 16px; }
   .mw-controls-row { flex-direction: column; align-items: stretch; }
   .mw-filter-group { justify-content: flex-start; }
-  .mw-search-group { flex-direction: column; }
-  .mw-search-btn { width: 100%; }
+  /* search-group stays as row so input+geo-btn stay together, Sök below */
+  .mw-search-group { flex-wrap: wrap; }
+  .mw-search-wrap { flex: 1 1 100%; }
+  .mw-search-btn { flex: 1 1 100%; width: 100%; }
   .mw-map { height: 300px; }
   .mw-actions { flex-direction: column; }
   .mw-btn { width: 100%; }
