@@ -1,13 +1,2699 @@
 {
   "stops": [
-    {"id":"molndal-2026-03-10-0800","locationId":"molndal","services":["vaccin","provtagning"],"start":"2026-03-10T08:00:00+01:00","end":"2026-03-10T14:00:00+01:00","displayNote":"Drop-in i mån av tid erbjuds under öppettiderna.","status":"scheduled"},
-    {"id":"malmo-jagersro-2026-03-10-0900","locationId":"malmo-jagersro","services":["vaccin","provtagning"],"start":"2026-03-10T09:00:00+01:00","end":"2026-03-10T17:00:00+01:00","displayNote":"Drop-in i mån av tid erbjuds under öppettiderna.","status":"scheduled"},
-    {"id":"goteborg-centrum-2026-03-11-0900","locationId":"goteborg-centrum","services":["vaccin","provtagning"],"start":"2026-03-11T09:00:00+01:00","end":"2026-03-11T17:00:00+01:00","displayNote":"Drop-in i mån av tid erbjuds under öppettiderna.","status":"scheduled"},
-    {"id":"staffanstorp-2026-03-11-1000","locationId":"staffanstorp","services":["vaccin","provtagning"],"start":"2026-03-11T10:00:00+01:00","end":"2026-03-11T16:00:00+01:00","displayNote":"Drop-in i mån av tid erbjuds under öppettiderna.","status":"scheduled"},
-    {"id":"malmo-centrum-2026-03-11-1100","locationId":"malmo-centrum","services":["vaccin"],"start":"2026-03-11T11:00:00+01:00","end":"2026-03-11T18:00:00+01:00","displayNote":"Drop-in i mån av tid erbjuds under öppettiderna.","status":"scheduled"},
-    {"id":"molnlycke-2026-03-12-1000","locationId":"molnlycke","services":["vaccin"],"start":"2026-03-12T10:00:00+01:00","end":"2026-03-12T16:00:00+01:00","displayNote":"Drop-in i mån av tid erbjuds under öppettiderna.","status":"scheduled"},
-    {"id":"lund-2026-03-13-0900","locationId":"lund","services":["vaccin","provtagning"],"start":"2026-03-13T09:00:00+01:00","end":"2026-03-13T15:00:00+01:00","displayNote":"Drop-in i mån av tid erbjuds under öppettiderna.","status":"scheduled"},
-    {"id":"trelleborg-2026-03-14-1000","locationId":"trelleborg","services":["vaccin"],"start":"2026-03-14T10:00:00+01:00","end":"2026-03-14T15:00:00+01:00","displayNote":"Drop-in i mån av tid erbjuds under öppettiderna.","status":"scheduled"},
-    {"id":"tanum-2026-03-15-1100","locationId":"tanum","services":["vaccin"],"start":"2026-03-15T11:00:00+01:00","end":"2026-03-15T16:00:00+01:00","displayNote":"Drop-in i mån av tid erbjuds under öppettiderna.","status":"scheduled"}
+    {
+      "id": "ale-2026-03-11-0800",
+      "locationId": "ale",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-11T08:00:00+01:00",
+      "end": "2026-03-11T10:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "ale-2026-03-25-1130",
+      "locationId": "ale",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-25T11:30:00+01:00",
+      "end": "2026-03-25T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lerum-2026-03-06-1200",
+      "locationId": "lerum",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-06T12:00:00+01:00",
+      "end": "2026-03-06T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lerum-2026-03-09-0900",
+      "locationId": "lerum",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-09T09:00:00+01:00",
+      "end": "2026-03-09T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lerum-2026-03-16-1200",
+      "locationId": "lerum",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-16T12:00:00+01:00",
+      "end": "2026-03-16T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lerum-2026-03-23-0900",
+      "locationId": "lerum",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-23T09:00:00+01:00",
+      "end": "2026-03-23T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lilla-edet-2026-03-11-1130",
+      "locationId": "lilla-edet",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-11T11:30:00+01:00",
+      "end": "2026-03-11T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lilla-edet-2026-03-25-0800",
+      "locationId": "lilla-edet",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-25T08:00:00+01:00",
+      "end": "2026-03-25T10:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lysekil-2026-03-12-0900",
+      "locationId": "lysekil",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-12T09:00:00+01:00",
+      "end": "2026-03-12T13:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lysekil-2026-03-26-0900",
+      "locationId": "lysekil",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-26T09:00:00+01:00",
+      "end": "2026-03-26T13:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "skene-2026-03-11-0830",
+      "locationId": "skene",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-11T08:30:00+01:00",
+      "end": "2026-03-11T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "skene-2026-03-18-1200",
+      "locationId": "skene",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-18T12:00:00+01:00",
+      "end": "2026-03-18T14:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "skene-2026-03-25-0830",
+      "locationId": "skene",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-25T08:30:00+01:00",
+      "end": "2026-03-25T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "munkedal-2026-03-19-1230",
+      "locationId": "munkedal",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-19T12:30:00+01:00",
+      "end": "2026-03-19T14:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "orust-2026-03-10-0900",
+      "locationId": "orust",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-10T09:00:00+01:00",
+      "end": "2026-03-10T13:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "orust-2026-03-24-0900",
+      "locationId": "orust",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-24T09:00:00+01:00",
+      "end": "2026-03-24T13:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "partille-2026-03-06-0900",
+      "locationId": "partille",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-06T09:00:00+01:00",
+      "end": "2026-03-06T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "partille-2026-03-09-1300",
+      "locationId": "partille",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-09T13:00:00+01:00",
+      "end": "2026-03-09T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "partille-2026-03-11-0900",
+      "locationId": "partille",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-11T09:00:00+01:00",
+      "end": "2026-03-11T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "partille-2026-03-16-0900",
+      "locationId": "partille",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-16T09:00:00+01:00",
+      "end": "2026-03-16T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "partille-2026-03-18-1300",
+      "locationId": "partille",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-18T13:00:00+01:00",
+      "end": "2026-03-18T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "partille-2026-03-23-1200",
+      "locationId": "partille",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-23T12:00:00+01:00",
+      "end": "2026-03-23T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "partille-2026-03-25-0900",
+      "locationId": "partille",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-25T09:00:00+01:00",
+      "end": "2026-03-25T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "smogen-2026-03-06-0900",
+      "locationId": "smogen",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-06T09:00:00+01:00",
+      "end": "2026-03-06T13:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "smogen-2026-03-20-0900",
+      "locationId": "smogen",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-20T09:00:00+01:00",
+      "end": "2026-03-20T13:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "stenungsund-2026-03-16-1100",
+      "locationId": "stenungsund",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-16T11:00:00+01:00",
+      "end": "2026-03-16T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "stromstad-2026-03-15-1330",
+      "locationId": "stromstad",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-15T13:30:00+01:00",
+      "end": "2026-03-15T15:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "stromstad-2026-03-29-1000",
+      "locationId": "stromstad",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-29T10:00:00+01:00",
+      "end": "2026-03-29T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "svenljunga-2026-03-18-0830",
+      "locationId": "svenljunga",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-18T08:30:00+01:00",
+      "end": "2026-03-18T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "tanum-2026-03-15-1000",
+      "locationId": "tanum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-15T10:00:00+01:00",
+      "end": "2026-03-15T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "tanum-2026-03-19-0900",
+      "locationId": "tanum",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-19T09:00:00+01:00",
+      "end": "2026-03-19T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "tanum-2026-03-29-1330",
+      "locationId": "tanum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-29T13:30:00+01:00",
+      "end": "2026-03-29T15:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "tjorn-2026-03-16-0800",
+      "locationId": "tjorn",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-16T08:00:00+01:00",
+      "end": "2026-03-16T10:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "tranemo-2026-03-25-1300",
+      "locationId": "tranemo",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-25T13:00:00+01:00",
+      "end": "2026-03-25T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "ulricehamn-2026-03-28-1100",
+      "locationId": "ulricehamn",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-28T11:00:00+01:00",
+      "end": "2026-03-28T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "vargarda-2026-03-15-1300",
+      "locationId": "vargarda",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-15T13:00:00+01:00",
+      "end": "2026-03-15T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "ockero-2026-03-07-1100",
+      "locationId": "ockero",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-07T11:00:00+01:00",
+      "end": "2026-03-07T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "ockero-2026-03-28-1100",
+      "locationId": "ockero",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-28T11:00:00+01:00",
+      "end": "2026-03-28T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "bjuv-2026-03-11-1230",
+      "locationId": "bjuv",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-11T12:30:00+01:00",
+      "end": "2026-03-11T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "bjuv-2026-03-25-1230",
+      "locationId": "bjuv",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-25T12:30:00+01:00",
+      "end": "2026-03-25T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "alingsas-2026-03-04-0830",
+      "locationId": "alingsas",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-04T08:30:00+01:00",
+      "end": "2026-03-04T11:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "alingsas-2026-03-11-1230",
+      "locationId": "alingsas",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-11T12:30:00+01:00",
+      "end": "2026-03-11T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "alingsas-2026-03-18-0830",
+      "locationId": "alingsas",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-18T08:30:00+01:00",
+      "end": "2026-03-18T11:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "alingsas-2026-03-25-1230",
+      "locationId": "alingsas",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-25T12:30:00+01:00",
+      "end": "2026-03-25T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "bollebygd-2026-03-19-1230",
+      "locationId": "bollebygd",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-19T12:30:00+01:00",
+      "end": "2026-03-19T14:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "molnlycke-2026-03-05-0830",
+      "locationId": "molnlycke",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-05T08:30:00+01:00",
+      "end": "2026-03-05T10:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "molnlycke-2026-03-19-0900",
+      "locationId": "molnlycke",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-19T09:00:00+01:00",
+      "end": "2026-03-19T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "partille-2026-03-04-1300",
+      "locationId": "partille",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-04T13:00:00+01:00",
+      "end": "2026-03-04T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "stenungsund-2026-03-16-1100",
+      "locationId": "stenungsund",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-16T11:00:00+01:00",
+      "end": "2026-03-16T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "helsingborg-vaccin-2026-03-11-1500",
+      "locationId": "helsingborg",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-11T15:00:00+01:00",
+      "end": "2026-03-11T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "helsingborg-provtagning-2026-03-11-0730",
+      "locationId": "helsingborg",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-11T07:30:00+01:00",
+      "end": "2026-03-11T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "helsingborg-bada-2026-03-13-0730",
+      "locationId": "helsingborg",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-13T07:30:00+01:00",
+      "end": "2026-03-13T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "helsingborg-vaccin-2026-03-18-1500",
+      "locationId": "helsingborg",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-18T15:00:00+01:00",
+      "end": "2026-03-18T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "helsingborg-provtagning-2026-03-18-0730",
+      "locationId": "helsingborg",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-18T07:30:00+01:00",
+      "end": "2026-03-18T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "helsingborg-bada-2026-03-20-0730",
+      "locationId": "helsingborg",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-20T07:30:00+01:00",
+      "end": "2026-03-20T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "staffanstorp-2026-03-04-1230",
+      "locationId": "staffanstorp",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-04T12:30:00+01:00",
+      "end": "2026-03-04T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "staffanstorp-2026-03-18-0900",
+      "locationId": "staffanstorp",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-18T09:00:00+01:00",
+      "end": "2026-03-18T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "trelleborg-2026-03-16-0800",
+      "locationId": "trelleborg",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-16T08:00:00+01:00",
+      "end": "2026-03-16T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "hassleholm-2026-03-10-0900",
+      "locationId": "hassleholm",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-10T09:00:00+01:00",
+      "end": "2026-03-10T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "hassleholm-2026-03-17-0800",
+      "locationId": "hassleholm",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-17T08:00:00+01:00",
+      "end": "2026-03-17T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "hassleholm-2026-03-24-0900",
+      "locationId": "hassleholm",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-24T09:00:00+01:00",
+      "end": "2026-03-24T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lomma-2026-03-17-0900",
+      "locationId": "lomma",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-17T09:00:00+01:00",
+      "end": "2026-03-17T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "svalov-2026-03-12-1300",
+      "locationId": "svalov",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-12T13:00:00+01:00",
+      "end": "2026-03-12T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "svalov-2026-03-26-1300",
+      "locationId": "svalov",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-26T13:00:00+01:00",
+      "end": "2026-03-26T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kavlinge-2026-02-13-1230",
+      "locationId": "kavlinge",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-02-13T12:30:00+01:00",
+      "end": "2026-02-13T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "klippan-2026-03-22-1300",
+      "locationId": "klippan",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-22T13:00:00+01:00",
+      "end": "2026-03-22T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kristianstad-2026-03-09-0900",
+      "locationId": "kristianstad",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-09T09:00:00+01:00",
+      "end": "2026-03-09T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kristianstad-2026-03-16-0900",
+      "locationId": "kristianstad",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-16T09:00:00+01:00",
+      "end": "2026-03-16T13:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kristianstad-2026-03-23-0900",
+      "locationId": "kristianstad",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-23T09:00:00+01:00",
+      "end": "2026-03-23T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "landskrona-2026-03-05-0900",
+      "locationId": "landskrona",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-05T09:00:00+01:00",
+      "end": "2026-03-05T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "landskrona-2026-03-12-0900",
+      "locationId": "landskrona",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-12T09:00:00+01:00",
+      "end": "2026-03-12T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "landskrona-2026-03-19-0900",
+      "locationId": "landskrona",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-19T09:00:00+01:00",
+      "end": "2026-03-19T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "landskrona-2026-03-26-0900",
+      "locationId": "landskrona",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-26T09:00:00+01:00",
+      "end": "2026-03-26T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "bastad-2026-03-11-0900",
+      "locationId": "bastad",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-11T09:00:00+01:00",
+      "end": "2026-03-11T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "bastad-2026-03-25-0900",
+      "locationId": "bastad",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-25T09:00:00+01:00",
+      "end": "2026-03-25T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "eslov-2026-03-09-1400",
+      "locationId": "eslov",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-09T14:00:00+01:00",
+      "end": "2026-03-09T15:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "eslov-2026-03-23-1400",
+      "locationId": "eslov",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-23T14:00:00+01:00",
+      "end": "2026-03-23T15:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "hoganas-2026-03-17-1300",
+      "locationId": "hoganas",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-17T13:00:00+01:00",
+      "end": "2026-03-17T14:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "limhamn-2026-03-14-1000",
+      "locationId": "limhamn",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-14T10:00:00+01:00",
+      "end": "2026-03-14T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "limhamn-2026-03-28-1100",
+      "locationId": "limhamn",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-28T11:00:00+01:00",
+      "end": "2026-03-28T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "loddekopinge-2026-03-05-1300",
+      "locationId": "loddekopinge",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-05T13:00:00+01:00",
+      "end": "2026-03-05T14:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "loddekopinge-2026-03-19-1300",
+      "locationId": "loddekopinge",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-19T13:00:00+01:00",
+      "end": "2026-03-19T14:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "horby-2026-03-11-0900",
+      "locationId": "horby",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-11T09:00:00+01:00",
+      "end": "2026-03-11T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "horby-2026-03-25-1300",
+      "locationId": "horby",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-25T13:00:00+01:00",
+      "end": "2026-03-25T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "hoor-2026-03-04-0900",
+      "locationId": "hoor",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-04T09:00:00+01:00",
+      "end": "2026-03-04T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "hoor-2026-03-11-1300",
+      "locationId": "hoor",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-11T13:00:00+01:00",
+      "end": "2026-03-11T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "hoor-2026-03-18-1230",
+      "locationId": "hoor",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-18T12:30:00+01:00",
+      "end": "2026-03-18T14:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "hoor-2026-03-25-0900",
+      "locationId": "hoor",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-25T09:00:00+01:00",
+      "end": "2026-03-25T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "ljungbyhed-2026-03-22-1000",
+      "locationId": "ljungbyhed",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-22T10:00:00+01:00",
+      "end": "2026-03-22T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "osby-2026-03-17-1230",
+      "locationId": "osby",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-17T12:30:00+01:00",
+      "end": "2026-03-17T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "simrishamn-2026-03-19-0900",
+      "locationId": "simrishamn",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-19T09:00:00+01:00",
+      "end": "2026-03-19T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "sjobo-2026-03-19-1345",
+      "locationId": "sjobo",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-19T13:45:00+01:00",
+      "end": "2026-03-19T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "sjobo-2026-03-29-1300",
+      "locationId": "sjobo",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-29T13:00:00+02:00",
+      "end": "2026-03-29T14:00:00+02:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "skurup-2026-03-09-1300",
+      "locationId": "skurup",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-09T13:00:00+01:00",
+      "end": "2026-03-09T13:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "skurup-2026-03-23-1300",
+      "locationId": "skurup",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-23T13:00:00+01:00",
+      "end": "2026-03-23T14:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "svedala-2026-03-16-1200",
+      "locationId": "svedala",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-16T12:00:00+01:00",
+      "end": "2026-03-16T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "sodra-sandby-2026-03-29-1000",
+      "locationId": "sodra-sandby",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-29T10:00:00+02:00",
+      "end": "2026-03-29T12:00:00+02:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "tomelilla-2026-03-19-1215",
+      "locationId": "tomelilla",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-19T12:15:00+01:00",
+      "end": "2026-03-19T13:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "vellinge-2026-03-14-1300",
+      "locationId": "vellinge",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-14T13:00:00+01:00",
+      "end": "2026-03-14T15:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "ystad-2026-03-09-0900",
+      "locationId": "ystad",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-09T09:00:00+01:00",
+      "end": "2026-03-09T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "ystad-2026-03-23-0900",
+      "locationId": "ystad",
+      "services": [
+        "bada"
+      ],
+      "start": "2026-03-23T09:00:00+01:00",
+      "end": "2026-03-23T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-p-2026-03-09-0730",
+      "locationId": "kungalv",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-09T07:30:00+01:00",
+      "end": "2026-03-09T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "angelholm-p-2026-03-09-0730",
+      "locationId": "angelholm",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-09T07:30:00+01:00",
+      "end": "2026-03-09T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-09-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-09T08:30:00+01:00",
+      "end": "2026-03-09T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-09-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-09T08:30:00+01:00",
+      "end": "2026-03-09T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "molndal-2026-03-09-1500",
+      "locationId": "molndal",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-09T15:00:00+01:00",
+      "end": "2026-03-09T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "uddevalla-v-2026-03-09-1500",
+      "locationId": "uddevalla",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-09T15:00:00+01:00",
+      "end": "2026-03-09T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "boras-v-2026-03-09-1500",
+      "locationId": "boras",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-09T15:00:00+01:00",
+      "end": "2026-03-09T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "angelholm-v-2026-03-09-1500",
+      "locationId": "angelholm",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-09T15:00:00+01:00",
+      "end": "2026-03-09T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lund-centrum-p-2026-03-10-0730",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-10T07:30:00+01:00",
+      "end": "2026-03-10T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "boras-p-2026-03-10-0800",
+      "locationId": "boras",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-10T08:00:00+01:00",
+      "end": "2026-03-10T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-v-2026-03-10-0800",
+      "locationId": "kungalv",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-10T08:00:00+01:00",
+      "end": "2026-03-10T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-p-2026-03-10-0800",
+      "locationId": "kungalv",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-10T08:00:00+01:00",
+      "end": "2026-03-10T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-10-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-10T08:30:00+01:00",
+      "end": "2026-03-10T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-10-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-10T08:30:00+01:00",
+      "end": "2026-03-10T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "uddevalla-v-2026-03-11-0800",
+      "locationId": "uddevalla",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-11T08:00:00+01:00",
+      "end": "2026-03-11T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "uddevalla-p-2026-03-11-0800",
+      "locationId": "uddevalla",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-11T08:00:00+01:00",
+      "end": "2026-03-11T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kalmar-p-2026-03-11-0800",
+      "locationId": "kalmar",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-11T08:00:00+01:00",
+      "end": "2026-03-11T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-11-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-11T08:30:00+01:00",
+      "end": "2026-03-11T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-11-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-11T08:30:00+01:00",
+      "end": "2026-03-11T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lund-centrum-p-2026-03-12-0730",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-12T07:30:00+01:00",
+      "end": "2026-03-12T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "boras-v-2026-03-12-0800",
+      "locationId": "boras",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-12T08:00:00+01:00",
+      "end": "2026-03-12T11:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "boras-p-2026-03-12-0800",
+      "locationId": "boras",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-12T08:00:00+01:00",
+      "end": "2026-03-12T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "halmstad-p-2026-03-12-0800",
+      "locationId": "halmstad",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-12T08:00:00+01:00",
+      "end": "2026-03-12T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-12-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-12T08:30:00+01:00",
+      "end": "2026-03-12T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-12-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-12T08:30:00+01:00",
+      "end": "2026-03-12T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "molndal-2026-03-12-1500",
+      "locationId": "molndal",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-12T15:00:00+01:00",
+      "end": "2026-03-12T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-v-2026-03-12-1500",
+      "locationId": "kungalv",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-12T15:00:00+01:00",
+      "end": "2026-03-12T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lund-centrum-v-2026-03-12-1500",
+      "locationId": "lund-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-12T15:00:00+01:00",
+      "end": "2026-03-12T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lund-centrum-p-2026-03-13-0730",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-13T07:30:00+01:00",
+      "end": "2026-03-13T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-13-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-13T08:30:00+01:00",
+      "end": "2026-03-13T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-13-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-13T08:30:00+01:00",
+      "end": "2026-03-13T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-p-2026-03-16-0730",
+      "locationId": "kungalv",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-16T07:30:00+01:00",
+      "end": "2026-03-16T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "angelholm-p-2026-03-16-0730",
+      "locationId": "angelholm",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-16T07:30:00+01:00",
+      "end": "2026-03-16T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-16-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-16T08:30:00+01:00",
+      "end": "2026-03-16T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-16-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-16T08:30:00+01:00",
+      "end": "2026-03-16T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "molndal-2026-03-16-1500",
+      "locationId": "molndal",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-16T15:00:00+01:00",
+      "end": "2026-03-16T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "uddevalla-v-2026-03-16-1500",
+      "locationId": "uddevalla",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-16T15:00:00+01:00",
+      "end": "2026-03-16T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "boras-v-2026-03-16-1500",
+      "locationId": "boras",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-16T15:00:00+01:00",
+      "end": "2026-03-16T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "angelholm-v-2026-03-16-1500",
+      "locationId": "angelholm",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-16T15:00:00+01:00",
+      "end": "2026-03-16T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lund-centrum-p-2026-03-17-0730",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-17T07:30:00+01:00",
+      "end": "2026-03-17T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "boras-p-2026-03-17-0800",
+      "locationId": "boras",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-17T08:00:00+01:00",
+      "end": "2026-03-17T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-v-2026-03-17-0800",
+      "locationId": "kungalv",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-17T08:00:00+01:00",
+      "end": "2026-03-17T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-p-2026-03-17-0800",
+      "locationId": "kungalv",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-17T08:00:00+01:00",
+      "end": "2026-03-17T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-17-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-17T08:30:00+01:00",
+      "end": "2026-03-17T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-17-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-17T08:30:00+01:00",
+      "end": "2026-03-17T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "uddevalla-v-2026-03-18-0800",
+      "locationId": "uddevalla",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-18T08:00:00+01:00",
+      "end": "2026-03-18T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "uddevalla-p-2026-03-18-0800",
+      "locationId": "uddevalla",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-18T08:00:00+01:00",
+      "end": "2026-03-18T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kalmar-p-2026-03-18-0800",
+      "locationId": "kalmar",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-18T08:00:00+01:00",
+      "end": "2026-03-18T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-18-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-18T08:30:00+01:00",
+      "end": "2026-03-18T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-18-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-18T08:30:00+01:00",
+      "end": "2026-03-18T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lund-centrum-p-2026-03-19-0730",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-19T07:30:00+01:00",
+      "end": "2026-03-19T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "boras-v-2026-03-19-0800",
+      "locationId": "boras",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-19T08:00:00+01:00",
+      "end": "2026-03-19T11:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "boras-p-2026-03-19-0800",
+      "locationId": "boras",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-19T08:00:00+01:00",
+      "end": "2026-03-19T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "halmstad-p-2026-03-19-0800",
+      "locationId": "halmstad",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-19T08:00:00+01:00",
+      "end": "2026-03-19T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-19-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-19T08:30:00+01:00",
+      "end": "2026-03-19T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-19-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-19T08:30:00+01:00",
+      "end": "2026-03-19T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "molndal-2026-03-19-1500",
+      "locationId": "molndal",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-19T15:00:00+01:00",
+      "end": "2026-03-19T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-v-2026-03-19-1500",
+      "locationId": "kungalv",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-19T15:00:00+01:00",
+      "end": "2026-03-19T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lund-centrum-v-2026-03-19-1500",
+      "locationId": "lund-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-19T15:00:00+01:00",
+      "end": "2026-03-19T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lund-centrum-p-2026-03-20-0730",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-20T07:30:00+01:00",
+      "end": "2026-03-20T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-20-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-20T08:30:00+01:00",
+      "end": "2026-03-20T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-20-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-20T08:30:00+01:00",
+      "end": "2026-03-20T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-p-2026-03-23-0730",
+      "locationId": "kungalv",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-23T07:30:00+01:00",
+      "end": "2026-03-23T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "angelholm-p-2026-03-23-0730",
+      "locationId": "angelholm",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-23T07:30:00+01:00",
+      "end": "2026-03-23T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-23-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-23T08:30:00+01:00",
+      "end": "2026-03-23T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-23-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-23T08:30:00+01:00",
+      "end": "2026-03-23T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "molndal-2026-03-23-1500",
+      "locationId": "molndal",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-23T15:00:00+01:00",
+      "end": "2026-03-23T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "uddevalla-v-2026-03-23-1500",
+      "locationId": "uddevalla",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-23T15:00:00+01:00",
+      "end": "2026-03-23T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "boras-v-2026-03-23-1500",
+      "locationId": "boras",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-23T15:00:00+01:00",
+      "end": "2026-03-23T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "angelholm-v-2026-03-23-1500",
+      "locationId": "angelholm",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-23T15:00:00+01:00",
+      "end": "2026-03-23T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lund-centrum-p-2026-03-24-0730",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-24T07:30:00+01:00",
+      "end": "2026-03-24T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "boras-p-2026-03-24-0800",
+      "locationId": "boras",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-24T08:00:00+01:00",
+      "end": "2026-03-24T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-v-2026-03-24-0800",
+      "locationId": "kungalv",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-24T08:00:00+01:00",
+      "end": "2026-03-24T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-p-2026-03-24-0800",
+      "locationId": "kungalv",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-24T08:00:00+01:00",
+      "end": "2026-03-24T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-24-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-24T08:30:00+01:00",
+      "end": "2026-03-24T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-24-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-24T08:30:00+01:00",
+      "end": "2026-03-24T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "uddevalla-v-2026-03-25-0800",
+      "locationId": "uddevalla",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-25T08:00:00+01:00",
+      "end": "2026-03-25T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "uddevalla-p-2026-03-25-0800",
+      "locationId": "uddevalla",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-25T08:00:00+01:00",
+      "end": "2026-03-25T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kalmar-p-2026-03-25-0800",
+      "locationId": "kalmar",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-25T08:00:00+01:00",
+      "end": "2026-03-25T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-25-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-25T08:30:00+01:00",
+      "end": "2026-03-25T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-25-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-25T08:30:00+01:00",
+      "end": "2026-03-25T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lund-centrum-p-2026-03-26-0730",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-26T07:30:00+01:00",
+      "end": "2026-03-26T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "boras-v-2026-03-26-0800",
+      "locationId": "boras",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-26T08:00:00+01:00",
+      "end": "2026-03-26T11:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "boras-p-2026-03-26-0800",
+      "locationId": "boras",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-26T08:00:00+01:00",
+      "end": "2026-03-26T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "halmstad-p-2026-03-26-0800",
+      "locationId": "halmstad",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-26T08:00:00+01:00",
+      "end": "2026-03-26T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-26-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-26T08:30:00+01:00",
+      "end": "2026-03-26T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-26-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-26T08:30:00+01:00",
+      "end": "2026-03-26T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "molndal-2026-03-26-1500",
+      "locationId": "molndal",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-26T15:00:00+01:00",
+      "end": "2026-03-26T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-v-2026-03-26-1500",
+      "locationId": "kungalv",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-26T15:00:00+01:00",
+      "end": "2026-03-26T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lund-centrum-v-2026-03-26-1500",
+      "locationId": "lund-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-26T15:00:00+01:00",
+      "end": "2026-03-26T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lund-centrum-p-2026-03-27-0730",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-27T07:30:00+01:00",
+      "end": "2026-03-27T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-27-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-27T08:30:00+01:00",
+      "end": "2026-03-27T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-27-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-27T08:30:00+01:00",
+      "end": "2026-03-27T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-p-2026-03-30-0730",
+      "locationId": "kungalv",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-30T07:30:00+01:00",
+      "end": "2026-03-30T12:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "angelholm-p-2026-03-30-0730",
+      "locationId": "angelholm",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-30T07:30:00+01:00",
+      "end": "2026-03-30T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-30-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-30T08:30:00+01:00",
+      "end": "2026-03-30T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-30-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-30T08:30:00+01:00",
+      "end": "2026-03-30T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "molndal-2026-03-30-1500",
+      "locationId": "molndal",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-30T15:00:00+01:00",
+      "end": "2026-03-30T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "uddevalla-v-2026-03-30-1500",
+      "locationId": "uddevalla",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-30T15:00:00+01:00",
+      "end": "2026-03-30T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "boras-v-2026-03-30-1500",
+      "locationId": "boras",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-30T15:00:00+01:00",
+      "end": "2026-03-30T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "angelholm-v-2026-03-30-1500",
+      "locationId": "angelholm",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-30T15:00:00+01:00",
+      "end": "2026-03-30T18:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "lund-centrum-p-2026-03-31-0730",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-31T07:30:00+01:00",
+      "end": "2026-03-31T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "boras-p-2026-03-31-0800",
+      "locationId": "boras",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-31T08:00:00+01:00",
+      "end": "2026-03-31T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-v-2026-03-31-0800",
+      "locationId": "kungalv",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-31T08:00:00+01:00",
+      "end": "2026-03-31T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "kungalv-p-2026-03-31-0800",
+      "locationId": "kungalv",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-31T08:00:00+01:00",
+      "end": "2026-03-31T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-v-2026-03-31-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-31T08:30:00+01:00",
+      "end": "2026-03-31T16:30:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-jagersro-p-2026-03-31-0830",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-31T08:30:00+01:00",
+      "end": "2026-03-31T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-09-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-09T07:00:00+01:00",
+      "end": "2026-03-09T15:00:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-09-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-09T10:00:00+01:00",
+      "end": "2026-03-09T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-10-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-10T07:00:00+01:00",
+      "end": "2026-03-10T15:00:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-10-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-10T10:00:00+01:00",
+      "end": "2026-03-10T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-11-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-11T07:00:00+01:00",
+      "end": "2026-03-11T15:00:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "orebro-p-2026-03-11-0800",
+      "locationId": "orebro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-11T08:00:00+01:00",
+      "end": "2026-03-11T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-11-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-11T10:00:00+01:00",
+      "end": "2026-03-11T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-12-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-12T07:00:00+01:00",
+      "end": "2026-03-12T15:00:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-12-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-12T10:00:00+01:00",
+      "end": "2026-03-12T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-13-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-13T07:00:00+01:00",
+      "end": "2026-03-13T12:30:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-13-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-13T10:00:00+01:00",
+      "end": "2026-03-13T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-16-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-16T07:00:00+01:00",
+      "end": "2026-03-16T15:00:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-16-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-16T10:00:00+01:00",
+      "end": "2026-03-16T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-17-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-17T07:00:00+01:00",
+      "end": "2026-03-17T15:00:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-17-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-17T10:00:00+01:00",
+      "end": "2026-03-17T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-18-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-18T07:00:00+01:00",
+      "end": "2026-03-18T15:00:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "orebro-p-2026-03-18-0800",
+      "locationId": "orebro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-18T08:00:00+01:00",
+      "end": "2026-03-18T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-18-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-18T10:00:00+01:00",
+      "end": "2026-03-18T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-19-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-19T07:00:00+01:00",
+      "end": "2026-03-19T15:00:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-19-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-19T10:00:00+01:00",
+      "end": "2026-03-19T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-20-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-20T07:00:00+01:00",
+      "end": "2026-03-20T12:30:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-20-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-20T10:00:00+01:00",
+      "end": "2026-03-20T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-23-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-23T07:00:00+01:00",
+      "end": "2026-03-23T15:00:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-23-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-23T10:00:00+01:00",
+      "end": "2026-03-23T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-24-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-24T07:00:00+01:00",
+      "end": "2026-03-24T15:00:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-24-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-24T10:00:00+01:00",
+      "end": "2026-03-24T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-25-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-25T07:00:00+01:00",
+      "end": "2026-03-25T15:00:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "orebro-p-2026-03-25-0800",
+      "locationId": "orebro",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-25T08:00:00+01:00",
+      "end": "2026-03-25T11:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-25-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-25T10:00:00+01:00",
+      "end": "2026-03-25T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-26-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-26T07:00:00+01:00",
+      "end": "2026-03-26T15:00:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-26-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-26T10:00:00+01:00",
+      "end": "2026-03-26T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-27-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-27T07:00:00+01:00",
+      "end": "2026-03-27T12:30:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-27-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-27T10:00:00+01:00",
+      "end": "2026-03-27T14:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-30-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-30T07:00:00+01:00",
+      "end": "2026-03-30T15:00:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-30-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-30T10:00:00+01:00",
+      "end": "2026-03-30T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-p-2026-03-31-0700",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-31T07:00:00+01:00",
+      "end": "2026-03-31T15:00:00+01:00",
+      "displayNote": "Endast tidsbokning, ej drop-in.",
+      "status": "scheduled"
+    },
+    {
+      "id": "malmo-centrum-v-2026-03-31-1000",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-31T10:00:00+01:00",
+      "end": "2026-03-31T16:00:00+01:00",
+      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
+      "status": "scheduled"
+    }
   ]
 }

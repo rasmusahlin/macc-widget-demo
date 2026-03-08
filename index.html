@@ -3,38 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MACC – Demo: Öppettider och bokning</title>
-  <meta name="description" content="Demo för MACC People – vaccination och provtagning nära dig." />
+  <title>MACC Widget Prototype v4</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-  <link rel="stylesheet" href="./assets/widget.css?v=demo1" />
+  <link rel="stylesheet" href="./assets/widget.css" />
 </head>
 <body>
-  <main class="macc-page">
-    <section class="macc-hero">
-      <div class="macc-hero__bg"></div>
-      <div class="macc-shell">
-        <div class="macc-hero__content">
-          <div class="macc-eyebrow">MACC People · Demo av bokningswidget</div>
-          <h1>Vaccination och provtagning nära dig</h1>
-          <p>Sök ort, postnummer eller mottagning för att se var vi finns nära dig, när nästa öppettid är och hur du bokar. Tidsbokning rekommenderas, men drop-in erbjuds i mån av tid under öppettiderna.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="macc-widget-section">
-      <div class="macc-shell">
-        <div id="macc-booking-widget"></div>
-      </div>
-    </section>
-  </main>
+  <section class="demo-shell">
+    <div class="demo-hero">
+      <p class="demo-eyebrow">Prototyp v4</p>
+      <h1>Vaccination och provtagning nära dig</h1>
+      <p class="demo-intro">Sök ort, postnummer eller mottagning för att se när vi finns nära dig. Tidsbokning rekommenderas, men drop-in erbjuds i mån av tid under öppettiderna.</p>
+    </div>
+    <div id="macc-booking-widget"></div>
+  </section>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" defer></script>
-  <script src="./assets/widget.js?v=demo1" defer></script>
+  <script src="./assets/widget.js" defer></script>
 </body>
 </html>
