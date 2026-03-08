@@ -47,7 +47,8 @@
   }
 
   function serviceMatches(entityServices = []) {
-    if (state.service === 'bada') return entityServices.includes('vaccin') || entityServices.includes('provtagning');
+    if (state.service === 'bada') return entityServices.includes('vaccin') || entityServices.includes('provtagning') || entityServices.includes('bada');
+    if (entityServices.includes('bada')) return true; // 'bada' means both vaccin and provtagning
     return entityServices.includes(state.service);
   }
 
@@ -66,7 +67,8 @@
 
   function textMatch(loc, qNorm) {
     if (!qNorm) return true;
-    const hay = [loc.name, loc.city, loc.postalCode, loc.address, ...(loc.searchTerms || [])].map(normalize);
+    const postalNorm = normalize((loc.postalCode || '').replace(/\s/g, ''));
+    const hay = [loc.name, loc.city, loc.postalCode, loc.address, postalNorm, ...(loc.searchTerms || [])].map(normalize);
     return hay.some(v => v.includes(qNorm));
   }
 
@@ -236,7 +238,7 @@
 
     if (rankedLocations.length) {
       const bounds = L.latLngBounds(rankedLocations.map(loc => [loc.lat, loc.lon]));
-      map.fitBounds(bounds.pad(0.2), { maxZoom: rankedLocations.length === 1 ? 11 : 10 });
+      map.fitBounds(bounds.pad(0.1), { maxZoom: rankedLocations.length === 1 ? 14 : 13 });
     }
   }
 
