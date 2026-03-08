@@ -253,7 +253,9 @@
       clusterGroup = L.markerClusterGroup({ showCoverageOnHover: false, spiderfyOnMaxZoom: true });
       map.addLayer(clusterGroup);
 
+      let mapReady = false;
       map.on('moveend', () => {
+        if (!mapReady) return;
         clearTimeout(mapMoveTimer);
         mapMoveTimer = setTimeout(() => {
           const c = map.getCenter();
@@ -262,17 +264,16 @@
           if (root) refreshList(root);
         }, 350);
       });
+      // Allow moveend to fire after initial fitBounds settles
+      setTimeout(() => { mapReady = true; }, 800);
     }
 
     clusterGroup.clearLayers();
     markerById = new Map();
 
-    // On initial load (no center, no search): show ALL active locations on map
-    const mapLocs = (state.searchPoint || state.mapCenter)
-      ? ranked
-      : locations.filter(l => l.active);
-
-    mapLocs.forEach(loc => {
+    // Always show ALL active locations as markers — list shows the relevant subset
+    const allActive = locations.filter(l => l.active);
+    allActive.forEach(loc => {
       const relevant = getRelevantStops(loc.id);
       const next = relevant[0] || null;
       const m = L.marker([loc.lat, loc.lon], { icon: markerIcon(!!next) });
@@ -281,11 +282,13 @@
       markerById.set(loc.id, m);
     });
 
-    if (!state.mapCenter && ranked.length) {
+    if (!state.mapCenter) {
       if (state.searchPoint) {
         map.setView([state.searchPoint.lat, state.searchPoint.lon], 10);
       } else {
-        map.fitBounds(L.latLngBounds(ranked.map(l => [l.lat, l.lon])).pad(0.1), { maxZoom: ranked.length === 1 ? 13 : 8 });
+        // Fit to all active locations so full Sweden cluster is visible
+        const allCoords = allActive.map(l => [l.lat, l.lon]);
+        if (allCoords.length) map.fitBounds(L.latLngBounds(allCoords).pad(0.05), { maxZoom: 7 });
       }
     }
   }
@@ -294,22 +297,25 @@
     const { ranked, showingAll } = rankLocations();
 
     // Sync markers: remove stale, add new
-    const newIds = new Set(ranked.map(l => l.id));
-    markerById.forEach((m, id) => {
-      if (!newIds.has(id)) { clusterGroup.removeLayer(m); markerById.delete(id); }
-    });
-    ranked.forEach(loc => {
-      if (markerById.has(loc.id)) {
-        const m = markerById.get(loc.id);
-        m.setIcon(markerIcon(!!loc._next));
-        m.setPopupContent(popupHtml(loc));
-      } else {
-        const m = L.marker([loc.lat, loc.lon], { icon: markerIcon(!!loc._next) });
-        m.bindPopup(popupHtml(loc));
-        clusterGroup.addLayer(m);
-        markerById.set(loc.id, m);
-      }
-    });
+    // Only prune/sync markers when user has searched or panned — otherwise keep all visible
+    if (state.searchPoint || state.mapCenter) {
+      const newIds = new Set(ranked.map(l => l.id));
+      markerById.forEach((m, id) => {
+        if (!newIds.has(id)) { clusterGroup.removeLayer(m); markerById.delete(id); }
+      });
+      ranked.forEach(loc => {
+        if (markerById.has(loc.id)) {
+          const m = markerById.get(loc.id);
+          m.setIcon(markerIcon(!!loc._next));
+          m.setPopupContent(popupHtml(loc));
+        } else {
+          const m = L.marker([loc.lat, loc.lon], { icon: markerIcon(!!loc._next) });
+          m.bindPopup(popupHtml(loc));
+          clusterGroup.addLayer(m);
+          markerById.set(loc.id, m);
+        }
+      });
+    }
 
     // Update list
     const leftEl = root.querySelector('.mw-left');
