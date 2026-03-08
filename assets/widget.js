@@ -30,20 +30,9 @@
     return 2 * R * Math.asin(Math.sqrt(a));
   }
 
-  // Normalise services: null/[] → ['vaccin','provtagning'], 'bada' → both
-  function normServices(raw) {
-    if (!raw || !Array.isArray(raw) || raw.length === 0) return ['vaccin', 'provtagning'];
-    const out = new Set();
-    for (const s of raw) {
-      if (s === 'bada') { out.add('vaccin'); out.add('provtagning'); }
-      else if (s === 'vaccin' || s === 'provtagning') out.add(s);
-    }
-    return out.size ? [...out] : ['vaccin', 'provtagning'];
-  }
-
   function locationMatchesFilter(loc) {
     if (state.service === 'alla') return true;
-    return normServices(loc.services).includes(state.service);
+    return (loc.services || []).includes(state.service);
   }
 
   function stopMatchesFilter(services = []) {
@@ -114,12 +103,12 @@
     }
 
     const enriched = pool.map(l => {
-      const relevant = getRelevantStops(l.id);
-      const next = relevant[0] || null;
+      const stops = getRelevantStops(l.id);
+      const next = stops[0] || null;
       const hoursToNext = next ? Math.max(0, (next._start - n) / 36e5) : 9999;
       const distScore = l._distanceKm ?? 999;
       const score = center ? distScore : hoursToNext;
-      return { ...l, _next: next, _upcomingStops: relevant.slice(0,2), _score: score };
+      return { ...l, _next: next, _upcomingStops: stops.slice(0,2), _score: score };
     });
 
     return { ranked: enriched.sort((a,b) => a._score - b._score), showingAll };
@@ -136,9 +125,9 @@
       ? `<span class="mw-dist">${loc._distanceKm.toFixed(1)} km</span>`
       : '';
 
-    // Service badges — use normServices so null/bada handled correctly
-    const locSvcs = normServices(loc.services);
-    const svcBadges = locSvcs
+    // Service badges — show all services the location offers (excluding 'bada' internal tag)
+    const svcBadges = (loc.services || [])
+      .filter(s => s !== 'bada')
       .map(s => `<span class="mw-badge mw-badge--${s}">${servicePill(s)}</span>`)
       .join('');
 
@@ -157,8 +146,8 @@
     }
 
     const hasNext = loc._upcomingStops.length > 0;
-    const hasVaccin = locSvcs.includes('vaccin');
-    const hasProv   = locSvcs.includes('provtagning');
+    const hasVaccin = (loc.services||[]).includes('vaccin') || (loc.services||[]).includes('bada');
+    const hasProv   = (loc.services||[]).includes('provtagning') || (loc.services||[]).includes('bada');
 
     let actionsHtml;
     if (state.service === 'alla' && hasVaccin && hasProv) {
