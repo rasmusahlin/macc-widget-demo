@@ -73,6 +73,21 @@
   }
 
   async function geocode(query) {
+    // If query looks like a Swedish postal code (5 digits, optionally with space after 3rd)
+    const postalMatch = query.replace(/\s/g, '').match(/^(\d{5})$/);
+    if (postalMatch) {
+      try {
+        const pc = postalMatch[1];
+        const pcUrl = `https://nominatim.openstreetmap.org/search?postalcode=${pc}&country=SE&format=json&limit=1`;
+        const pcRes = await fetch(pcUrl, { headers: { 'Accept-Language': 'sv' } });
+        if (pcRes.ok) {
+          const pcData = await pcRes.json();
+          if (pcData && pcData[0]) {
+            return { lat: parseFloat(pcData[0].lat), lon: parseFloat(pcData[0].lon), label: pcData[0].display_name.split(',')[0] || query };
+          }
+        }
+      } catch {}
+    }
     const url = `${DOMAINS.geocode}?q=${encodeURIComponent(query)}&limit=1&lang=sv`;
     const res = await fetch(url);
     if (!res.ok) throw new Error('Geocoding failed');
@@ -242,7 +257,7 @@
     if (rankedLocations.length) {
       if (state.searchPoint) {
         // Zoom tightly to the search point so the searched city fills the map.
-        map.setView([state.searchPoint.lat, state.searchPoint.lon], 12);
+        map.setView([state.searchPoint.lat, state.searchPoint.lon], 10);
       } else {
         const bounds = L.latLngBounds(rankedLocations.map(loc => [loc.lat, loc.lon]));
         map.fitBounds(bounds.pad(0.1), { maxZoom: rankedLocations.length === 1 ? 13 : 10 });
