@@ -1,6 +1,6 @@
 (() => {
   const state = {
-    service: 'alla',       // 'alla' | 'vaccin' | 'provtagning'
+    service: 'alla',
     query: '',
     searchPoint: null,
     searchLabel: '',
@@ -18,19 +18,19 @@
 
   const normalize = (str = '') => str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
   const esc = (s = '') => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
-  const servicePill = s => ({ vaccin: 'Vaccinering', provtagning: 'Provtagning' }[s] || s);
-  const filterLabel = s => ({ alla: 'Alla tjänster', vaccin: 'Enbart vaccinering', provtagning: 'Enbart provtagning' }[s] || s);
+  const servicePill = (s) => ({ vaccin: 'Vaccinering', provtagning: 'Provtagning' }[s] || s);
+  const filterLabel = (s) => ({ alla: 'Alla tjänster', vaccin: 'Enbart vaccinering', provtagning: 'Enbart provtagning' }[s] || s);
 
   function now() { return new Date(); }
 
   function haversineKm(lat1, lon1, lat2, lon2) {
     const R = 6371, r = d => d * Math.PI / 180;
-    const dLat = r(lat2-lat1), dLon = r(lon2-lon1);
+    const dLat = r(lat2 - lat1), dLon = r(lon2 - lon1);
     const a = Math.sin(dLat/2)**2 + Math.cos(r(lat1))*Math.cos(r(lat2))*Math.sin(dLon/2)**2;
     return 2 * R * Math.asin(Math.sqrt(a));
   }
 
-  // Normalise a services array: null/undefined → [], 'bada' → ['vaccin','provtagning']
+  // Normalise services: null/[] → ['vaccin','provtagning'], 'bada' → both
   function normServices(raw) {
     if (!raw || !Array.isArray(raw) || raw.length === 0) return ['vaccin', 'provtagning'];
     const out = new Set();
@@ -41,23 +41,21 @@
     return out.size ? [...out] : ['vaccin', 'provtagning'];
   }
 
-  // Does a location match the current service filter?
   function locationMatchesFilter(loc) {
     if (state.service === 'alla') return true;
     return normServices(loc.services).includes(state.service);
   }
 
-  // Does a stop match the current service filter?
-  function stopMatchesFilter(rawServices) {
-    const svcs = normServices(rawServices);
-    if (state.service === 'alla') return true;
-    return svcs.includes(state.service);
+  function stopMatchesFilter(services = []) {
+    if (state.service === 'alla') return services.some(s => ['vaccin','provtagning','bada'].includes(s));
+    if (services.includes('bada')) return true;
+    return services.includes(state.service);
   }
 
   function getRelevantStops(locId) {
     const n = now();
     return stops
-      .filter(s => s.locationId === locId && s.status === 'scheduled' && stopMatchesFilter(s.services))
+      .filter(s => s.locationId === locId && s.status === 'scheduled' && stopMatchesFilter(s.services || []))
       .map(s => ({ ...s, _start: new Date(s.start), _end: new Date(s.end) }))
       .filter(s => s._end >= n)
       .sort((a, b) => a._start - b._start);
@@ -95,7 +93,6 @@
     let pool = locations.filter(l => l.active && locationMatchesFilter(l));
     const center = getRankCenter();
 
-    // Text filter only when no geo center
     if (!center && qNorm) {
       const tf = pool.filter(l => textMatch(l, qNorm));
       if (tf.length) pool = tf;
@@ -122,39 +119,35 @@
       const hoursToNext = next ? Math.max(0, (next._start - n) / 36e5) : 9999;
       const distScore = l._distanceKm ?? 999;
       const score = center ? distScore : hoursToNext;
-      return { ...l, _next: next, _upcomingStops: relevant.slice(0, 2), _score: score };
+      return { ...l, _next: next, _upcomingStops: relevant.slice(0,2), _score: score };
     });
 
     return { ranked: enriched.sort((a,b) => a._score - b._score), showingAll };
   }
 
   function locationCard(loc) {
-    const svcs = normServices(loc.services);
-    const hasVaccin = svcs.includes('vaccin');
-    const hasProv   = svcs.includes('provtagning');
-    const hasNext   = loc._upcomingStops.length > 0;
-
-    // Address
+    // Address line
     const addressHtml = loc.address
-      ? `<div class="mw-card-address">${esc(loc.address)}</div>` : '';
+      ? `<div class="mw-card-address">${esc(loc.address)}</div>`
+      : '';
 
-    // Distance
+    // Distance badge
     const distHtml = (state.searchPoint || state.mapCenter) && loc._distanceKm != null
-      ? `<span class="mw-dist">${loc._distanceKm.toFixed(1)} km</span>` : '';
+      ? `<span class="mw-dist">${loc._distanceKm.toFixed(1)} km</span>`
+      : '';
 
-    // Service badges — derived from normServices, always accurate
-    const svcBadges = svcs.map(s =>
-      `<span class="mw-badge mw-badge--${s}">${servicePill(s)}</span>`
-    ).join('');
+    // Service badges — use normServices so null/bada handled correctly
+    const locSvcs = normServices(loc.services);
+    const svcBadges = locSvcs
+      .map(s => `<span class="mw-badge mw-badge--${s}">${servicePill(s)}</span>`)
+      .join('');
 
     // Upcoming times (up to 2)
     let timesHtml;
-    if (hasNext) {
+    if (loc._upcomingStops.length) {
       timesHtml = `<div class="mw-times">
         <span class="mw-times-label">Nästa öppettid</span>
-        ${loc._upcomingStops.map((s,i) =>
-          `<div class="mw-time${i > 0 ? ' mw-time--dim' : ''}">${fmtDayTime(s._start, s._end)}</div>`
-        ).join('')}
+        ${loc._upcomingStops.map((s,i) => `<div class="mw-time${i>0?' mw-time--dim':''}">${fmtDayTime(s._start, s._end)}</div>`).join('')}
       </div>`;
     } else {
       timesHtml = `<div class="mw-times mw-times--empty">
@@ -163,31 +156,32 @@
       </div>`;
     }
 
-    // Book buttons
+    const hasNext = loc._upcomingStops.length > 0;
+    const hasVaccin = locSvcs.includes('vaccin');
+    const hasProv   = locSvcs.includes('provtagning');
+
     let actionsHtml;
-    if (!hasNext) {
-      actionsHtml = `<a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Se öppettider</a>`;
-    } else if (state.service === 'vaccin') {
-      const url = loc.bookVaccinUrl || loc.readMoreUrl;
-      actionsHtml = `<a class="mw-btn mw-btn--primary" href="${esc(url)}" target="_blank" rel="noopener">Boka vaccinering</a>
-                     <a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>`;
-    } else if (state.service === 'provtagning') {
-      const url = loc.bookProvtagningUrl || loc.readMoreUrl;
-      actionsHtml = `<a class="mw-btn mw-btn--primary" href="${esc(url)}" target="_blank" rel="noopener">Boka provtagning</a>
-                     <a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>`;
-    } else {
-      // 'alla' — check if URLs differ
+    if (state.service === 'alla' && hasVaccin && hasProv) {
+      // Both services — merge to one button if URLs are the same
       const vUrl = loc.bookVaccinUrl || loc.readMoreUrl;
       const pUrl = loc.bookProvtagningUrl || loc.readMoreUrl;
-      if (hasVaccin && hasProv && vUrl !== pUrl) {
-        actionsHtml = `<a class="mw-btn mw-btn--primary" href="${esc(vUrl)}" target="_blank" rel="noopener">Boka vaccinering</a>
-                       <a class="mw-btn mw-btn--outline" href="${esc(pUrl)}" target="_blank" rel="noopener">Boka provtagning</a>
-                       <a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>`;
-      } else {
-        const url = vUrl || pUrl || loc.readMoreUrl;
-        actionsHtml = `<a class="mw-btn mw-btn--primary" href="${esc(url)}" target="_blank" rel="noopener">Boka tid</a>
-                       <a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>`;
-      }
+      const sameUrl = vUrl === pUrl;
+      actionsHtml = hasNext
+        ? sameUrl
+          ? `<a class="mw-btn mw-btn--primary" href="${esc(vUrl)}" target="_blank" rel="noopener">Boka tid</a>
+             <a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>`
+          : `<a class="mw-btn mw-btn--primary" href="${esc(vUrl)}" target="_blank" rel="noopener">Boka vaccinering</a>
+             <a class="mw-btn mw-btn--outline" href="${esc(pUrl)}" target="_blank" rel="noopener">Boka provtagning</a>
+             <a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>`
+        : `<a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Se öppettider</a>`;
+    } else if (state.service === 'vaccin' || (state.service === 'alla' && hasVaccin)) {
+      const url = hasNext ? (loc.bookVaccinUrl || loc.readMoreUrl) : loc.readMoreUrl;
+      actionsHtml = `<a class="mw-btn mw-btn--primary" href="${esc(url)}" target="_blank" rel="noopener">${hasNext ? 'Boka vaccinering' : 'Se öppettider'}</a>
+                     <a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>`;
+    } else {
+      const url = hasNext ? (loc.bookProvtagningUrl || loc.readMoreUrl) : loc.readMoreUrl;
+      actionsHtml = `<a class="mw-btn mw-btn--primary" href="${esc(url)}" target="_blank" rel="noopener">${hasNext ? 'Boka provtagning' : 'Se öppettider'}</a>
+                     <a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>`;
     }
 
     return `
@@ -208,37 +202,54 @@
   }
 
   function popupHtml(loc) {
-    const relevant = getRelevantStops(loc.id);
-    const next = relevant[0] || null;
+    const next = loc._next || getRelevantStops(loc.id)[0];
     const nextStr = next ? fmtDayTime(next._start, next._end) : 'Ingen planerad tid';
-    const url = next ? (loc.bookVaccinUrl || loc.bookProvtagningUrl || loc.readMoreUrl) : loc.readMoreUrl;
+    const bookUrl = loc.bookVaccinUrl || loc.bookProvtagningUrl || loc.readMoreUrl;
     return `<div class="mw-popup-title">${esc(loc.name)}</div>
       <div class="mw-popup-addr">${esc(loc.address || loc.city)}</div>
       <div class="mw-popup-next">${esc(nextStr)}</div>
       <div class="mw-popup-actions">
-        <a href="${esc(url)}" target="_blank" rel="noopener">${next ? 'Boka tid' : 'Se öppettider'}</a>
+        <a href="${esc(next ? bookUrl : loc.readMoreUrl)}" target="_blank" rel="noopener">${next ? 'Boka tid' : 'Se öppettider'}</a>
         <a href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>
       </div>`;
   }
 
   function markerIcon(hasNext) {
     const color = hasNext ? '#d7263d' : '#0d6973';
-    const pulse = hasNext ? `<div class="mw-marker-pulse" style="background:${color}"></div>` : '';
+    const pulse = hasNext
+      ? `<div class="mw-marker-pulse" style="background:${color}"></div>`
+      : '';
+    const html = `
+      <div class="mw-marker-wrap">
+        ${pulse}
+        <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z"
+                fill="${color}"/>
+          <path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z"
+                fill="url(#pin-grad-${hasNext?'red':'teal'})" opacity="0.35"/>
+          <circle cx="14" cy="14" r="6" fill="white" opacity="0.95"/>
+          ${hasNext
+            ? `<path d="M14 10v4l2.5 2.5" stroke="${color}" stroke-width="2" stroke-linecap="round"/>`
+            : `<circle cx="14" cy="14" r="2.5" fill="${color}"/>`
+          }
+          <defs>
+            <radialGradient id="pin-grad-red" cx="40%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="white" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="black" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="pin-grad-teal" cx="40%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="white" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="black" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>`;
     return L.divIcon({
       className: '',
-      html: `<div class="mw-marker-wrap">${pulse}<svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z" fill="${color}"/>
-        <path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z" fill="url(#pg)" opacity="0.35"/>
-        <circle cx="14" cy="14" r="6" fill="white" opacity="0.95"/>
-        ${hasNext
-          ? `<path d="M14 10v4l2.5 2.5" stroke="${color}" stroke-width="2" stroke-linecap="round"/>`
-          : `<circle cx="14" cy="14" r="2.5" fill="${color}"/>`}
-        <defs><radialGradient id="pg" cx="40%" cy="30%" r="70%">
-          <stop offset="0%" stop-color="white" stop-opacity="0.4"/>
-          <stop offset="100%" stop-color="black" stop-opacity="0"/>
-        </radialGradient></defs>
-      </svg></div>`,
-      iconSize: [28, 36], iconAnchor: [14, 36], popupAnchor: [0, -34]
+      html,
+      iconSize: [28, 36],
+      iconAnchor: [14, 36],
+      popupAnchor: [0, -34]
     });
   }
 
@@ -284,7 +295,8 @@
 
   function refreshList(root) {
     const { ranked, showingAll } = rankLocations();
-    // Sync markers
+
+    // Sync markers: remove stale, add new
     const newIds = new Set(ranked.map(l => l.id));
     markerById.forEach((m, id) => {
       if (!newIds.has(id)) { clusterGroup.removeLayer(m); markerById.delete(id); }
@@ -301,8 +313,13 @@
         markerById.set(loc.id, m);
       }
     });
+
+    // Update list
     const leftEl = root.querySelector('.mw-left');
-    if (leftEl) { leftEl.innerHTML = buildListHtml(ranked, showingAll); bindListEvents(root, ranked); }
+    if (leftEl) {
+      leftEl.innerHTML = buildListHtml(ranked, showingAll);
+      bindListEvents(root, ranked);
+    }
   }
 
   function buildContextLine() {
@@ -358,18 +375,16 @@
             <div class="mw-search-group">
               <div class="mw-search-wrap">
                 <span class="mw-search-icon">⌕</span>
-                <input class="mw-search-input" data-search-input
-                  placeholder="Sök ort, adress eller postnummer"
-                  value="${esc(state.query)}" />
+                <input class="mw-search-input" data-search-input placeholder="Sök ort, adress eller postnummer" value="${esc(state.query)}" />
                 <button class="mw-geo-btn" data-geo-btn title="Använd min plats">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
-                    <circle cx="12" cy="12" r="7" opacity=".25"/>
-                  </svg>
-                </button>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+                  <circle cx="12" cy="12" r="7" stroke-dasharray="none" opacity=".25"/>
+                </svg>
+              </button>
               </div>
-              <button class="mw-search-btn${state.searching?' is-loading':''}" data-search-btn${state.searching?' disabled':''}>
-                ${state.searching ? 'Söker…' : 'Sök'}
+              <button class="mw-search-btn${state.searching?' is-loading':''}" data-search-btn ${state.searching?'disabled':''}>
+                ${state.searching?'Söker…':'Sök'}
               </button>
             </div>
           </div>
@@ -386,16 +401,10 @@
     renderMap(ranked);
 
     root.querySelectorAll('[data-service]').forEach(btn =>
-      btn.addEventListener('click', () => {
-        state.service = btn.dataset.service;
-        state.mapCenter = null;
-        render(root);
-      })
+      btn.addEventListener('click', () => { state.service = btn.dataset.service; state.mapCenter = null; render(root); })
     );
     root.querySelector('[data-search-btn]').addEventListener('click', () => runSearch(root));
-    root.querySelector('[data-search-input]').addEventListener('keydown', e => {
-      if (e.key === 'Enter') { e.preventDefault(); runSearch(root); }
-    });
+    root.querySelector('[data-search-input]').addEventListener('keydown', e => { if (e.key==='Enter') { e.preventDefault(); runSearch(root); } });
     root.querySelector('[data-geo-btn]').addEventListener('click', () => {
       if (!navigator.geolocation) return;
       navigator.geolocation.getCurrentPosition(pos => {
@@ -415,25 +424,19 @@
     const query = input.value.trim();
     state.query = query;
     state.mapCenter = null;
+    if (!query) { state.searchPoint = null; state.searchLabel = ''; render(root); return; }
 
-    if (!query) {
-      state.searchPoint = null;
-      state.searchLabel = '';
-      render(root);
-      return;
-    }
-
-    // Try local location match first (instant, no network)
+    // Local match first (instant)
     const qNorm = normalize(query);
     const local = locations.find(l => textMatch(l, qNorm));
     if (local) {
-      state.searchPoint = { lat: local.lat, lon: local.lon };
+      state.searchPoint = { lat: local.lat, lon: local.lon, label: local.name };
       state.searchLabel = local.name;
       render(root);
       return;
     }
 
-    // Remote geocode with loading state
+    // Remote geocode
     state.searching = true;
     const btn = root.querySelector('[data-search-btn]');
     if (btn) { btn.disabled = true; btn.textContent = 'Söker…'; btn.classList.add('is-loading'); }
