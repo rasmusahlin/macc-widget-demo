@@ -373,13 +373,13 @@
               <div class="mw-search-wrap">
                 <span class="mw-search-icon">⌕</span>
                 <input class="mw-search-input" data-search-input placeholder="Sök ort, adress eller postnummer" value="${esc(state.query)}" />
-                <button class="mw-geo-btn" data-geo-btn title="Använd min plats">
+              </div>
+              <button class="mw-geo-btn" data-geo-btn title="Använd min plats">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
                   <circle cx="12" cy="12" r="7" stroke-dasharray="none" opacity=".25"/>
                 </svg>
               </button>
-              </div>
               <button class="mw-search-btn${state.searching?' is-loading':''}" data-search-btn ${state.searching?'disabled':''}>
                 ${state.searching?'Söker…':'Sök'}
               </button>

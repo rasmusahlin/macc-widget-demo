@@ -88,7 +88,7 @@ body {
 .mw-search-input {
   width: 100%;
   height: 48px;
-  padding: 0 48px 0 46px;
+  padding: 0 16px 0 46px;
   border-radius: 14px;
   border: 1.5px solid var(--mw-border);
   background: var(--mw-surface);
@@ -102,15 +102,14 @@ body {
   position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
   color: var(--mw-muted); font-size: 18px; pointer-events: none;
 }
-/* 📍 geo button inside search field */
+/* 📍 geo button — sibling flex item */
 .mw-geo-btn {
-  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
   border: 1.5px solid var(--mw-border);
   background: var(--mw-surface);
   color: var(--mw-primary);
   cursor: pointer;
-  width: 34px; height: 34px;
-  border-radius: 10px;
+  width: 48px; height: 48px;
+  border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
   transition: .15s;
   flex-shrink: 0;
@@ -326,9 +325,8 @@ body {
   .mw-controls { padding: 14px 16px; }
   .mw-controls-row { flex-direction: column; align-items: stretch; }
   .mw-filter-group { justify-content: flex-start; }
-  /* search-group stays as row so input+geo-btn stay together, Sök below */
   .mw-search-group { flex-wrap: wrap; }
-  .mw-search-wrap { flex: 1 1 100%; }
+  .mw-search-wrap { flex: 1 1 0; min-width: 0; }
   .mw-search-btn { flex: 1 1 100%; width: 100%; }
   .mw-map { height: 300px; }
   .mw-actions { flex-direction: column; }
