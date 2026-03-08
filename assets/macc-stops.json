@@ -2694,6 +2694,1327 @@
       "end": "2026-03-31T16:00:00+01:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
+    },
+    {
+      "id": "stop-00bde4c2",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-01T08:30:00+01:00",
+      "end": "2026-04-01T16:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-5a73d210",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-02T08:30:00+01:00",
+      "end": "2026-04-02T16:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-7ed78377",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-03T08:30:00+01:00",
+      "end": "2026-04-03T16:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-4aded5a1",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-06T08:30:00+01:00",
+      "end": "2026-04-06T16:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-d64a1bdf",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-07T08:30:00+01:00",
+      "end": "2026-04-07T16:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-0e1b17a5",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-08T08:30:00+01:00",
+      "end": "2026-04-08T16:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-ffd2442f",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-09T08:30:00+01:00",
+      "end": "2026-04-09T16:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-3d94fae0",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-10T08:30:00+01:00",
+      "end": "2026-04-10T16:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-b0e6b723",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-13T08:30:00+01:00",
+      "end": "2026-04-13T16:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-bbc319a7",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-14T08:30:00+01:00",
+      "end": "2026-04-14T16:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-c9974822",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-15T08:30:00+01:00",
+      "end": "2026-04-15T16:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-b3ebaea5",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-16T08:30:00+01:00",
+      "end": "2026-04-16T16:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-eae94520",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-17T08:30:00+01:00",
+      "end": "2026-04-17T16:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-e3bfb7c4",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-01T10:00:00+01:00",
+      "end": "2026-04-01T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-29bcb4b2",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-02T10:00:00+01:00",
+      "end": "2026-04-02T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-77d3a418",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-06T10:00:00+01:00",
+      "end": "2026-04-06T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-c11ef04a",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-07T10:00:00+01:00",
+      "end": "2026-04-07T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-d62e4a71",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-08T10:00:00+01:00",
+      "end": "2026-04-08T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-0dbfcc0c",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-09T10:00:00+01:00",
+      "end": "2026-04-09T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-88ed7cb2",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-13T10:00:00+01:00",
+      "end": "2026-04-13T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-e247a3b3",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-14T10:00:00+01:00",
+      "end": "2026-04-14T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-6b5c6de0",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-15T10:00:00+01:00",
+      "end": "2026-04-15T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-831e7ff6",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-16T10:00:00+01:00",
+      "end": "2026-04-16T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-89449e1d",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-03T10:00:00+01:00",
+      "end": "2026-04-03T14:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-bce53ce0",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-10T10:00:00+01:00",
+      "end": "2026-04-10T14:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-8208ec6d",
+      "locationId": "malmo-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-17T10:00:00+01:00",
+      "end": "2026-04-17T14:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-0599def6",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-01T07:00:00+01:00",
+      "end": "2026-04-01T15:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-b20b6297",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-02T07:00:00+01:00",
+      "end": "2026-04-02T15:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-8ee22190",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-06T07:00:00+01:00",
+      "end": "2026-04-06T15:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-d8d4b135",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-07T07:00:00+01:00",
+      "end": "2026-04-07T15:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-92be34a5",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-08T07:00:00+01:00",
+      "end": "2026-04-08T15:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-7668174a",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-09T07:00:00+01:00",
+      "end": "2026-04-09T15:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-dc6f4d82",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-13T07:00:00+01:00",
+      "end": "2026-04-13T15:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-dd9d5679",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-14T07:00:00+01:00",
+      "end": "2026-04-14T15:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-bdf9ce54",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-15T07:00:00+01:00",
+      "end": "2026-04-15T15:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-670d5ddb",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-16T07:00:00+01:00",
+      "end": "2026-04-16T15:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-6f7a0c16",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-03T07:00:00+01:00",
+      "end": "2026-04-03T12:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-ca8dcc81",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-10T07:00:00+01:00",
+      "end": "2026-04-10T12:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-0be2a2f9",
+      "locationId": "malmo-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-17T07:00:00+01:00",
+      "end": "2026-04-17T12:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-25df7cdc",
+      "locationId": "molndal",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-02T15:00:00+01:00",
+      "end": "2026-04-02T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-f2b291f6",
+      "locationId": "molndal",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-06T15:00:00+01:00",
+      "end": "2026-04-06T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-784dc7b2",
+      "locationId": "molndal",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-09T15:00:00+01:00",
+      "end": "2026-04-09T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-fe35b33e",
+      "locationId": "molndal",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-13T15:00:00+01:00",
+      "end": "2026-04-13T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-3bee4b76",
+      "locationId": "molndal",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-16T15:00:00+01:00",
+      "end": "2026-04-16T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-20c0024c",
+      "locationId": "boras",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-06T15:00:00+01:00",
+      "end": "2026-04-06T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-d64fa0b1",
+      "locationId": "boras",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-13T15:00:00+01:00",
+      "end": "2026-04-13T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-10a57e3e",
+      "locationId": "boras",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-02T08:00:00+01:00",
+      "end": "2026-04-02T11:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-be438e47",
+      "locationId": "boras",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-09T08:00:00+01:00",
+      "end": "2026-04-09T11:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-59c6ae50",
+      "locationId": "boras",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-16T08:00:00+01:00",
+      "end": "2026-04-16T11:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-e9b44bb7",
+      "locationId": "boras",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-07T08:00:00+01:00",
+      "end": "2026-04-07T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-1c67b428",
+      "locationId": "boras",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-14T08:00:00+01:00",
+      "end": "2026-04-14T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-bf1d1207",
+      "locationId": "kungalv",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-07T08:00:00+01:00",
+      "end": "2026-04-07T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-e6f7c05d",
+      "locationId": "kungalv",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-14T08:00:00+01:00",
+      "end": "2026-04-14T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-8805c600",
+      "locationId": "kungalv",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-02T15:00:00+01:00",
+      "end": "2026-04-02T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-dfa31eb9",
+      "locationId": "kungalv",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-09T15:00:00+01:00",
+      "end": "2026-04-09T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-2c706178",
+      "locationId": "kungalv",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-16T15:00:00+01:00",
+      "end": "2026-04-16T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-93e240c2",
+      "locationId": "kungalv",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-06T07:30:00+01:00",
+      "end": "2026-04-06T12:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-006d2c9f",
+      "locationId": "kungalv",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-13T07:30:00+01:00",
+      "end": "2026-04-13T12:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-aad2df3e",
+      "locationId": "uddevalla",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-06T15:00:00+01:00",
+      "end": "2026-04-06T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-3daecc58",
+      "locationId": "uddevalla",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-13T15:00:00+01:00",
+      "end": "2026-04-13T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-1ccd744f",
+      "locationId": "uddevalla",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-01T08:00:00+01:00",
+      "end": "2026-04-01T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-d0743531",
+      "locationId": "uddevalla",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-08T08:00:00+01:00",
+      "end": "2026-04-08T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-e0d1b87b",
+      "locationId": "uddevalla",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-15T08:00:00+01:00",
+      "end": "2026-04-15T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-24a7761b",
+      "locationId": "lund-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-02T15:00:00+01:00",
+      "end": "2026-04-02T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-9a1a6de5",
+      "locationId": "lund-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-09T15:00:00+01:00",
+      "end": "2026-04-09T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-318f632d",
+      "locationId": "lund-centrum",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-16T15:00:00+01:00",
+      "end": "2026-04-16T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-d3b7c144",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-02T07:30:00+01:00",
+      "end": "2026-04-02T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-5355e08f",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-03T07:30:00+01:00",
+      "end": "2026-04-03T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-cc501cd3",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-07T07:30:00+01:00",
+      "end": "2026-04-07T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-ffcfbadd",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-09T07:30:00+01:00",
+      "end": "2026-04-09T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-e1b94892",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-10T07:30:00+01:00",
+      "end": "2026-04-10T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-05138f14",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-14T07:30:00+01:00",
+      "end": "2026-04-14T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-92b989c3",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-16T07:30:00+01:00",
+      "end": "2026-04-16T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-1c92b23f",
+      "locationId": "lund-centrum",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-17T07:30:00+01:00",
+      "end": "2026-04-17T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-ac6b3b93",
+      "locationId": "angelholm",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-06T15:00:00+01:00",
+      "end": "2026-04-06T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-cc58d80a",
+      "locationId": "angelholm",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-04-13T15:00:00+01:00",
+      "end": "2026-04-13T18:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-fdf033db",
+      "locationId": "angelholm",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-06T07:30:00+01:00",
+      "end": "2026-04-06T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-e38049ec",
+      "locationId": "angelholm",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-13T07:30:00+01:00",
+      "end": "2026-04-13T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-2684273f",
+      "locationId": "helsingborg",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-25T07:30:00+01:00",
+      "end": "2026-03-25T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-47d5b586",
+      "locationId": "helsingborg",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-01T07:30:00+01:00",
+      "end": "2026-04-01T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-5535f806",
+      "locationId": "helsingborg",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-08T07:30:00+01:00",
+      "end": "2026-04-08T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-7792a99d",
+      "locationId": "helsingborg",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-15T07:30:00+01:00",
+      "end": "2026-04-15T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-2a4a4477",
+      "locationId": "helsingborg",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-27T07:30:00+01:00",
+      "end": "2026-03-27T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-da1fa6ff",
+      "locationId": "helsingborg",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-03T07:30:00+01:00",
+      "end": "2026-04-03T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-01b4d38c",
+      "locationId": "helsingborg",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-10T07:30:00+01:00",
+      "end": "2026-04-10T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-887625e2",
+      "locationId": "helsingborg",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-04-17T07:30:00+01:00",
+      "end": "2026-04-17T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-357d8b66",
+      "locationId": "kalmar",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-01T08:00:00+01:00",
+      "end": "2026-04-01T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-7db56e1a",
+      "locationId": "kalmar",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-08T08:00:00+01:00",
+      "end": "2026-04-08T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-7a1a7fa7",
+      "locationId": "kalmar",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-15T08:00:00+01:00",
+      "end": "2026-04-15T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-c8bce860",
+      "locationId": "halmstad",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-02T08:00:00+01:00",
+      "end": "2026-04-02T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-5665066a",
+      "locationId": "halmstad",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-09T08:00:00+01:00",
+      "end": "2026-04-09T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-81cd31ce",
+      "locationId": "halmstad",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-04-16T08:00:00+01:00",
+      "end": "2026-04-16T11:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-dcb72e30",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-09T08:00:00+01:00",
+      "end": "2026-03-09T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-4b66408e",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-10T08:00:00+01:00",
+      "end": "2026-03-10T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-832a8eca",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-11T08:00:00+01:00",
+      "end": "2026-03-11T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-ae01e5c9",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-12T08:00:00+01:00",
+      "end": "2026-03-12T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-33b3e7ee",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-13T08:00:00+01:00",
+      "end": "2026-03-13T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-9ef3c364",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-16T08:00:00+01:00",
+      "end": "2026-03-16T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-7cd54af3",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-17T08:00:00+01:00",
+      "end": "2026-03-17T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-5c941743",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-18T08:00:00+01:00",
+      "end": "2026-03-18T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-de61bd68",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-19T08:00:00+01:00",
+      "end": "2026-03-19T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-965cc144",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-20T08:00:00+01:00",
+      "end": "2026-03-20T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-310d6fc5",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-23T08:00:00+01:00",
+      "end": "2026-03-23T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-4fbae462",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-24T08:00:00+01:00",
+      "end": "2026-03-24T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-1621ba3f",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-25T08:00:00+01:00",
+      "end": "2026-03-25T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-b68cab73",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-26T08:00:00+01:00",
+      "end": "2026-03-26T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-ac160775",
+      "locationId": "malmo-jagersro",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-27T08:00:00+01:00",
+      "end": "2026-03-27T16:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-1117e416",
+      "locationId": "bjarnum",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-10T13:00:00+01:00",
+      "end": "2026-03-10T14:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-6e3dc715",
+      "locationId": "bjarnum",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "start": "2026-03-24T13:00:00+01:00",
+      "end": "2026-03-24T14:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-7db58f02",
+      "locationId": "boras",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-10T07:30:00+01:00",
+      "end": "2026-03-10T11:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-bab57a98",
+      "locationId": "boras",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-17T07:30:00+01:00",
+      "end": "2026-03-17T11:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-6878fb30",
+      "locationId": "boras",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-24T07:30:00+01:00",
+      "end": "2026-03-24T11:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-30f02d26",
+      "locationId": "uddevalla",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-12T07:30:00+01:00",
+      "end": "2026-03-12T11:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-9aa7d37f",
+      "locationId": "uddevalla",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-19T07:30:00+01:00",
+      "end": "2026-03-19T11:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-e2e853fe",
+      "locationId": "uddevalla",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-26T07:30:00+01:00",
+      "end": "2026-03-26T11:30:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-3458e90a",
+      "locationId": "ulricehamn",
+      "services": [
+        "provtagning"
+      ],
+      "start": "2026-03-11T13:00:00+01:00",
+      "end": "2026-03-11T15:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
+    },
+    {
+      "id": "stop-c1e355e4",
+      "locationId": "herrljunga",
+      "services": [
+        "vaccin"
+      ],
+      "start": "2026-03-15T10:00:00+01:00",
+      "end": "2026-03-15T12:00:00+01:00",
+      "displayNote": "",
+      "status": "scheduled"
     }
   ]
 }
