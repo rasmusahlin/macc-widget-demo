@@ -129,9 +129,12 @@
       const next = getNextStop(loc.id);
       const hoursToNext = next ? Math.max(0, (next._start - now) / 36e5) : 9999;
       const distanceScore = loc._distanceKm == null ? 999 : loc._distanceKm;
-      const score = state.sort === 'upcoming'
-        ? (hoursToNext * 0.65) + (distanceScore * 0.35)
-        : (distanceScore * 0.6) + (hoursToNext * 0.4);
+      // When a searchPoint is set, sort purely by distance so the searched location always comes first.
+      const score = state.searchPoint
+        ? distanceScore
+        : state.sort === 'upcoming'
+          ? (hoursToNext * 0.65) + (distanceScore * 0.35)
+          : (distanceScore * 0.6) + (hoursToNext * 0.4);
       return { ...loc, _next: next, _score: score };
     });
 
@@ -237,8 +240,13 @@
     });
 
     if (rankedLocations.length) {
-      const bounds = L.latLngBounds(rankedLocations.map(loc => [loc.lat, loc.lon]));
-      map.fitBounds(bounds.pad(0.1), { maxZoom: rankedLocations.length === 1 ? 14 : 13 });
+      if (state.searchPoint) {
+        // Zoom tightly to the search point so the searched city fills the map.
+        map.setView([state.searchPoint.lat, state.searchPoint.lon], 12);
+      } else {
+        const bounds = L.latLngBounds(rankedLocations.map(loc => [loc.lat, loc.lon]));
+        map.fitBounds(bounds.pad(0.1), { maxZoom: rankedLocations.length === 1 ? 13 : 10 });
+      }
     }
   }
 
