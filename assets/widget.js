@@ -204,11 +204,41 @@
   }
 
   function markerIcon(hasNext) {
-    const bg = hasNext ? '#d7263d' : '#0d6973';
+    const color = hasNext ? '#d7263d' : '#0d6973';
+    const pulse = hasNext
+      ? `<div class="mw-marker-pulse" style="background:${color}"></div>`
+      : '';
+    const html = `
+      <div class="mw-marker-wrap">
+        ${pulse}
+        <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z"
+                fill="${color}"/>
+          <path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z"
+                fill="url(#pin-grad-${hasNext?'red':'teal'})" opacity="0.35"/>
+          <circle cx="14" cy="14" r="6" fill="white" opacity="0.95"/>
+          ${hasNext
+            ? `<path d="M14 10v4l2.5 2.5" stroke="${color}" stroke-width="2" stroke-linecap="round"/>`
+            : `<circle cx="14" cy="14" r="2.5" fill="${color}"/>`
+          }
+          <defs>
+            <radialGradient id="pin-grad-red" cx="40%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="white" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="black" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="pin-grad-teal" cx="40%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="white" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="black" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>`;
     return L.divIcon({
       className: '',
-      html: `<div style="width:18px;height:18px;border-radius:50%;background:${bg};border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.25)"></div>`,
-      iconSize: [18,18], iconAnchor: [9,9]
+      html,
+      iconSize: [28, 36],
+      iconAnchor: [14, 36],
+      popupAnchor: [0, -34]
     });
   }
 
@@ -335,7 +365,12 @@
               <div class="mw-search-wrap">
                 <span class="mw-search-icon">⌕</span>
                 <input class="mw-search-input" data-search-input placeholder="Sök ort, adress eller postnummer" value="${esc(state.query)}" />
-                <button class="mw-geo-btn" data-geo-btn title="Använd min plats">📍</button>
+                <button class="mw-geo-btn" data-geo-btn title="Använd min plats">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+                  <circle cx="12" cy="12" r="7" stroke-dasharray="none" opacity=".25"/>
+                </svg>
+              </button>
               </div>
               <button class="mw-search-btn${state.searching?' is-loading':''}" data-search-btn ${state.searching?'disabled':''}>
                 ${state.searching?'Söker…':'Sök'}

@@ -104,12 +104,23 @@ body {
 }
 /* 📍 geo button inside search field */
 .mw-geo-btn {
-  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
-  border: none; background: transparent; cursor: pointer;
-  font-size: 17px; padding: 4px; border-radius: 8px;
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  border: 1.5px solid var(--mw-border);
+  background: var(--mw-surface);
+  color: var(--mw-primary);
+  cursor: pointer;
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
   transition: .15s;
+  flex-shrink: 0;
 }
-.mw-geo-btn:hover { background: var(--mw-surface-2); }
+.mw-geo-btn:hover {
+  background: var(--mw-surface-2);
+  border-color: var(--mw-primary);
+  box-shadow: 0 0 0 3px rgba(13,105,115,.1);
+}
+.mw-geo-btn svg { display: block; }
 .mw-search-btn {
   height: 48px;
   padding: 0 22px;
@@ -278,6 +289,30 @@ body {
 }
 .mw-popup-actions a:first-child { background: var(--mw-primary); color: #fff; border-color: var(--mw-primary); }
 .mw-popup-actions a:last-child  { background: #fff; color: var(--mw-primary); }
+
+
+/* ── Map markers ── */
+.mw-marker-wrap {
+  position: relative;
+  width: 28px;
+  height: 36px;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,.28));
+}
+.mw-marker-wrap svg { display: block; }
+.mw-marker-pulse {
+  position: absolute;
+  top: 3px; left: 50%;
+  transform: translateX(-50%);
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: mw-pulse 2.2s ease-out infinite;
+}
+@keyframes mw-pulse {
+  0%   { transform: translateX(-50%) scale(.6); opacity: .55; }
+  70%  { transform: translateX(-50%) scale(2);  opacity: 0; }
+  100% { transform: translateX(-50%) scale(2);  opacity: 0; }
+}
 
 /* ── Responsive ── */
 @media (max-width: 980px) {
