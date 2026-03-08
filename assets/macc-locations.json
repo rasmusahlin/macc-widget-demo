@@ -80,8 +80,8 @@
       "id": "bjuv",
       "name": "Bjuv",
       "city": "Bjuv",
-      "postalCode": "",
-      "address": "",
+      "postalCode": null,
+      "address": null,
       "region": "Skåne",
       "services": [
         "vaccin",
@@ -126,8 +126,8 @@
       "id": "lilla-edet",
       "name": "Lilla Edet",
       "city": "Lilla Edet",
-      "postalCode": "463 30",
-      "address": "Göteborgsvägen 49",
+      "postalCode": "\n463 30",
+      "address": "\nGöteborgsvägen 49",
       "region": "Västra Götaland",
       "services": [
         "vaccin",
@@ -148,7 +148,7 @@
       "id": "lysekil",
       "name": "Lysekil",
       "city": "Lysekil",
-      "postalCode": "453 37",
+      "postalCode": "453 37 ",
       "address": "Ekgatan 1",
       "region": "Västra Götaland",
       "services": [
@@ -170,7 +170,7 @@
       "name": "Skene",
       "city": "Skene",
       "postalCode": "511 62",
-      "address": "Håvengatan 3D",
+      "address": "\nHåvengatan 3D",
       "region": "Västra Götaland",
       "services": [
         "vaccin",
@@ -734,8 +734,8 @@
       ],
       "lat": 59.2741,
       "lon": 15.2066,
-      "bookVaccinUrl": "",
-      "bookProvtagningUrl": "",
+      "bookVaccinUrl": null,
+      "bookProvtagningUrl": null,
       "readMoreUrl": "https://www.maccpeople.se/17/107/orebro/",
       "searchTerms": [
         "örebro",
@@ -793,6 +793,32 @@
         "råstensvägen",
         "rastensvagen",
         "ica nära"
+      ],
+      "active": true
+    },
+    {
+      "id": "stenungsund",
+      "name": "Stenungsund",
+      "city": "Stenungsund",
+      "postalCode": "444 30",
+      "address": "Stenunge v 1",
+      "region": "Västra Götaland",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "lat": 58.0780846,
+      "lon": 11.8282311,
+      "bookVaccinUrl": "https://mittvaccin.se/mottagning/7805",
+      "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7805",
+      "readMoreUrl": "https://www.maccpeople.se/17/115/stenungssund/",
+      "searchTerms": [
+        "stenungsund",
+        "44430",
+        "stenunge",
+        "mcdonalds",
+        "p-plats",
+        "parkering"
       ],
       "active": true
     },
@@ -1377,6 +1403,30 @@
         "24731",
         "revingevägen",
         "revingevagen"
+      ],
+      "active": true
+    },
+    {
+      "id": "trelleborg",
+      "name": "Trelleborg",
+      "city": "Trelleborg",
+      "postalCode": "231 66",
+      "address": "Hedvägen 121",
+      "region": "Skåne",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "lat": 55.3865998,
+      "lon": 13.110696,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/72/trelleborg/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/72/trelleborg/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/72/trelleborg/",
+      "searchTerms": [
+        "trelleborg",
+        "23166",
+        "hedvägen",
+        "hedvagen"
       ],
       "active": true
     },
