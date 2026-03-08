@@ -6,6 +6,7 @@
     searchLabel: '',
     mapCenter: null,
     searching: false,
+    expandedLocationId: null,
   };
 
   const fmtDate = new Intl.DateTimeFormat('sv-SE', { weekday: 'short', day: 'numeric', month: 'short' });
@@ -132,7 +133,7 @@
       const hoursToNext = next ? Math.max(0, (next._start - n) / 36e5) : 9999;
       const distScore = l._distanceKm ?? 999;
       const score = center ? distScore : hoursToNext;
-      return { ...l, _next: next, _upcomingStops: locStops.slice(0,2), _score: score };
+      return { ...l, _next: next, _upcomingStops: locStops.slice(0,2), _allUpcomingStops: locStops.slice(0,5), _score: score };
     });
 
     return { ranked: enriched.sort((a,b) => a._score - b._score), showingAll };
@@ -140,6 +141,7 @@
 
   function locationCard(loc) {
     const addressHtml = loc.address ? `<div class="mw-card-address">${esc(loc.address)}</div>` : '';
+    const isExpanded = state.expandedLocationId === loc.id;
 
     const distHtml = (state.searchPoint || state.mapCenter) && loc._distanceKm != null
       ? `<span class="mw-dist">${loc._distanceKm.toFixed(1)} km</span>`
@@ -154,7 +156,7 @@
     if (loc._upcomingStops.length) {
       timesHtml = `<div class="mw-times">
         <span class="mw-times-label">Nästa öppettid</span>
-        ${loc._upcomingStops.map((s,i) => `<div class="mw-time${i>0?' mw-time--dim':''}">${fmtDayTime(s._start, s._end)}</div>`).join('')}
+        <div class="mw-time">${fmtDayTime(loc._upcomingStops[0]._start, loc._upcomingStops[0]._end)}</div>
       </div>`;
     } else {
       timesHtml = `<div class="mw-times mw-times--empty">
@@ -190,19 +192,44 @@
                      <a class="mw-btn mw-btn--ghost" href="${esc(loc.readMoreUrl)}" target="_blank" rel="noopener">Läs mer</a>`;
     }
 
+    const accordionButton = loc._allUpcomingStops.length > 1
+      ? `<button class="mw-accordion-toggle" type="button" data-accordion-toggle="${esc(loc.id)}" aria-expanded="${isExpanded ? 'true' : 'false'}">
+           <span>${isExpanded ? 'Dölj fler tider' : 'Visa fler tider'}</span>
+           <span class="mw-accordion-icon" aria-hidden="true">⌄</span>
+         </button>`
+      : '';
+
+    const extraTimesHtml = loc._allUpcomingStops.length > 1
+      ? `<div class="mw-accordion-panel${isExpanded ? ' is-open' : ''}" data-accordion-panel="${esc(loc.id)}" ${isExpanded ? '' : 'hidden'}>
+           <div class="mw-accordion-inner">
+             <div class="mw-accordion-label">Kommande tider</div>
+             <div class="mw-upcoming-list">
+               ${loc._allUpcomingStops.map((s, i) => `<div class="mw-upcoming-item${i === 0 ? ' is-current' : ''}">${fmtDayTime(s._start, s._end)}</div>`).join('')}
+             </div>
+           </div>
+         </div>`
+      : '';
+
     return `
-      <article class="mw-card" data-location-id="${esc(loc.id)}">
-        <div class="mw-card-head">
-          <div class="mw-card-title-group">
-            <h3 class="mw-card-title">${esc(loc.name)}</h3>
-            ${addressHtml}
+      <article class="mw-card${isExpanded ? ' is-expanded' : ''}" data-location-id="${esc(loc.id)}">
+        <button class="mw-card-main" type="button" data-card-toggle="${esc(loc.id)}" aria-expanded="${isExpanded ? 'true' : 'false'}">
+          <div class="mw-card-head">
+            <div class="mw-card-title-group">
+              <h3 class="mw-card-title">${esc(loc.name)}</h3>
+              ${addressHtml}
+            </div>
+            <div class="mw-card-right">
+              ${distHtml}
+              <div class="mw-badges">${svcBadges}</div>
+            </div>
           </div>
-          <div class="mw-card-right">
-            ${distHtml}
-            <div class="mw-badges">${svcBadges}</div>
-          </div>
+          ${timesHtml}
+        </button>
+        <div class="mw-card-footer">
+          ${accordionButton}
+          <button class="mw-map-link" type="button" data-show-on-map="${esc(loc.id)}">Visa på karta</button>
         </div>
-        ${timesHtml}
+        ${extraTimesHtml}
         <div class="mw-actions">${actionsHtml}</div>
       </article>`;
   }
@@ -369,6 +396,7 @@
 
   function resetToSearch(root) {
     state.mapCenter = null;
+    state.expandedLocationId = null;
     refreshList(root);
     if (state.searchPoint) {
       map.setView([state.searchPoint.lat, state.searchPoint.lon], 10);
@@ -385,6 +413,7 @@
     state.searchPoint = null;
     state.searchLabel = '';
     state.query = '';
+    state.expandedLocationId = null;
     const input = root.querySelector('[data-search-input]');
     if (input) input.value = '';
     refreshList(root);
@@ -394,12 +423,34 @@
     });
   }
 
+  function toggleExpanded(root, locationId) {
+    state.expandedLocationId = state.expandedLocationId === locationId ? null : locationId;
+    refreshList(root);
+  }
+
+  function focusLocationOnMap(locationId) {
+    const m = markerById.get(locationId);
+    if (!m) return;
+    map.setView(m.getLatLng(), 12);
+    m.openPopup();
+  }
+
   function bindListEvents(root, ranked) {
-    root.querySelectorAll('[data-location-id]').forEach(card => {
-      card.addEventListener('click', e => {
-        if (e.target.closest('a,button')) return;
-        const m = markerById.get(card.dataset.locationId);
-        if (m) { map.setView(m.getLatLng(), 12); m.openPopup(); }
+    root.querySelectorAll('[data-card-toggle]').forEach(btn => {
+      btn.addEventListener('click', () => toggleExpanded(root, btn.dataset.cardToggle));
+    });
+
+    root.querySelectorAll('[data-accordion-toggle]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        toggleExpanded(root, btn.dataset.accordionToggle);
+      });
+    });
+
+    root.querySelectorAll('[data-show-on-map]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        focusLocationOnMap(btn.dataset.showOnMap);
       });
     });
 
@@ -466,7 +517,7 @@
     renderMap(ranked);
 
     root.querySelectorAll('[data-service]').forEach(btn =>
-      btn.addEventListener('click', () => { state.service = btn.dataset.service; state.mapCenter = null; render(root); })
+      btn.addEventListener('click', () => { state.service = btn.dataset.service; state.mapCenter = null; state.expandedLocationId = null; render(root); })
     );
     root.querySelector('[data-search-btn]').addEventListener('click', () => runSearch(root));
     root.querySelector('[data-search-input]').addEventListener('keydown', e => { if (e.key==='Enter') { e.preventDefault(); runSearch(root); } });
@@ -477,6 +528,7 @@
         state.searchLabel = 'din plats';
         state.mapCenter = null;
         state.query = '';
+        state.expandedLocationId = null;
         root.querySelector('[data-search-input]').value = '';
         render(root);
       });
@@ -489,6 +541,7 @@
     const query = input.value.trim();
     state.query = query;
     state.mapCenter = null;
+    state.expandedLocationId = null;
     if (!query) { state.searchPoint = null; state.searchLabel = ''; render(root); return; }
 
     const qNorm = normalize(query);
