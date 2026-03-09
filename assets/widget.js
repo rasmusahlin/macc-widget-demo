@@ -27,6 +27,8 @@
   let dataReady = false;
   let didInitialFit = false;
   let stopCacheByFilter = new Map();
+  let locationBaseCacheByFilter = new Map();
+  let searchRequestSeq = 0;
 
   const normalize = (str = '') => String(str).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
   const esc = (s = '') => String(s)
@@ -117,6 +119,110 @@
 
   function getRelevantStops(locId) {
     return (stopCacheByFilter.get(state.service) || new Map()).get(locId) || [];
+  }
+
+  function buildLocationBaseCache() {
+    locationBaseCacheByFilter.clear();
+
+    for (const serviceKey of ['alla', 'vaccin', 'provtagning']) {
+      const base = [];
+      const stopMap = stopCacheByFilter.get(serviceKey) || new Map();
+
+      for (const loc of locations) {
+        if (!loc.active) continue;
+        if (serviceKey !== 'alla' && !((loc.services || []).includes(serviceKey) || (loc.services || []).includes('bada'))) continue;
+        const relevantStops = stopMap.get(loc.id) || [];
+        const next = relevantStops[0] || null;
+        base.push({
+          ...loc,
+          _next: next,
+          _upcomingStops: relevantStops.slice(0, 5),
+          _hasFutureStops: relevantStops.length > 0
+        });
+      }
+
+      locationBaseCacheByFilter.set(serviceKey, base);
+    }
+  }
+
+  function getBaseLocations(serviceKey = state.service) {
+    return locationBaseCacheByFilter.get(serviceKey) || [];
+  }
+
+  function editDistance(a = '', b = '') {
+    const s = normalize(a);
+    const t = normalize(b);
+    if (!s) return t.length;
+    if (!t) return s.length;
+    const dp = Array.from({ length: t.length + 1 }, (_, i) => i);
+    for (let i = 1; i <= s.length; i++) {
+      let prev = dp[0];
+      dp[0] = i;
+      for (let j = 1; j <= t.length; j++) {
+        const tmp = dp[j];
+        dp[j] = Math.min(
+          dp[j] + 1,
+          dp[j - 1] + 1,
+          prev + (s[i - 1] === t[j - 1] ? 0 : 1)
+        );
+        prev = tmp;
+      }
+    }
+    return dp[t.length];
+  }
+
+  function fuzzyScoreTerm(queryNorm, termNorm) {
+    if (!queryNorm || !termNorm) return 0;
+    if (termNorm === queryNorm) return 100;
+    if (termNorm.startsWith(queryNorm) || queryNorm.startsWith(termNorm)) return 88;
+    if (termNorm.includes(queryNorm) || queryNorm.includes(termNorm)) return 80;
+
+    const qWords = queryNorm.split(/\s+/).filter(Boolean);
+    const tWords = termNorm.split(/\s+/).filter(Boolean);
+    let best = 0;
+
+    for (const q of qWords) {
+      for (const t of tWords.length ? tWords : [termNorm]) {
+        if (!q || !t) continue;
+        const dist = editDistance(q, t);
+        const maxLen = Math.max(q.length, t.length);
+        if (maxLen <= 4 && dist <= 1) best = Math.max(best, 72);
+        else if (maxLen <= 7 && dist <= 2) best = Math.max(best, 68);
+        else if (dist <= 3 && maxLen >= 8) best = Math.max(best, 62);
+      }
+    }
+
+    const overlap = qWords.filter(q => tWords.some(t => t.includes(q) || q.includes(t))).length;
+    if (overlap) best = Math.max(best, 58 + overlap * 8);
+
+    return best;
+  }
+
+  function fuzzyMatchScore(loc, query) {
+    const qNorm = normalize(query);
+    if (!qNorm) return 0;
+    const postalNorm = normalize((loc.postalCode || '').replace(/\s/g, ''));
+    const terms = [
+      loc.name, loc.city, loc.postalCode, loc.address, postalNorm,
+      ...(loc.searchTerms || []),
+      ...(loc.nearbySearchTerms || []),
+      ...(loc.serviceAreaTerms || [])
+    ].map(normalize).filter(Boolean);
+
+    let best = 0;
+    for (const term of terms) {
+      best = Math.max(best, fuzzyScoreTerm(qNorm, term));
+    }
+    return best;
+  }
+
+  function findFuzzyLocalMatches(query, limit = 8) {
+    return getBaseLocations('alla')
+      .map(loc => ({ loc, score: fuzzyMatchScore(loc, query) }))
+      .filter(x => x.score >= 68)
+      .sort((a, b) => b.score - a.score || String(a.loc.name).localeCompare(String(b.loc.name), 'sv'))
+      .slice(0, limit)
+      .map(x => x.loc);
   }
 
   function textMatch(loc, qNorm) {
@@ -235,6 +341,8 @@
 
     if (!/,\s*skane|skåne|sverige|sweden/.test(qNorm)) candidateQueries.push(`${query}, Sverige`);
     if (!/,\s*skane|skåne/.test(qNorm)) candidateQueries.push(`${query}, Skåne, Sverige`);
+    if (!/,\s*vastra gotaland|västra götaland/.test(qNorm)) candidateQueries.push(`${query}, Västra Götaland, Sverige`);
+    candidateQueries.push(`${query} Sweden`);
 
     let result = null;
 
@@ -261,26 +369,20 @@
   }
 
   function enrichLocation(loc, center) {
-    const relevantStops = getRelevantStops(loc.id);
-    const next = relevantStops[0] || null;
-    const hoursToNext = next ? Math.max(0, (next._start - now()) / 36e5) : 9999;
     const distanceKm = center ? haversineKm(center.lat, center.lon, loc.lat, loc.lon) : null;
-    const score = center ? distanceKm : hoursToNext;
+    const score = center ? distanceKm : (loc._next ? Math.max(0, (loc._next._start - now()) / 36e5) : 9999);
 
     return {
       ...loc,
       _distanceKm: distanceKm,
-      _next: next,
-      _upcomingStops: relevantStops.slice(0, 5),
-      _score: score,
-      _hasFutureStops: relevantStops.length > 0
+      _score: score
     };
   }
 
   function rankLocations() {
     const qNorm = normalize(state.query);
     const center = getRankCenter();
-    let pool = locations.filter(l => l.active && locationMatchesFilter(l));
+    let pool = getBaseLocations(state.service);
     let usedTextFallback = false;
     let showingFallbackNearest = false;
 
@@ -289,6 +391,16 @@
       if (directTextMatches.length) {
         pool = directTextMatches;
         usedTextFallback = true;
+      } else {
+        const fuzzyMatches = pool
+          .map(l => ({ ...l, _fuzzyScore: fuzzyMatchScore(l, qNorm) }))
+          .filter(l => l._fuzzyScore >= 68)
+          .sort((a, b) => b._fuzzyScore - a._fuzzyScore || String(a.name).localeCompare(String(b.name), 'sv'))
+          .slice(0, 8);
+        if (fuzzyMatches.length) {
+          pool = fuzzyMatches;
+          usedTextFallback = true;
+        }
       }
     }
 
@@ -568,7 +680,7 @@
         requestAnimationFrame(() => {
           map.invalidateSize();
           if (!state.searchPoint && !state.mapCenter) {
-            fitMapToLocations(locations.filter(l => l.active && locationMatchesFilter(l)).map(l => enrichLocation(l, null)));
+            fitMapToLocations(getBaseLocations(state.service).map(l => enrichLocation(l, null)));
           }
         });
       });
@@ -579,7 +691,7 @@
     clusterGroup.clearLayers();
     markerById = new Map();
 
-    const allActive = locations.filter(l => l.active && locationMatchesFilter(l)).map(l => enrichLocation(l, null));
+    const allActive = getBaseLocations(state.service).map(l => enrichLocation(l, null));
 
     allActive.forEach(loc => {
       const marker = L.marker([loc.lat, loc.lon], { icon: markerIcon(loc) });
@@ -619,7 +731,7 @@
 
     if (!state.mapCenter) {
       map.invalidateSize();
-      fitMapToLocations(locations.filter(l => l.active && locationMatchesFilter(l)).map(l => enrichLocation(l, null)));
+      fitMapToLocations(getBaseLocations(state.service).map(l => enrichLocation(l, null)));
     }
   }
 
@@ -835,7 +947,7 @@
     }
 
     const qNorm = normalize(query);
-    const exactLocal = locations.find(l => textMatch(l, qNorm));
+    const exactLocal = getBaseLocations('alla').find(l => textMatch(l, qNorm));
     if (exactLocal) {
       state.searchPoint = { lat: exactLocal.lat, lon: exactLocal.lon };
       state.searchLabel = exactLocal.name;
@@ -843,6 +955,15 @@
       return;
     }
 
+    const fuzzyLocal = findFuzzyLocalMatches(query, 1)[0];
+    if (fuzzyLocal && fuzzyMatchScore(fuzzyLocal, query) >= 84) {
+      state.searchPoint = { lat: fuzzyLocal.lat, lon: fuzzyLocal.lon };
+      state.searchLabel = fuzzyLocal.name;
+      render(root);
+      return;
+    }
+
+    const requestId = ++searchRequestSeq;
     state.searching = true;
     render(root);
 
@@ -853,9 +974,20 @@
       geo = null;
     }
 
+    if (requestId !== searchRequestSeq) return;
+
     state.searching = false;
-    state.searchPoint = geo || null;
-    state.searchLabel = geo ? (geo.label || query) : query;
+
+    if (geo) {
+      state.searchPoint = geo;
+      state.searchLabel = geo.label || query;
+      render(root);
+      return;
+    }
+
+    const fallbackLocal = findFuzzyLocalMatches(query, 1)[0] || null;
+    state.searchPoint = fallbackLocal ? { lat: fallbackLocal.lat, lon: fallbackLocal.lon } : null;
+    state.searchLabel = fallbackLocal ? `${query} (närmsta match: ${fallbackLocal.name})` : query;
 
     render(root);
   }
@@ -875,6 +1007,7 @@
       locations = locationPayload.locations || [];
       stops = stopPayload.stops || [];
       buildStopCache();
+      buildLocationBaseCache();
       dataReady = true;
       render(root);
     } catch (err) {
