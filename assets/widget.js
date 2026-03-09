@@ -1,9 +1,8 @@
 
 (() => {
-  const DATA_CACHE_KEY = 'maccWidgetDataCacheV1';
-  const GEO_CACHE_KEY = 'maccWidgetGeoCacheV1';
-  const DATA_CACHE_TTL_MS = 15 * 60 * 1000;
+  const GEO_CACHE_KEY = 'maccWidgetGeoCacheV2';
   const GEO_CACHE_TTL_MS = 14 * 24 * 60 * 60 * 1000;
+  const GEOCODE_TIMEOUT_MS = 2500;
 
   const state = {
     service: 'alla',
@@ -12,9 +11,7 @@
     searchLabel: '',
     mapCenter: null,
     searching: false,
-    loading: true,
     expandedId: null,
-    pendingScrollId: null,
   };
 
   const fmtDate = new Intl.DateTimeFormat('sv-SE', { weekday: 'short', day: 'numeric', month: 'short' });
@@ -84,10 +81,10 @@
     return (loc.services || []).includes(state.service);
   }
 
-  function stopMatchesFilter(services = []) {
-    if (state.service === 'alla') return services.some(s => ['vaccin', 'provtagning', 'bada'].includes(s));
+  function stopMatchesFilter(services = [], serviceKey = state.service) {
+    if (serviceKey === 'alla') return services.some(s => ['vaccin', 'provtagning', 'bada'].includes(s));
     if (services.includes('bada')) return true;
-    return services.includes(state.service);
+    return services.includes(serviceKey);
   }
 
   function buildStopCache() {
@@ -97,22 +94,17 @@
     for (const serviceKey of ['alla', 'vaccin', 'provtagning']) {
       const perLocation = new Map();
 
-      for (const s of stops) {
-        if (s.status !== 'scheduled') continue;
-        const services = s.services || [];
-        const matches = serviceKey === 'alla'
-          ? services.some(v => ['vaccin', 'provtagning', 'bada'].includes(v))
-          : (services.includes('bada') || services.includes(serviceKey));
+      for (const stop of stops) {
+        if (stop.status !== 'scheduled') continue;
+        if (!stopMatchesFilter(stop.services || [], serviceKey)) continue;
 
-        if (!matches) continue;
-
-        const start = new Date(s.start);
-        const end = new Date(s.end);
+        const start = new Date(stop.start);
+        const end = new Date(stop.end);
         if (end < n) continue;
 
-        const arr = perLocation.get(s.locationId) || [];
-        arr.push({ ...s, _start: start, _end: end });
-        perLocation.set(s.locationId, arr);
+        const arr = perLocation.get(stop.locationId) || [];
+        arr.push({ ...stop, _start: start, _end: end });
+        perLocation.set(stop.locationId, arr);
       }
 
       for (const arr of perLocation.values()) {
@@ -166,34 +158,39 @@
     setLocalStorageJson(GEO_CACHE_KEY, cache);
   }
 
-  async function fetchJsonWithCache(url, cacheKey) {
-    const cache = getLocalStorageJson(cacheKey);
-    if (cache && cache.ts && (Date.now() - cache.ts) < DATA_CACHE_TTL_MS && cache.payload) {
-      return cache.payload;
-    }
-    const response = await fetch(url, { cache: 'no-store' });
-    if (!response.ok) throw new Error(`Kunde inte läsa ${url}`);
-    const payload = await response.json();
-    setLocalStorageJson(cacheKey, { ts: Date.now(), payload });
-    return payload;
+  function currentScriptUrl() {
+    const script = document.currentScript || Array.from(document.scripts).find(s => /widget(?:\.|\.production\.|\.final\.)?updated?\.js/i.test(s.src) || /widget/i.test(s.src)) || null;
+    return script ? new URL(script.src, window.location.href) : new URL(window.location.href);
   }
 
-  async function geocodeWithNominatim(query) {
-    const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=se&q=${encodeURIComponent(query)}`;
-    const r = await fetch(url, { headers: { 'Accept-Language': 'sv' } });
-    if (!r.ok) return null;
-    const d = await r.json();
-    if (!d?.[0]) return null;
-    return {
-      lat: +d[0].lat,
-      lon: +d[0].lon,
-      label: (d[0].display_name || query).split(',')[0]
-    };
+  const SCRIPT_URL = currentScriptUrl();
+  const ASSET_VERSION = SCRIPT_URL.searchParams.get('v') || '';
+
+  function buildAssetUrl(filename) {
+    const url = new URL(filename, SCRIPT_URL);
+    if (ASSET_VERSION) url.searchParams.set('v', ASSET_VERSION);
+    return url.toString();
+  }
+
+  async function fetchJson(url) {
+    const response = await fetch(url, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Kunde inte läsa ${url}`);
+    return response.json();
+  }
+
+  async function fetchWithTimeout(url, options = {}, timeoutMs = GEOCODE_TIMEOUT_MS) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      return await fetch(url, { ...options, signal: controller.signal });
+    } finally {
+      clearTimeout(timeout);
+    }
   }
 
   async function geocodePostal(postalCode) {
     const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=se&postalcode=${encodeURIComponent(postalCode)}`;
-    const r = await fetch(url, { headers: { 'Accept-Language': 'sv' } });
+    const r = await fetchWithTimeout(url, { headers: { 'Accept-Language': 'sv' } });
     if (!r.ok) return null;
     const d = await r.json();
     if (!d?.[0]) return null;
@@ -204,8 +201,22 @@
     };
   }
 
+  async function geocodeWithNominatim(query) {
+    const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=se&q=${encodeURIComponent(query)}`;
+    const r = await fetchWithTimeout(url, { headers: { 'Accept-Language': 'sv' } });
+    if (!r.ok) return null;
+    const d = await r.json();
+    if (!d?.[0]) return null;
+    return {
+      lat: +d[0].lat,
+      lon: +d[0].lon,
+      label: (d[0].display_name || query).split(',')[0]
+    };
+  }
+
   async function geocodeWithPhoton(query) {
-    const r = await fetch(`https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=1&lang=sv`);
+    const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=1&lang=sv`;
+    const r = await fetchWithTimeout(url);
     if (!r.ok) return null;
     const d = await r.json();
     const f = d?.features?.[0];
@@ -219,12 +230,24 @@
     if (cached !== null) return cached;
 
     const postalMatch = query.replace(/\s/g, '').match(/^(\d{5})$/);
+    const candidateQueries = [query];
+    const qNorm = normalize(query);
+
+    if (!/,\s*skane|skåne|sverige|sweden/.test(qNorm)) candidateQueries.push(`${query}, Sverige`);
+    if (!/,\s*skane|skåne/.test(qNorm)) candidateQueries.push(`${query}, Skåne, Sverige`);
+
     let result = null;
 
     try {
       if (postalMatch) result = await geocodePostal(postalMatch[1]);
-      if (!result) result = await geocodeWithNominatim(query);
-      if (!result) result = await geocodeWithPhoton(query);
+      for (const candidate of candidateQueries) {
+        if (result) break;
+        result = await geocodeWithNominatim(candidate);
+      }
+      for (const candidate of candidateQueries) {
+        if (result) break;
+        result = await geocodeWithPhoton(candidate);
+      }
     } catch {
       result = null;
     }
@@ -254,7 +277,7 @@
     };
   }
 
-  function rankLocations(forceAll = false) {
+  function rankLocations() {
     const qNorm = normalize(state.query);
     const center = getRankCenter();
     let pool = locations.filter(l => l.active && locationMatchesFilter(l));
@@ -275,7 +298,7 @@
       if (local.length < 3) local = pool.filter(l => l._distanceKm <= 60);
       if (local.length < 3) local = pool.filter(l => l._distanceKm <= 100);
 
-      if (local.length && !forceAll) {
+      if (local.length) {
         pool = local;
       } else {
         showingFallbackNearest = true;
@@ -442,35 +465,49 @@
 
   function markerIcon(loc) {
     const hasNext = !!loc._next;
-    const type = locationType(loc);
     const color = hasNext ? '#d7263d' : '#0d6973';
-    const symbol = type === 'mottagning' ? '🏥' : (type === 'buss' ? '🚐' : '');
-
-    const pulse = hasNext ? `<div class="mw-marker-pulse" style="background:${color}"></div>` : '';
+    const pulse = hasNext
+      ? `<div class="mw-marker-pulse" style="background:${color}"></div>`
+      : '';
     const html = `
       <div class="mw-marker-wrap">
         ${pulse}
-        <div class="mw-marker-pin" style="background:${color}">
-          <span class="mw-marker-symbol">${symbol || '•'}</span>
-        </div>
-      </div>
-    `;
-
+        <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z" fill="${color}"/>
+          <path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z" fill="url(#pin-grad-${hasNext ? 'red' : 'teal'})" opacity="0.35"/>
+          <circle cx="14" cy="14" r="6" fill="white" opacity="0.95"/>
+          ${hasNext
+            ? `<path d="M14 10v4l2.5 2.5" stroke="${color}" stroke-width="2" stroke-linecap="round"/>`
+            : `<circle cx="14" cy="14" r="2.5" fill="${color}"/>`
+          }
+          <defs>
+            <radialGradient id="pin-grad-red" cx="40%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="white" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="black" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="pin-grad-teal" cx="40%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="white" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="black" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>`;
     return L.divIcon({
       className: '',
       html,
-      iconSize: [30, 40],
-      iconAnchor: [15, 40],
+      iconSize: [28, 36],
+      iconAnchor: [14, 36],
       popupAnchor: [0, -34]
     });
   }
 
   function scrollCardIntoView(root, locationId) {
     if (!locationId) return;
-    const el = root.querySelector(`[data-location-id="${CSS.escape(locationId)}"]`);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
+    const escapedId = window.CSS && typeof window.CSS.escape === 'function'
+      ? window.CSS.escape(locationId)
+      : locationId.replace(/([!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~])/g, '\\$1');
+    const el = root.querySelector(`[data-location-id="${escapedId}"]`);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   function openCard(root, locationId, scroll = false) {
@@ -531,7 +568,7 @@
         requestAnimationFrame(() => {
           map.invalidateSize();
           if (!state.searchPoint && !state.mapCenter) {
-            fitMapToLocations(locations.filter(l => l.active));
+            fitMapToLocations(locations.filter(l => l.active && locationMatchesFilter(l)).map(l => enrichLocation(l, null)));
           }
         });
       });
@@ -582,7 +619,7 @@
 
     if (!state.mapCenter) {
       map.invalidateSize();
-      fitMapToLocations(locations.filter(l => l.active && locationMatchesFilter(l)));
+      fitMapToLocations(locations.filter(l => l.active && locationMatchesFilter(l)).map(l => enrichLocation(l, null)));
     }
   }
 
@@ -653,7 +690,7 @@
         e.stopPropagation();
         const id = e.currentTarget.getAttribute('data-show-on-map');
         const marker = markerById.get(id);
-        if (marker) {
+        if (marker && map) {
           const latLng = marker.getLatLng();
           map.setView(latLng, 12);
           marker.openPopup();
@@ -685,12 +722,6 @@
     if (!leftEl) return;
     leftEl.innerHTML = buildListHtml(result.ranked, result);
     bindListEvents(root);
-
-    if (state.pendingScrollId) {
-      const id = state.pendingScrollId;
-      state.pendingScrollId = null;
-      setTimeout(() => scrollCardIntoView(root, id), 60);
-    }
   }
 
   function skeletonCardsHtml() {
@@ -837,19 +868,17 @@
 
     try {
       const [locationPayload, stopPayload] = await Promise.all([
-        fetchJsonWithCache('./assets/macc-locations.json', `${DATA_CACHE_KEY}:locations`),
-        fetchJsonWithCache('./assets/macc-stops.json', `${DATA_CACHE_KEY}:stops`)
+        fetchJson(buildAssetUrl('macc-locations.json')),
+        fetchJson(buildAssetUrl('macc-stops.json'))
       ]);
 
       locations = locationPayload.locations || [];
       stops = stopPayload.stops || [];
       buildStopCache();
       dataReady = true;
-      state.loading = false;
       render(root);
     } catch (err) {
       dataReady = false;
-      state.loading = false;
       root.innerHTML = `
         <div class="macc-widget">
           <div class="mw-empty">
