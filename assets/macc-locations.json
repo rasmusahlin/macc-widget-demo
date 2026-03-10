@@ -133,8 +133,8 @@
         "vaccin",
         "provtagning"
       ],
-      "lat": 58.133333,
-      "lon": 12.166667,
+      "lat": 58.13728394477333,
+      "lon": 12.12798883253505,
       "bookVaccinUrl": "https://mittvaccin.se/mottagning/7806",
       "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7806",
       "readMoreUrl": "https://www.maccpeople.se/17/128/lilla-edet/",
@@ -155,8 +155,8 @@
         "vaccin",
         "provtagning"
       ],
-      "lat": 58.3965726,
-      "lon": 11.4196339,
+      "lat": 58.28258681334863,
+      "lon": 11.463067791403818,
       "bookVaccinUrl": "https://mittvaccin.se/mottagning/7794",
       "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7794",
       "readMoreUrl": "https://www.maccpeople.se/17/117/lysekil/",
@@ -198,8 +198,8 @@
         "vaccin",
         "provtagning"
       ],
-      "lat": 58.55,
-      "lon": 11.666667,
+      "lat": 58.466607740610165,
+      "lon": 11.672708644205123,
       "bookVaccinUrl": "https://mittvaccin.se/mottagning/7796",
       "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7796",
       "readMoreUrl": "https://www.maccpeople.se/17/118/munkedal/",
@@ -245,8 +245,8 @@
         "vaccin",
         "provtagning"
       ],
-      "lat": 58.2,
-      "lon": 11.666667,
+      "lat": 58.181598750389284,
+      "lon": 11.607934642318945,
       "bookVaccinUrl": "https://mittvaccin.se/mottagning/7795",
       "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7795",
       "readMoreUrl": "https://www.maccpeople.se/17/114/orust/",
@@ -425,8 +425,8 @@
         "vaccin",
         "provtagning"
       ],
-      "lat": 57.5,
-      "lon": 13.433333,
+      "lat": 57.48293682843999,
+      "lon": 13.349514189621749,
       "bookVaccinUrl": "https://mittvaccin.se/mottagning/7802",
       "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7802",
       "readMoreUrl": "https://www.maccpeople.se/17/124/tranemo/",
@@ -448,9 +448,9 @@
       ],
       "lat": 58.3491301,
       "lon": 11.9338683,
-      "bookVaccinUrl": "https://mittvaccin.se/mottagning/11742",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/63/uddevalla/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/63/uddevalla/",
+      "bookVaccinUrl": "https://mittvaccin.se/mottagning/7638",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/133/uddevalla/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/133/uddevalla/",
       "searchTerms": [
         "uddevalla",
         "norra drottninggatan"
@@ -561,8 +561,8 @@
       "lat": 57.7242143,
       "lon": 12.9397748,
       "bookVaccinUrl": "https://mittvaccin.se/mottagning/7639",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/41/boras/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/41/boras/",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/134/boras/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/134/boras/",
       "searchTerms": [
         "borås",
         "boras",
@@ -587,8 +587,8 @@
       "lat": 57.8691108,
       "lon": 11.9838329,
       "bookVaccinUrl": "https://mittvaccin.se/mottagning/7785",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/47/kungalv/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/47/kungalv/",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/135/kungalv/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/135/kungalv/",
       "searchTerms": [
         "kungälv",
         "kungalv",
@@ -662,9 +662,9 @@
       ],
       "lat": 56.287115,
       "lon": 12.8425727,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/105/angelholm/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/105/angelholm/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/105/angelholm/",
+      "bookVaccinUrl": "https://www.maccpeople.se/17/109/angelholm/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/109/angelholm/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/109/angelholm/",
       "searchTerms": [
         "ängelholm",
         "angelholm",
@@ -681,10 +681,12 @@
       "address": "Lorensbergsleden 3",
       "region": "Småland",
       "services": [
+        "vaccin",
         "provtagning"
       ],
       "lat": 56.6650447,
       "lon": 16.3431284,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/46/kalmar/#bokning",
       "bookProvtagningUrl": "https://www.maccpeople.se/17/46/kalmar/#bokning",
       "readMoreUrl": "https://www.maccpeople.se/17/46/kalmar/",
       "searchTerms": [
@@ -706,8 +708,9 @@
       ],
       "lat": 56.6741283,
       "lon": 12.8888549,
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/42/halmstad/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/42/halmstad/",
+      "bookVaccinUrl": "",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/202/halmstad/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/202/halmstad/",
       "searchTerms": [
         "halmstad",
         "30232",
@@ -1443,6 +1446,28 @@
         "27133",
         "kristianstadsvägen",
         "kristianstadsvagen"
+      ],
+      "active": true
+    },
+    {
+      "id": "herrljunga",
+      "name": "Herrljunga",
+      "city": "Herrljunga",
+      "postalCode": "524 30",
+      "address": "Magasinsgatan 6",
+      "region": "Västra Götaland",
+      "services": [
+        "vaccin"
+      ],
+      "lat": 58.07829,
+      "lon": 13.02687,
+      "bookVaccinUrl": "https://mittvaccin.se/mottagning/7816",
+      "bookProvtagningUrl": "",
+      "readMoreUrl": "https://www.maccpeople.se/17/127/herrljunga/",
+      "searchTerms": [
+        "herrljunga",
+        "52430",
+        "magasinsgatan"
       ],
       "active": true
     }
