@@ -1211,17 +1211,6 @@
       "status": "scheduled"
     },
     {
-      "id": "boras-p-2026-03-10-0800",
-      "locationId": "boras",
-      "services": [
-        "provtagning"
-      ],
-      "start": "2026-03-10T08:00:00+01:00",
-      "end": "2026-03-10T11:00:00+01:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
       "id": "kungalv-v-2026-03-10-0800",
       "locationId": "kungalv",
       "services": [
@@ -1338,7 +1327,7 @@
         "vaccin"
       ],
       "start": "2026-03-12T08:00:00+01:00",
-      "end": "2026-03-12T11:30:00+01:00",
+      "end": "2026-03-12T11:00:00+01:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -1415,7 +1404,7 @@
         "vaccin"
       ],
       "start": "2026-03-12T15:00:00+01:00",
-      "end": "2026-03-12T18:00:00+01:00",
+      "end": "2026-03-12T17:00:00+01:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -1552,17 +1541,6 @@
       "status": "scheduled"
     },
     {
-      "id": "boras-p-2026-03-17-0800",
-      "locationId": "boras",
-      "services": [
-        "provtagning"
-      ],
-      "start": "2026-03-17T08:00:00+01:00",
-      "end": "2026-03-17T11:00:00+01:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
       "id": "kungalv-v-2026-03-17-0800",
       "locationId": "kungalv",
       "services": [
@@ -1679,7 +1657,7 @@
         "vaccin"
       ],
       "start": "2026-03-19T08:00:00+01:00",
-      "end": "2026-03-19T11:30:00+01:00",
+      "end": "2026-03-19T11:00:00+01:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -1893,17 +1871,6 @@
       "status": "scheduled"
     },
     {
-      "id": "boras-p-2026-03-24-0800",
-      "locationId": "boras",
-      "services": [
-        "provtagning"
-      ],
-      "start": "2026-03-24T08:00:00+01:00",
-      "end": "2026-03-24T11:00:00+01:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
       "id": "kungalv-v-2026-03-24-0800",
       "locationId": "kungalv",
       "services": [
@@ -2020,7 +1987,7 @@
         "vaccin"
       ],
       "start": "2026-03-26T08:00:00+01:00",
-      "end": "2026-03-26T11:30:00+01:00",
+      "end": "2026-03-26T11:00:00+01:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },

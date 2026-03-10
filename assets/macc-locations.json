@@ -681,12 +681,11 @@
       "address": "Lorensbergsleden 3",
       "region": "Småland",
       "services": [
-        "vaccin",
         "provtagning"
       ],
       "lat": 56.6650447,
       "lon": 16.3431284,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/46/kalmar/#bokning",
+      "bookVaccinUrl": "",
       "bookProvtagningUrl": "https://www.maccpeople.se/17/46/kalmar/#bokning",
       "readMoreUrl": "https://www.maccpeople.se/17/46/kalmar/",
       "searchTerms": [
@@ -704,12 +703,11 @@
       "address": "Actic Simhallsbadet, Karlsbergsvägen 2A",
       "region": "Halland",
       "services": [
-        "vaccin",
         "provtagning"
       ],
       "lat": 56.6741283,
       "lon": 12.8888549,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/42/halmstad/#bokning",
+      "bookVaccinUrl": "",
       "bookProvtagningUrl": "https://www.maccpeople.se/17/42/halmstad/#bokning",
       "readMoreUrl": "https://www.maccpeople.se/17/42/halmstad/",
       "searchTerms": [
