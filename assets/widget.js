@@ -358,16 +358,15 @@
     const input = root.querySelector('[data-search-input]');
     if (!input) return;
 
-    // Create dropdown if not already present
-    let dropdown = root.querySelector('.mw-autocomplete');
-    if (!dropdown) {
-      dropdown = document.createElement('ul');
-      dropdown.className = 'mw-autocomplete';
-      dropdown.setAttribute('role', 'listbox');
-      input.parentNode.appendChild(dropdown);
-    }
+    const dropdown = document.createElement('ul');
+    dropdown.className = 'mw-autocomplete';
+    dropdown.setAttribute('role', 'listbox');
+    dropdown.hidden = true;
+    input.parentNode.appendChild(dropdown);
 
     let activeIdx = -1;
+    let suggestions = [];
+    let lastQuery = '';
 
     function closeDropdown() {
       dropdown.hidden = true;
@@ -375,10 +374,10 @@
       activeIdx = -1;
     }
 
-    function renderDropdown(suggestions) {
-      if (!suggestions.length) { closeDropdown(); return; }
-      dropdown.innerHTML = suggestions.map((loc, i) =>
-        `<li class="mw-autocomplete-item" role="option" data-idx="${i}" data-loc-id="${esc(loc.id)}">
+    function renderDropdown(sugg) {
+      if (!sugg.length) { closeDropdown(); return; }
+      dropdown.innerHTML = sugg.map((loc, i) =>
+        `<li class="mw-autocomplete-item" role="option" data-idx="${i}">
           <span class="mw-autocomplete-name">${esc(loc.name)}</span>
           <span class="mw-autocomplete-city">${esc(loc.city || '')}</span>
         </li>`
@@ -387,7 +386,7 @@
       activeIdx = -1;
     }
 
-    function setActive(idx, suggestions) {
+    function setActive(idx) {
       const items = dropdown.querySelectorAll('.mw-autocomplete-item');
       items.forEach((el, i) => el.classList.toggle('is-active', i === idx));
       activeIdx = idx;
@@ -405,9 +404,6 @@
       state.pinnedLocationId = null;
       render(root);
     }
-
-    let lastQuery = '';
-    let suggestions = [];
 
     input.addEventListener('input', () => {
       const q = input.value;
@@ -431,10 +427,10 @@
       if (!dropdown.hidden && suggestions.length) {
         if (e.key === 'ArrowDown') {
           e.preventDefault();
-          setActive(Math.min(activeIdx + 1, suggestions.length - 1), suggestions);
+          setActive(Math.min(activeIdx + 1, suggestions.length - 1));
         } else if (e.key === 'ArrowUp') {
           e.preventDefault();
-          setActive(Math.max(activeIdx - 1, 0), suggestions);
+          setActive(Math.max(activeIdx - 1, 0));
         } else if (e.key === 'Escape') {
           closeDropdown();
         }
