@@ -340,6 +340,120 @@
     });
   }
 
+  function buildSuggestions(query) {
+    const q = normalize(query);
+    if (!q || q.length < 2) return [];
+    return locations
+      .filter(l => l.active && textMatch(l, q))
+      .sort((a, b) => {
+        const an = normalize(a.name), bn = normalize(b.name);
+        const aStarts = an.startsWith(q) ? 0 : 1;
+        const bStarts = bn.startsWith(q) ? 0 : 1;
+        return aStarts - bStarts || an.localeCompare(bn, 'sv');
+      })
+      .slice(0, 7);
+  }
+
+  function bindAutocomplete(root) {
+    const input = root.querySelector('[data-search-input]');
+    if (!input) return;
+
+    // Create dropdown if not already present
+    let dropdown = root.querySelector('.mw-autocomplete');
+    if (!dropdown) {
+      dropdown = document.createElement('ul');
+      dropdown.className = 'mw-autocomplete';
+      dropdown.setAttribute('role', 'listbox');
+      input.parentNode.appendChild(dropdown);
+    }
+
+    let activeIdx = -1;
+
+    function closeDropdown() {
+      dropdown.hidden = true;
+      dropdown.innerHTML = '';
+      activeIdx = -1;
+    }
+
+    function renderDropdown(suggestions) {
+      if (!suggestions.length) { closeDropdown(); return; }
+      dropdown.innerHTML = suggestions.map((loc, i) =>
+        `<li class="mw-autocomplete-item" role="option" data-idx="${i}" data-loc-id="${esc(loc.id)}">
+          <span class="mw-autocomplete-name">${esc(loc.name)}</span>
+          <span class="mw-autocomplete-city">${esc(loc.city || '')}</span>
+        </li>`
+      ).join('');
+      dropdown.hidden = false;
+      activeIdx = -1;
+    }
+
+    function setActive(idx, suggestions) {
+      const items = dropdown.querySelectorAll('.mw-autocomplete-item');
+      items.forEach((el, i) => el.classList.toggle('is-active', i === idx));
+      activeIdx = idx;
+      if (idx >= 0 && suggestions[idx]) input.value = suggestions[idx].name;
+    }
+
+    function pickSuggestion(loc) {
+      input.value = loc.name;
+      state.query = loc.name;
+      closeDropdown();
+      state.searchPoint = { lat: loc.lat, lon: loc.lon };
+      state.searchLabel = loc.name;
+      state.mapCenter = null;
+      state.expandedId = null;
+      state.pinnedLocationId = null;
+      render(root);
+    }
+
+    let lastQuery = '';
+    let suggestions = [];
+
+    input.addEventListener('input', () => {
+      const q = input.value;
+      if (q === lastQuery) return;
+      lastQuery = q;
+      suggestions = buildSuggestions(q);
+      renderDropdown(suggestions);
+    });
+
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        if (activeIdx >= 0 && suggestions[activeIdx]) {
+          pickSuggestion(suggestions[activeIdx]);
+        } else {
+          closeDropdown();
+          runSearch(root);
+        }
+        return;
+      }
+      if (!dropdown.hidden && suggestions.length) {
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          setActive(Math.min(activeIdx + 1, suggestions.length - 1), suggestions);
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          setActive(Math.max(activeIdx - 1, 0), suggestions);
+        } else if (e.key === 'Escape') {
+          closeDropdown();
+        }
+      }
+    });
+
+    dropdown.addEventListener('mousedown', e => {
+      const item = e.target.closest('.mw-autocomplete-item');
+      if (!item) return;
+      e.preventDefault();
+      const idx = +item.dataset.idx;
+      if (suggestions[idx]) pickSuggestion(suggestions[idx]);
+    });
+
+    document.addEventListener('click', e => {
+      if (!root.contains(e.target)) closeDropdown();
+    }, true);
+  }
+
   function render(root) {
     const { ranked, showingAll } = rankLocations();
     root.innerHTML = `<div class="macc-widget"><section class="mw-controls"><div class="mw-controls-row"><div class="mw-filter-group">${['alla','vaccin','provtagning'].map(s => `<button class="mw-filter-btn${state.service===s?' is-active':''}" data-service="${s}">${filterLabel(s)}</button>`).join('')}</div><div class="mw-search-group"><div class="mw-search-wrap"><span class="mw-search-icon">⌕</span><input class="mw-search-input" data-search-input placeholder="Sök ort, adress eller postnummer" value="${esc(state.query)}" /></div><button class="mw-geo-btn" data-geo-btn title="Använd min plats" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7" stroke-dasharray="none" opacity=".25"/></svg></button><button class="mw-search-btn${state.searching?' is-loading':''}" data-search-btn type="button" ${state.searching?'disabled':''}>${state.searching?'Söker…':'Sök'}</button></div></div></section><div class="mw-main"><div class="mw-left">${buildListHtml(ranked, showingAll)}</div><div class="mw-right"><div class="mw-map-hint">Sök först. Om du vill justera resultatet kan du sedan flytta kartan. Klicka på en ort i kartan och välj <strong>Visa tider i listan</strong> när du vill hoppa till kortet.</div><div id="macc-widget-map" class="mw-map"></div></div></div></div>`;
@@ -348,7 +462,7 @@
 
     root.querySelectorAll('[data-service]').forEach(btn => btn.addEventListener('click', () => { state.service = btn.dataset.service; state.mapCenter = null; state.expandedId = null; state.pinnedLocationId = null; render(root); }));
     root.querySelector('[data-search-btn]').addEventListener('click', () => runSearch(root));
-    root.querySelector('[data-search-input]').addEventListener('keydown', e => { if (e.key==='Enter') { e.preventDefault(); runSearch(root); } });
+    bindAutocomplete(root);
     root.querySelector('[data-geo-btn]').addEventListener('click', () => {
       if (!navigator.geolocation) return;
       navigator.geolocation.getCurrentPosition(pos => {
