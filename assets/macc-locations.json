@@ -465,7 +465,8 @@
       "address": "ICA Tornet, Strandgatan 6",
       "region": "Västra Götaland",
       "services": [
-        "vaccin"
+        "vaccin",
+        "provtagning"
       ],
       "lat": 57.79266828730381,
       "lon": 13.411768046626458,
@@ -604,7 +605,7 @@
       "name": "Malmö – Centrum",
       "city": "Malmö",
       "postalCode": "211 28",
-      "address": "Östra tullgatan 6",
+      "address": "Östra tullgatan 6 E",
       "region": "Skåne",
       "services": [
         "vaccin",
@@ -612,9 +613,9 @@
       ],
       "lat": 55.6078852,
       "lon": 13.0037,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/213/malmo-drottningtorget/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/213/malmo-drottningtorget/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/213/malmo-drottningtorget/",
+      "bookVaccinUrl": "https://www.maccpeople.se/17/87/malmo-centrum/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/87/malmo-centrum/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/87/malmo-centrum/",
       "searchTerms": [
         "malmö",
         "malmo",
@@ -1093,15 +1094,15 @@
       "id": "hoganas",
       "name": "Höganäs",
       "city": "Höganäs",
-      "postalCode": "263 31",
-      "address": "Kyrkplatsen",
+      "postalCode": "263 39",
+      "address": "Sundstorget",
       "region": "Skåne",
       "services": [
         "vaccin",
         "provtagning"
       ],
-      "lat": 56.19902353416357,
-      "lon": 12.557870028835763,
+      "lat": 56.2011673,
+      "lon": 12.5508485,
       "bookVaccinUrl": "https://www.maccpeople.se/17/63/hoganas/#bokning",
       "bookProvtagningUrl": "https://www.maccpeople.se/17/63/hoganas/#bokning",
       "readMoreUrl": "https://www.maccpeople.se/17/63/hoganas/",
