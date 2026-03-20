@@ -227,29 +227,6 @@
       "active": true
     },
     {
-      "id": "boras-viared",
-      "name": "Borås Viared",
-      "city": "Borås",
-      "postalCode": "",
-      "address": "",
-      "region": "Västra Götaland",
-      "services": [
-        "vaccin",
-        "provtagning"
-      ],
-      "lat": 57.715,
-      "lon": 12.98,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/225/boras-viared/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/225/boras-viared/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/225/boras-viared/",
-      "searchTerms": [
-        "borås",
-        "boras",
-        "viared"
-      ],
-      "active": true
-    },
-    {
       "id": "broby",
       "name": "Broby",
       "city": "Broby",
