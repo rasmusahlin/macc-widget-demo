@@ -984,8 +984,8 @@
       ],
       "lat": 55.6078852,
       "lon": 13.0037,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/213/malmo-drottningtorget/bokning#",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/213/malmo-drottningtorget/bokning#",
+      "bookVaccinUrl": "https://www.maccpeople.se/17/213/malmo-drottningtorget/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/213/malmo-drottningtorget/#bokning",
       "readMoreUrl": "https://www.maccpeople.se/17/213/malmo-drottningtorget/",
       "searchTerms": [
         "malmö",
