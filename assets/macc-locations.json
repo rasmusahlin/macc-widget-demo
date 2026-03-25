@@ -577,9 +577,9 @@
       ],
       "lat": 56.6650447,
       "lon": 16.3431284,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/46/kalmar/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/46/kalmar/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/46/kalmar/",
+      "bookVaccinUrl": "https://www.maccpeople.se/17/198/kalmar/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/198/kalmar/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/198/kalmar/",
       "searchTerms": [
         "kalmar",
         "stronger performance",
@@ -1634,6 +1634,34 @@
         "23166",
         "hedvägen",
         "hedvagen"
+      ],
+      "active": true
+    },
+    {
+      "id": "trollhattan",
+      "name": "Trollhättan Högskolan",
+      "city": "Trollhättan",
+      "postalCode": "461 30",
+      "address": "Drottningtorget / Framgången (vid Högskolan)",
+      "region": "Västra Götaland",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "lat": 58.2836,
+      "lon": 12.2863,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/158/trollhattan/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/158/trollhattan/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/158/trollhattan/",
+      "searchTerms": [
+        "trollhättan",
+        "trollhattan",
+        "46130",
+        "drottningtorget",
+        "högskolan",
+        "hogskolan",
+        "framgången",
+        "framgangen"
       ],
       "active": true
     },
