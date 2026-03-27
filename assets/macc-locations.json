@@ -52,6 +52,30 @@
       "active": true
     },
     {
+      "id": "angelholm",
+      "name": "Ängelholm",
+      "city": "Ängelholm",
+      "postalCode": "262 75",
+      "address": "Stjernsvärds Allé 59",
+      "region": "Skåne",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "lat": 56.287115,
+      "lon": 12.8425727,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/109/angelholm/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/109/angelholm/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/109/angelholm/",
+      "searchTerms": [
+        "ängelholm",
+        "angelholm",
+        "stjernsvärds allé",
+        "stjernsvards alle"
+      ],
+      "active": true
+    },
+    {
       "id": "bara",
       "name": "Bara",
       "city": "Bara",
@@ -77,25 +101,26 @@
       "active": true
     },
     {
-      "id": "bjuv",
-      "name": "Bjuv",
-      "city": "Bjuv",
-      "postalCode": "",
-      "address": "Norra Storgatan 20",
+      "id": "bastad",
+      "name": "Båstad",
+      "city": "Båstad",
+      "postalCode": "269 33",
+      "address": "Torget",
       "region": "Skåne",
       "services": [
         "vaccin",
         "provtagning"
       ],
-      "lat": 56.0818,
-      "lon": 12.9194,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/87/bjuv/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/87/bjuv/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/87/bjuv/",
+      "lat": 56.4335365,
+      "lon": 12.8336868,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/99/bastad/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/99/bastad/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/99/bastad/",
       "searchTerms": [
-        "bjuv",
-        "norra storgatan",
-        "coop"
+        "båstad",
+        "bastad",
+        "26933",
+        "torget"
       ],
       "active": true
     },
@@ -125,6 +150,29 @@
       "active": true
     },
     {
+      "id": "bjuv",
+      "name": "Bjuv",
+      "city": "Bjuv",
+      "postalCode": "",
+      "address": "Norra Storgatan 20",
+      "region": "Skåne",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "lat": 56.0818,
+      "lon": 12.9194,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/87/bjuv/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/87/bjuv/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/87/bjuv/",
+      "searchTerms": [
+        "bjuv",
+        "norra storgatan",
+        "coop"
+      ],
+      "active": true
+    },
+    {
       "id": "bollebygd",
       "name": "Bollebygd",
       "city": "Bollebygd",
@@ -145,31 +193,6 @@
         "51791",
         "rävlandavägen",
         "ravlandavagen"
-      ],
-      "active": true
-    },
-    {
-      "id": "boras-hulta",
-      "name": "Borås Hulta",
-      "city": "Borås",
-      "postalCode": "507 50",
-      "address": "Hultagatan 11",
-      "region": "Västra Götaland",
-      "services": [
-        "vaccin",
-        "provtagning"
-      ],
-      "lat": 57.7047,
-      "lon": 12.9315,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/225/boras-hulta/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/225/boras-hulta/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/225/boras-hulta/",
-      "searchTerms": [
-        "borås",
-        "boras",
-        "50750",
-        "hulta",
-        "hultagatan"
       ],
       "active": true
     },
@@ -197,6 +220,31 @@
         "allegatan",
         "högskolan",
         "hogskolaan"
+      ],
+      "active": true
+    },
+    {
+      "id": "boras-hulta",
+      "name": "Borås Hulta",
+      "city": "Borås",
+      "postalCode": "507 50",
+      "address": "Hultagatan 11",
+      "region": "Västra Götaland",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "lat": 57.7047,
+      "lon": 12.9315,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/225/boras-hulta/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/225/boras-hulta/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/225/boras-hulta/",
+      "searchTerms": [
+        "borås",
+        "boras",
+        "50750",
+        "hulta",
+        "hultagatan"
       ],
       "active": true
     },
@@ -272,30 +320,6 @@
         "29531",
         "ifötorget",
         "ifotorget"
-      ],
-      "active": true
-    },
-    {
-      "id": "bastad",
-      "name": "Båstad",
-      "city": "Båstad",
-      "postalCode": "269 33",
-      "address": "Torget",
-      "region": "Skåne",
-      "services": [
-        "vaccin",
-        "provtagning"
-      ],
-      "lat": 56.4335365,
-      "lon": 12.8336868,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/99/bastad/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/99/bastad/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/99/bastad/",
-      "searchTerms": [
-        "båstad",
-        "bastad",
-        "26933",
-        "torget"
       ],
       "active": true
     },
@@ -397,6 +421,31 @@
       "active": true
     },
     {
+      "id": "hassleholm",
+      "name": "Hässleholm",
+      "city": "Hässleholm",
+      "postalCode": "281 30",
+      "address": "Frykholmsgatan 13",
+      "region": "Skåne",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "lat": 56.1589,
+      "lon": 13.7668,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/91/hassleholm/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/91/hassleholm/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/91/hassleholm/",
+      "searchTerms": [
+        "hässleholm",
+        "hassleholm",
+        "centrum",
+        "stortorget",
+        "statt hotell"
+      ],
+      "active": true
+    },
+    {
       "id": "helsingborg",
       "name": "Helsingborg",
       "city": "Helsingborg",
@@ -467,31 +516,6 @@
       "active": true
     },
     {
-      "id": "hassleholm",
-      "name": "Hässleholm",
-      "city": "Hässleholm",
-      "postalCode": "281 30",
-      "address": "Frykholmsgatan 13",
-      "region": "Skåne",
-      "services": [
-        "vaccin",
-        "provtagning"
-      ],
-      "lat": 56.1589,
-      "lon": 13.7668,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/91/hassleholm/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/91/hassleholm/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/91/hassleholm/",
-      "searchTerms": [
-        "hässleholm",
-        "hassleholm",
-        "centrum",
-        "stortorget",
-        "statt hotell"
-      ],
-      "active": true
-    },
-    {
       "id": "hoganas",
       "name": "Höganäs",
       "city": "Höganäs",
@@ -512,30 +536,6 @@
         "hoganas",
         "26339",
         "sundstorget"
-      ],
-      "active": true
-    },
-    {
-      "id": "horby",
-      "name": "Hörby",
-      "city": "Hörby",
-      "postalCode": "242 31",
-      "address": "Gamla torget",
-      "region": "Skåne",
-      "services": [
-        "vaccin",
-        "provtagning"
-      ],
-      "lat": 55.8494737,
-      "lon": 13.6598453,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/86/horby/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/86/horby/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/86/horby/",
-      "searchTerms": [
-        "hörby",
-        "horby",
-        "24231",
-        "gamla torget"
       ],
       "active": true
     },
@@ -565,6 +565,30 @@
       "active": true
     },
     {
+      "id": "horby",
+      "name": "Hörby",
+      "city": "Hörby",
+      "postalCode": "242 31",
+      "address": "Gamla torget",
+      "region": "Skåne",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "lat": 55.8494737,
+      "lon": 13.6598453,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/86/horby/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/86/horby/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/86/horby/",
+      "searchTerms": [
+        "hörby",
+        "horby",
+        "24231",
+        "gamla torget"
+      ],
+      "active": true
+    },
+    {
       "id": "kalmar",
       "name": "Kalmar",
       "city": "Kalmar",
@@ -584,6 +608,31 @@
         "kalmar",
         "stronger performance",
         "lorensbergsleden"
+      ],
+      "active": true
+    },
+    {
+      "id": "kavlinge",
+      "name": "Kävlinge",
+      "city": "Kävlinge",
+      "postalCode": "244 39",
+      "address": "Köpmansgatan 1",
+      "region": "Skåne",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "lat": 55.7893261,
+      "lon": 13.1043349,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/84/kavlinge/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/84/kavlinge/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/84/kavlinge/",
+      "searchTerms": [
+        "kävlinge",
+        "kavlinge",
+        "24439",
+        "köpmansgatan",
+        "kopmansgatan"
       ],
       "active": true
     },
@@ -635,29 +684,6 @@
       "active": true
     },
     {
-      "id": "kungsbacka",
-      "name": "Kungsbacka",
-      "city": "Kungsbacka",
-      "postalCode": "434 30",
-      "address": "Lindens torg",
-      "region": "Halland",
-      "services": [
-        "vaccin",
-        "provtagning"
-      ],
-      "lat": 57.4867,
-      "lon": 12.0745,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/227/kungsbacka/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/227/kungsbacka/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/227/kungsbacka/",
-      "searchTerms": [
-        "kungsbacka",
-        "43430",
-        "lindens torg"
-      ],
-      "active": true
-    },
-    {
       "id": "kungalv",
       "name": "Kungälv",
       "city": "Kungälv",
@@ -684,27 +710,25 @@
       "active": true
     },
     {
-      "id": "kavlinge",
-      "name": "Kävlinge",
-      "city": "Kävlinge",
-      "postalCode": "244 39",
-      "address": "Köpmansgatan 1",
-      "region": "Skåne",
+      "id": "kungsbacka",
+      "name": "Kungsbacka",
+      "city": "Kungsbacka",
+      "postalCode": "434 30",
+      "address": "Lindens torg",
+      "region": "Halland",
       "services": [
         "vaccin",
         "provtagning"
       ],
-      "lat": 55.7893261,
-      "lon": 13.1043349,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/84/kavlinge/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/84/kavlinge/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/84/kavlinge/",
+      "lat": 57.4867,
+      "lon": 12.0745,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/227/kungsbacka/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/227/kungsbacka/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/227/kungsbacka/",
       "searchTerms": [
-        "kävlinge",
-        "kavlinge",
-        "24439",
-        "köpmansgatan",
-        "kopmansgatan"
+        "kungsbacka",
+        "43430",
+        "lindens torg"
       ],
       "active": true
     },
@@ -852,6 +876,32 @@
       "active": true
     },
     {
+      "id": "loddekopinge",
+      "name": "Löddeköpinge",
+      "city": "Löddeköpinge",
+      "postalCode": "246 42",
+      "address": "Handelsvägen 1, Max Parkering",
+      "region": "Skåne",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "lat": 55.7715,
+      "lon": 12.9892,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/81/loddekopinge/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/81/loddekopinge/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/81/loddekopinge/",
+      "searchTerms": [
+        "löddeköpinge",
+        "loddekopinge",
+        "24642",
+        "handelsvägen",
+        "handelsvagen",
+        "max parkering"
+      ],
+      "active": true
+    },
+    {
       "id": "lomma-hamntorget",
       "name": "Lomma Hamntorget",
       "city": "Lomma",
@@ -946,32 +996,6 @@
       "active": true
     },
     {
-      "id": "loddekopinge",
-      "name": "Löddeköpinge",
-      "city": "Löddeköpinge",
-      "postalCode": "246 42",
-      "address": "Handelsvägen 1, Max Parkering",
-      "region": "Skåne",
-      "services": [
-        "vaccin",
-        "provtagning"
-      ],
-      "lat": 55.7715,
-      "lon": 12.9892,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/81/loddekopinge/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/81/loddekopinge/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/81/loddekopinge/",
-      "searchTerms": [
-        "löddeköpinge",
-        "loddekopinge",
-        "24642",
-        "handelsvägen",
-        "handelsvagen",
-        "max parkering"
-      ],
-      "active": true
-    },
-    {
       "id": "malmo-centrum",
       "name": "Malmö – Centrum",
       "city": "Malmö",
@@ -1026,27 +1050,6 @@
       "active": true
     },
     {
-      "id": "munkedal",
-      "name": "Munkedal",
-      "city": "Munkedal",
-      "postalCode": "455 30",
-      "address": "Centrumvägen 4B",
-      "region": "Västra Götaland",
-      "services": [
-        "vaccin",
-        "provtagning"
-      ],
-      "lat": 58.466607740610165,
-      "lon": 11.672708644205123,
-      "bookVaccinUrl": "https://mittvaccin.se/mottagning/7796",
-      "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7796",
-      "readMoreUrl": "https://www.maccpeople.se/17/118/munkedal/",
-      "searchTerms": [
-        "munkedal"
-      ],
-      "active": true
-    },
-    {
       "id": "molndal",
       "name": "Mölndal",
       "city": "Mölndal",
@@ -1095,6 +1098,72 @@
         "råstensvägen",
         "rastensvagen",
         "ica nära"
+      ],
+      "active": true
+    },
+    {
+      "id": "munkedal",
+      "name": "Munkedal",
+      "city": "Munkedal",
+      "postalCode": "455 30",
+      "address": "Centrumvägen 4B",
+      "region": "Västra Götaland",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "lat": 58.466607740610165,
+      "lon": 11.672708644205123,
+      "bookVaccinUrl": "https://mittvaccin.se/mottagning/7796",
+      "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7796",
+      "readMoreUrl": "https://www.maccpeople.se/17/118/munkedal/",
+      "searchTerms": [
+        "munkedal"
+      ],
+      "active": true
+    },
+    {
+      "id": "ockero",
+      "name": "Öckerö",
+      "city": "Öckerö",
+      "postalCode": "475 41",
+      "address": "Lökholmsvägen 2",
+      "region": "Västra Götaland",
+      "services": [
+        "vaccin"
+      ],
+      "lat": 57.716667,
+      "lon": 11.633333,
+      "bookVaccinUrl": "https://mittvaccin.se/mottagning/7808",
+      "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7808",
+      "readMoreUrl": "https://www.maccpeople.se/17/129/ockero/",
+      "searchTerms": [
+        "öckerö",
+        "ockero"
+      ],
+      "active": true
+    },
+    {
+      "id": "orebro",
+      "name": "Örebro",
+      "city": "Örebro",
+      "postalCode": "703 61",
+      "address": "ACTIC, Slottsgatan 17 A",
+      "region": "Närke",
+      "services": [
+        "provtagning"
+      ],
+      "lat": 59.2741,
+      "lon": 15.2066,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/214/orebro/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/214/orebro/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/214/orebro/",
+      "searchTerms": [
+        "örebro",
+        "orebro",
+        "70361",
+        "actic",
+        "slottsgatan"
       ],
       "active": true
     },
@@ -1312,6 +1381,30 @@
       "active": true
     },
     {
+      "id": "sodra-sandby",
+      "name": "Södra Sandby",
+      "city": "Södra Sandby",
+      "postalCode": "247 31",
+      "address": "Revingevägen 2",
+      "region": "Skåne",
+      "services": [
+        "vaccin"
+      ],
+      "lat": 55.7171687,
+      "lon": 13.3474337,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/79/sodra-sandby/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/79/sodra-sandby/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/79/sodra-sandby/",
+      "searchTerms": [
+        "södra sandby",
+        "sodra sandby",
+        "24731",
+        "revingevägen",
+        "revingevagen"
+      ],
+      "active": true
+    },
+    {
       "id": "staffanstorp",
       "name": "Staffanstorp",
       "city": "Staffanstorp",
@@ -1469,30 +1562,6 @@
       "readMoreUrl": "https://www.maccpeople.se/17/123/svenljunga/",
       "searchTerms": [
         "svenljunga"
-      ],
-      "active": true
-    },
-    {
-      "id": "sodra-sandby",
-      "name": "Södra Sandby",
-      "city": "Södra Sandby",
-      "postalCode": "247 31",
-      "address": "Revingevägen 2",
-      "region": "Skåne",
-      "services": [
-        "vaccin"
-      ],
-      "lat": 55.7171687,
-      "lon": 13.3474337,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/79/sodra-sandby/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/79/sodra-sandby/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/79/sodra-sandby/",
-      "searchTerms": [
-        "södra sandby",
-        "sodra sandby",
-        "24731",
-        "revingevägen",
-        "revingevagen"
       ],
       "active": true
     },
@@ -1710,28 +1779,6 @@
       "active": true
     },
     {
-      "id": "vellinge",
-      "name": "Vellinge",
-      "city": "Vellinge",
-      "postalCode": "235 31",
-      "address": "Stortorget",
-      "region": "Skåne",
-      "services": [
-        "vaccin"
-      ],
-      "lat": 55.4710924,
-      "lon": 13.0204997,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/70/vellinge/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/70/vellinge/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/70/vellinge/",
-      "searchTerms": [
-        "vellinge",
-        "23531",
-        "stortorget"
-      ],
-      "active": true
-    },
-    {
       "id": "vanersborg",
       "name": "Vänersborg",
       "city": "Vänersborg",
@@ -1778,6 +1825,54 @@
       "active": true
     },
     {
+      "id": "varnamo",
+      "name": "Värnamo",
+      "city": "Värnamo",
+      "postalCode": "331 42",
+      "address": "Hemmahallen, Malmövägen 12",
+      "region": "Jönköping",
+      "services": [
+        "vaccin",
+        "provtagning"
+      ],
+      "lat": 57.1794319,
+      "lon": 14.0586916,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/230/varnamo/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/230/varnamo/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/230/varnamo/",
+      "searchTerms": [
+        "värnamo",
+        "varnamo",
+        "33142",
+        "hemmahallen",
+        "malmövägen",
+        "malmovagen"
+      ],
+      "active": true
+    },
+    {
+      "id": "vellinge",
+      "name": "Vellinge",
+      "city": "Vellinge",
+      "postalCode": "235 31",
+      "address": "Stortorget",
+      "region": "Skåne",
+      "services": [
+        "vaccin"
+      ],
+      "lat": 55.4710924,
+      "lon": 13.0204997,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/70/vellinge/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/70/vellinge/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/70/vellinge/",
+      "searchTerms": [
+        "vellinge",
+        "23531",
+        "stortorget"
+      ],
+      "active": true
+    },
+    {
       "id": "ystad",
       "name": "Ystad",
       "city": "Ystad",
@@ -1797,75 +1892,6 @@
         "ystad",
         "27143",
         "stortorget"
-      ],
-      "active": true
-    },
-    {
-      "id": "angelholm",
-      "name": "Ängelholm",
-      "city": "Ängelholm",
-      "postalCode": "262 75",
-      "address": "Stjernsvärds Allé 59",
-      "region": "Skåne",
-      "services": [
-        "vaccin",
-        "provtagning"
-      ],
-      "lat": 56.287115,
-      "lon": 12.8425727,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/109/angelholm/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/109/angelholm/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/109/angelholm/",
-      "searchTerms": [
-        "ängelholm",
-        "angelholm",
-        "stjernsvärds allé",
-        "stjernsvards alle"
-      ],
-      "active": true
-    },
-    {
-      "id": "ockero",
-      "name": "Öckerö",
-      "city": "Öckerö",
-      "postalCode": "475 41",
-      "address": "Lökholmsvägen 2",
-      "region": "Västra Götaland",
-      "services": [
-        "vaccin"
-      ],
-      "lat": 57.716667,
-      "lon": 11.633333,
-      "bookVaccinUrl": "https://mittvaccin.se/mottagning/7808",
-      "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7808",
-      "readMoreUrl": "https://www.maccpeople.se/17/129/ockero/",
-      "searchTerms": [
-        "öckerö",
-        "ockero"
-      ],
-      "active": true
-    },
-    {
-      "id": "orebro",
-      "name": "Örebro",
-      "city": "Örebro",
-      "postalCode": "703 61",
-      "address": "ACTIC, Slottsgatan 17 A",
-      "region": "Närke",
-      "services": [
-        "provtagning"
-      ],
-      "lat": 59.2741,
-      "lon": 15.2066,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/214/orebro/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/214/orebro/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/214/orebro/",
-      "searchTerms": [
-        "örebro",
-        "orebro",
-        "70361",
-        "actic",
-        "slottsgatan"
       ],
       "active": true
     }
