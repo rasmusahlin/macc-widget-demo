@@ -120,6 +120,22 @@ body {
   box-shadow: 0 0 0 3px rgba(13,105,115,.1);
 }
 .mw-geo-btn svg { display: block; }
+.mw-geo-btn--labeled {
+  width: auto;
+  padding: 0 16px;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #fff;
+  background: var(--mw-primary);
+  border-color: var(--mw-primary);
+}
+.mw-geo-btn--labeled:hover {
+  background: var(--mw-primary-hover);
+  border-color: var(--mw-primary-hover);
+  box-shadow: 0 0 0 3px rgba(13,105,115,.15);
+}
 .mw-search-btn {
   height: 48px;
   padding: 0 22px;
