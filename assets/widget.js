@@ -19,23 +19,8 @@
 
   const normalize = (str = '') => String(str).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
   const esc = (s = '') => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
-  const servicePill = (s) => ({ vaccin: 'Vaccinering', provtagning: 'Provtagning', bada: 'Vaccinering + provtagning' }[s] || s);
+  const servicePill = (s) => ({ vaccin: 'Vaccinering', provtagning: 'Provtagning' }[s] || s);
   const filterLabel = (s) => ({ alla: 'Alla tjänster', vaccin: 'Enbart vaccinering', provtagning: 'Enbart provtagning' }[s] || s);
-
-  function normalizeStopService(services = []) {
-    const list = Array.isArray(services) ? services : [];
-    const set = new Set(list);
-    if (set.has('bada') || (set.has('vaccin') && set.has('provtagning'))) return 'bada';
-    if (set.has('vaccin')) return 'vaccin';
-    if (set.has('provtagning')) return 'provtagning';
-    return list[0] || '';
-  }
-
-  function stopServiceBadge(services = []) {
-    const key = normalizeStopService(services);
-    if (!key) return '';
-    return `<span class="mw-badge mw-badge--${key}">${servicePill(key)}</span>`;
-  }
 
   function now() { return new Date(); }
   function fmtDateLine(start) { return fmtDate.format(start).replace('.', ''); }
@@ -181,12 +166,12 @@
     const svcBadges = (loc.services || []).filter(s => s !== 'bada').map(s => `<span class="mw-badge mw-badge--${s}">${servicePill(s)}</span>`).join('');
 
     const nextHtml = loc._next
-      ? `<div class="mw-next"><div class="mw-next-label">Nästa öppettid</div><div class="mw-next-service">${stopServiceBadge(loc._next.services)}</div><div class="mw-next-main">${esc(fmtDateLine(loc._next._start))}</div><div class="mw-next-sub">${esc(fmtTimeLine(loc._next._start, loc._next._end))}</div></div>`
+      ? `<div class="mw-next"><div class="mw-next-label">Nästa öppettid</div><div class="mw-next-main">${esc(fmtDateLine(loc._next._start))}</div><div class="mw-next-sub">${esc(fmtTimeLine(loc._next._start, loc._next._end))}</div></div>`
       : `<div class="mw-next mw-next--empty"><div class="mw-next-label">Nästa öppettid</div><div class="mw-next-main">Ingen planerad tid just nu</div></div>`;
 
     const countText = loc._upcomingStops.length ? `${loc._upcomingStops.length} kommande tider` : 'Inga kommande tider';
     const detailRows = loc._upcomingStops.length
-      ? loc._upcomingStops.map(s => `<li class="mw-upcoming-item"><div class="mw-upcoming-primary"><span class="mw-upcoming-date">${esc(fmtDateLine(s._start))}</span><span class="mw-upcoming-time">${esc(fmtTimeLine(s._start, s._end))}</span></div><div class="mw-upcoming-service">${stopServiceBadge(s.services)}</div></li>`).join('')
+      ? loc._upcomingStops.map(s => `<li class="mw-upcoming-item"><span class="mw-upcoming-date">${esc(fmtDateLine(s._start))}</span><span class="mw-upcoming-time">${esc(fmtTimeLine(s._start, s._end))}</span></li>`).join('')
       : `<li class="mw-upcoming-item mw-upcoming-item--empty">Ingen planerad tid just nu.</li>`;
 
     return `<article class="mw-card${expanded ? ' is-expanded' : ''}" data-location-id="${esc(loc.id)}"><button class="mw-card-toggle" type="button" data-toggle-card="${esc(loc.id)}" aria-expanded="${expanded ? 'true' : 'false'}"><div class="mw-card-top"><div class="mw-card-title-wrap"><h3 class="mw-card-title">${esc(loc.name)}</h3>${addressHtml}<div class="mw-card-meta">${distHtml}<div class="mw-badges">${svcBadges}</div></div></div><div class="mw-card-right">${nextHtml}<div class="mw-accordion-cta">${expanded ? 'Dölj tider' : 'Visa fler tider'}<span class="mw-accordion-count">${esc(countText)}</span></div></div></div></button><div class="mw-card-inline-actions">${buildQuickActions(loc)}</div><div class="mw-card-details"${expanded ? '' : ' hidden'}><div class="mw-card-details-inner"><div class="mw-upcoming-block"><div class="mw-upcoming-title">Kommande tider</div><ul class="mw-upcoming-list">${detailRows}</ul></div></div></div></article>`;
@@ -195,9 +180,8 @@
   function popupHtml(loc) {
     const next = loc._next || getRelevantStops(loc.id)[0];
     const nextStr = next ? fmtDayTime(next._start, next._end) : 'Ingen planerad tid';
-    const nextLabel = next ? `${servicePill(normalizeStopService(next.services))} · ${nextStr}` : nextStr;
     const bookUrl = loc.bookVaccinUrl || loc.bookProvtagningUrl || loc.readMoreUrl;
-    return `<div class="mw-popup-title">${esc(loc.name)}</div><div class="mw-popup-addr">${esc(loc.address || loc.city || '')}</div><div class="mw-popup-next">${esc(nextLabel)}</div><div class="mw-popup-actions"><a href="${esc(next ? bookUrl : loc.readMoreUrl)}" target="_blank" rel="noopener">${next ? 'Boka tid' : 'Se öppettider'}</a><button type="button" class="mw-popup-list-link" data-popup-open-card="${esc(loc.id)}">Visa tider i listan</button></div>`;
+    return `<div class="mw-popup-title">${esc(loc.name)}</div><div class="mw-popup-addr">${esc(loc.address || loc.city || '')}</div><div class="mw-popup-next">${esc(nextStr)}</div><div class="mw-popup-actions"><a href="${esc(next ? bookUrl : loc.readMoreUrl)}" target="_blank" rel="noopener">${next ? 'Boka tid' : 'Se öppettider'}</a><button type="button" class="mw-popup-list-link" data-popup-open-card="${esc(loc.id)}">Visa tider i listan</button></div>`;
   }
 
   function markerIcon(hasNext) {

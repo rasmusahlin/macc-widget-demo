@@ -234,7 +234,6 @@ body {
 }
 .mw-badge--vaccin    { background: #e8f5f6; color: var(--mw-primary); }
 .mw-badge--provtagning { background: #f0eeff; color: #5b45b0; }
-.mw-badge--bada { background: #edf8ef; color: #1f7a43; }
 
 /* Times block */
 .mw-times {
@@ -399,8 +398,6 @@ body {
 .mw-next { background: #f6fafb; border: 1px solid #ddebed; border-radius: 12px; padding: 10px 12px; min-width: 180px; }
 .mw-next--empty { background: #fafafa; border-color: var(--mw-border); }
 .mw-next-label { font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--mw-muted); margin-bottom: 5px; }
-.mw-next-service { margin-bottom: 8px; }
-.mw-next-service .mw-badge { height: auto; min-height: 24px; padding-top: 4px; padding-bottom: 4px; }
 .mw-next-main { font-size: 15px; font-weight: 800; line-height: 1.3; }
 .mw-next-sub { font-size: 13px; color: var(--mw-muted); font-weight: 600; margin-top: 2px; }
 .mw-accordion-cta { margin-top: 8px; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; font-size: 13px; font-weight: 800; color: var(--mw-primary); }
@@ -410,9 +407,7 @@ body {
 .mw-card-details-inner { padding: 16px 18px 18px; display: grid; gap: 14px; }
 .mw-upcoming-title { font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--mw-muted); margin-bottom: 8px; }
 .mw-upcoming-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.mw-upcoming-item { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; background: #f7fafb; border: 1px solid #e5eef0; border-radius: 10px; padding: 10px 12px; }
-.mw-upcoming-primary { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.mw-upcoming-service { flex-shrink: 0; display: flex; align-items: center; }
+.mw-upcoming-item { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; background: #f7fafb; border: 1px solid #e5eef0; border-radius: 10px; padding: 10px 12px; }
 .mw-upcoming-item--empty { color: var(--mw-muted); }
 .mw-upcoming-date { font-weight: 700; }
 .mw-upcoming-time { color: var(--mw-muted); font-weight: 600; }
