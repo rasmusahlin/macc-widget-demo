@@ -2811,8 +2811,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-03-30T07:00:00+01:00",
-      "end": "2026-03-30T15:00:00+01:00",
+      "start": "2026-03-30T07:00:00+02:00",
+      "end": "2026-03-30T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -2899,8 +2899,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-03-30T10:00:00+01:00",
-      "end": "2026-03-30T16:00:00+01:00",
+      "start": "2026-03-30T10:00:00+02:00",
+      "end": "2026-03-30T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -3020,8 +3020,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-03-31T07:00:00+01:00",
-      "end": "2026-03-31T15:00:00+01:00",
+      "start": "2026-03-31T07:00:00+02:00",
+      "end": "2026-03-31T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -3108,8 +3108,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-03-31T10:00:00+01:00",
-      "end": "2026-03-31T16:00:00+01:00",
+      "start": "2026-03-31T10:00:00+02:00",
+      "end": "2026-03-31T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -3185,8 +3185,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-01T07:00:00+01:00",
-      "end": "2026-04-01T15:00:00+01:00",
+      "start": "2026-04-01T07:00:00+02:00",
+      "end": "2026-04-01T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -3284,8 +3284,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-01T10:00:00+01:00",
-      "end": "2026-04-01T16:00:00+01:00",
+      "start": "2026-04-01T10:00:00+02:00",
+      "end": "2026-04-01T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -3372,8 +3372,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-02T07:00:00+01:00",
-      "end": "2026-04-02T15:00:00+01:00",
+      "start": "2026-04-02T07:00:00+02:00",
+      "end": "2026-04-02T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -3482,8 +3482,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-02T10:00:00+01:00",
-      "end": "2026-04-02T16:00:00+01:00",
+      "start": "2026-04-02T10:00:00+02:00",
+      "end": "2026-04-02T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -3757,8 +3757,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-07T07:00:00+01:00",
-      "end": "2026-04-07T15:00:00+01:00",
+      "start": "2026-04-07T07:00:00+02:00",
+      "end": "2026-04-07T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -3856,8 +3856,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-07T10:00:00+01:00",
-      "end": "2026-04-07T16:00:00+01:00",
+      "start": "2026-04-07T10:00:00+02:00",
+      "end": "2026-04-07T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -3944,8 +3944,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-08T07:00:00+01:00",
-      "end": "2026-04-08T15:00:00+01:00",
+      "start": "2026-04-08T07:00:00+02:00",
+      "end": "2026-04-08T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -4076,8 +4076,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-08T10:00:00+01:00",
-      "end": "2026-04-08T16:00:00+01:00",
+      "start": "2026-04-08T10:00:00+02:00",
+      "end": "2026-04-08T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -4219,8 +4219,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-09T07:00:00+01:00",
-      "end": "2026-04-09T15:00:00+01:00",
+      "start": "2026-04-09T07:00:00+02:00",
+      "end": "2026-04-09T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -4318,8 +4318,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-09T10:00:00+01:00",
-      "end": "2026-04-09T16:00:00+01:00",
+      "start": "2026-04-09T10:00:00+02:00",
+      "end": "2026-04-09T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -4439,8 +4439,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-10T07:00:00+01:00",
-      "end": "2026-04-10T12:30:00+01:00",
+      "start": "2026-04-10T07:00:00+02:00",
+      "end": "2026-04-10T12:30:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -4516,8 +4516,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-10T10:00:00+01:00",
-      "end": "2026-04-10T14:00:00+01:00",
+      "start": "2026-04-10T10:00:00+02:00",
+      "end": "2026-04-10T14:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -4802,8 +4802,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-13T07:00:00+01:00",
-      "end": "2026-04-13T15:00:00+01:00",
+      "start": "2026-04-13T07:00:00+02:00",
+      "end": "2026-04-13T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -4890,8 +4890,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-13T10:00:00+01:00",
-      "end": "2026-04-13T16:00:00+01:00",
+      "start": "2026-04-13T10:00:00+02:00",
+      "end": "2026-04-13T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -5011,8 +5011,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-14T07:00:00+01:00",
-      "end": "2026-04-14T15:00:00+01:00",
+      "start": "2026-04-14T07:00:00+02:00",
+      "end": "2026-04-14T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -5110,8 +5110,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-14T10:00:00+01:00",
-      "end": "2026-04-14T16:00:00+01:00",
+      "start": "2026-04-14T10:00:00+02:00",
+      "end": "2026-04-14T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -5187,8 +5187,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-15T07:00:00+01:00",
-      "end": "2026-04-15T15:00:00+01:00",
+      "start": "2026-04-15T07:00:00+02:00",
+      "end": "2026-04-15T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -5286,8 +5286,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-15T10:00:00+01:00",
-      "end": "2026-04-15T16:00:00+01:00",
+      "start": "2026-04-15T10:00:00+02:00",
+      "end": "2026-04-15T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -5352,8 +5352,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-16T07:00:00+01:00",
-      "end": "2026-04-16T15:00:00+01:00",
+      "start": "2026-04-16T07:00:00+02:00",
+      "end": "2026-04-16T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -5451,8 +5451,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-16T10:00:00+01:00",
-      "end": "2026-04-16T16:00:00+01:00",
+      "start": "2026-04-16T10:00:00+02:00",
+      "end": "2026-04-16T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -5561,8 +5561,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-17T07:00:00+01:00",
-      "end": "2026-04-17T12:30:00+01:00",
+      "start": "2026-04-17T07:00:00+02:00",
+      "end": "2026-04-17T12:30:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -5627,8 +5627,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-17T10:00:00+01:00",
-      "end": "2026-04-17T14:00:00+01:00",
+      "start": "2026-04-17T10:00:00+02:00",
+      "end": "2026-04-17T14:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -5891,8 +5891,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-20T07:00:00+01:00",
-      "end": "2026-04-20T15:00:00+01:00",
+      "start": "2026-04-20T07:00:00+02:00",
+      "end": "2026-04-20T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -5968,8 +5968,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-20T10:00:00+01:00",
-      "end": "2026-04-20T16:00:00+01:00",
+      "start": "2026-04-20T10:00:00+02:00",
+      "end": "2026-04-20T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -6056,8 +6056,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-21T07:00:00+01:00",
-      "end": "2026-04-21T15:00:00+01:00",
+      "start": "2026-04-21T07:00:00+02:00",
+      "end": "2026-04-21T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -6155,8 +6155,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-21T10:00:00+01:00",
-      "end": "2026-04-21T16:00:00+01:00",
+      "start": "2026-04-21T10:00:00+02:00",
+      "end": "2026-04-21T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -6254,8 +6254,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-22T07:00:00+01:00",
-      "end": "2026-04-22T15:00:00+01:00",
+      "start": "2026-04-22T07:00:00+02:00",
+      "end": "2026-04-22T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -6386,8 +6386,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-22T10:00:00+01:00",
-      "end": "2026-04-22T16:00:00+01:00",
+      "start": "2026-04-22T10:00:00+02:00",
+      "end": "2026-04-22T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -6540,8 +6540,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-23T07:00:00+01:00",
-      "end": "2026-04-23T15:00:00+01:00",
+      "start": "2026-04-23T07:00:00+02:00",
+      "end": "2026-04-23T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -6650,8 +6650,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-23T10:00:00+01:00",
-      "end": "2026-04-23T16:00:00+01:00",
+      "start": "2026-04-23T10:00:00+02:00",
+      "end": "2026-04-23T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -6782,8 +6782,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-24T07:00:00+01:00",
-      "end": "2026-04-24T12:30:00+01:00",
+      "start": "2026-04-24T07:00:00+02:00",
+      "end": "2026-04-24T12:30:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -6859,8 +6859,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-24T10:00:00+01:00",
-      "end": "2026-04-24T14:00:00+01:00",
+      "start": "2026-04-24T10:00:00+02:00",
+      "end": "2026-04-24T14:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -7134,8 +7134,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-27T07:00:00+01:00",
-      "end": "2026-04-27T15:00:00+01:00",
+      "start": "2026-04-27T07:00:00+02:00",
+      "end": "2026-04-27T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -7233,8 +7233,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-27T10:00:00+01:00",
-      "end": "2026-04-27T16:00:00+01:00",
+      "start": "2026-04-27T10:00:00+02:00",
+      "end": "2026-04-27T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -7365,8 +7365,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-28T07:00:00+01:00",
-      "end": "2026-04-28T15:00:00+01:00",
+      "start": "2026-04-28T07:00:00+02:00",
+      "end": "2026-04-28T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -7464,8 +7464,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-28T10:00:00+01:00",
-      "end": "2026-04-28T16:00:00+01:00",
+      "start": "2026-04-28T10:00:00+02:00",
+      "end": "2026-04-28T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -7541,8 +7541,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-29T07:00:00+01:00",
-      "end": "2026-04-29T15:00:00+01:00",
+      "start": "2026-04-29T07:00:00+02:00",
+      "end": "2026-04-29T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -7662,8 +7662,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-29T10:00:00+01:00",
-      "end": "2026-04-29T16:00:00+01:00",
+      "start": "2026-04-29T10:00:00+02:00",
+      "end": "2026-04-29T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -7772,8 +7772,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-04-30T07:00:00+01:00",
-      "end": "2026-04-30T15:00:00+01:00",
+      "start": "2026-04-30T07:00:00+02:00",
+      "end": "2026-04-30T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -7904,8 +7904,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-04-30T10:00:00+01:00",
-      "end": "2026-04-30T16:00:00+01:00",
+      "start": "2026-04-30T10:00:00+02:00",
+      "end": "2026-04-30T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -8366,8 +8366,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-04T07:00:00+01:00",
-      "end": "2026-05-04T15:00:00+01:00",
+      "start": "2026-05-04T07:00:00+02:00",
+      "end": "2026-05-04T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -8443,8 +8443,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-04T10:00:00+01:00",
-      "end": "2026-05-04T16:00:00+01:00",
+      "start": "2026-05-04T10:00:00+02:00",
+      "end": "2026-05-04T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -8531,8 +8531,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-05T07:00:00+01:00",
-      "end": "2026-05-05T15:00:00+01:00",
+      "start": "2026-05-05T07:00:00+02:00",
+      "end": "2026-05-05T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -8630,8 +8630,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-05T10:00:00+01:00",
-      "end": "2026-05-05T16:00:00+01:00",
+      "start": "2026-05-05T10:00:00+02:00",
+      "end": "2026-05-05T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -8718,8 +8718,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-06T07:00:00+01:00",
-      "end": "2026-05-06T15:00:00+01:00",
+      "start": "2026-05-06T07:00:00+02:00",
+      "end": "2026-05-06T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -8861,8 +8861,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-06T10:00:00+01:00",
-      "end": "2026-05-06T16:00:00+01:00",
+      "start": "2026-05-06T10:00:00+02:00",
+      "end": "2026-05-06T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -9037,8 +9037,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-07T07:00:00+01:00",
-      "end": "2026-05-07T15:00:00+01:00",
+      "start": "2026-05-07T07:00:00+02:00",
+      "end": "2026-05-07T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -9147,8 +9147,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-07T10:00:00+01:00",
-      "end": "2026-05-07T16:00:00+01:00",
+      "start": "2026-05-07T10:00:00+02:00",
+      "end": "2026-05-07T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -9290,8 +9290,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-08T07:00:00+01:00",
-      "end": "2026-05-08T12:30:00+01:00",
+      "start": "2026-05-08T07:00:00+02:00",
+      "end": "2026-05-08T12:30:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -9378,8 +9378,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-08T10:00:00+01:00",
-      "end": "2026-05-08T14:00:00+01:00",
+      "start": "2026-05-08T10:00:00+02:00",
+      "end": "2026-05-08T14:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -9697,8 +9697,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-11T07:00:00+01:00",
-      "end": "2026-05-11T15:00:00+01:00",
+      "start": "2026-05-11T07:00:00+02:00",
+      "end": "2026-05-11T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -9763,8 +9763,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-11T10:00:00+01:00",
-      "end": "2026-05-11T16:00:00+01:00",
+      "start": "2026-05-11T10:00:00+02:00",
+      "end": "2026-05-11T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -9862,8 +9862,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-12T07:00:00+01:00",
-      "end": "2026-05-12T15:00:00+01:00",
+      "start": "2026-05-12T07:00:00+02:00",
+      "end": "2026-05-12T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -9961,8 +9961,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-12T10:00:00+01:00",
-      "end": "2026-05-12T16:00:00+01:00",
+      "start": "2026-05-12T10:00:00+02:00",
+      "end": "2026-05-12T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -10049,8 +10049,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-13T07:00:00+01:00",
-      "end": "2026-05-13T15:00:00+01:00",
+      "start": "2026-05-13T07:00:00+02:00",
+      "end": "2026-05-13T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -10159,8 +10159,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-13T10:00:00+01:00",
-      "end": "2026-05-13T16:00:00+01:00",
+      "start": "2026-05-13T10:00:00+02:00",
+      "end": "2026-05-13T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -10291,8 +10291,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-15T07:00:00+01:00",
-      "end": "2026-05-15T12:30:00+01:00",
+      "start": "2026-05-15T07:00:00+02:00",
+      "end": "2026-05-15T12:30:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -10324,8 +10324,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-15T10:00:00+01:00",
-      "end": "2026-05-15T14:00:00+01:00",
+      "start": "2026-05-15T10:00:00+02:00",
+      "end": "2026-05-15T14:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -10599,8 +10599,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-18T07:00:00+01:00",
-      "end": "2026-05-18T15:00:00+01:00",
+      "start": "2026-05-18T07:00:00+02:00",
+      "end": "2026-05-18T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -10687,8 +10687,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-18T10:00:00+01:00",
-      "end": "2026-05-18T16:00:00+01:00",
+      "start": "2026-05-18T10:00:00+02:00",
+      "end": "2026-05-18T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -10786,8 +10786,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-19T07:00:00+01:00",
-      "end": "2026-05-19T15:00:00+01:00",
+      "start": "2026-05-19T07:00:00+02:00",
+      "end": "2026-05-19T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -10885,8 +10885,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-19T10:00:00+01:00",
-      "end": "2026-05-19T16:00:00+01:00",
+      "start": "2026-05-19T10:00:00+02:00",
+      "end": "2026-05-19T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -10973,8 +10973,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-20T07:00:00+01:00",
-      "end": "2026-05-20T15:00:00+01:00",
+      "start": "2026-05-20T07:00:00+02:00",
+      "end": "2026-05-20T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -11127,8 +11127,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-20T10:00:00+01:00",
-      "end": "2026-05-20T16:00:00+01:00",
+      "start": "2026-05-20T10:00:00+02:00",
+      "end": "2026-05-20T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -11270,8 +11270,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-21T07:00:00+01:00",
-      "end": "2026-05-21T15:00:00+01:00",
+      "start": "2026-05-21T07:00:00+02:00",
+      "end": "2026-05-21T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -11391,8 +11391,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-21T10:00:00+01:00",
-      "end": "2026-05-21T16:00:00+01:00",
+      "start": "2026-05-21T10:00:00+02:00",
+      "end": "2026-05-21T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -11534,8 +11534,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-22T07:00:00+01:00",
-      "end": "2026-05-22T12:30:00+01:00",
+      "start": "2026-05-22T07:00:00+02:00",
+      "end": "2026-05-22T12:30:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -11622,8 +11622,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-22T10:00:00+01:00",
-      "end": "2026-05-22T14:00:00+01:00",
+      "start": "2026-05-22T10:00:00+02:00",
+      "end": "2026-05-22T14:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -11974,8 +11974,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-26T07:00:00+01:00",
-      "end": "2026-05-26T15:00:00+01:00",
+      "start": "2026-05-26T07:00:00+02:00",
+      "end": "2026-05-26T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -12062,8 +12062,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-26T10:00:00+01:00",
-      "end": "2026-05-26T16:00:00+01:00",
+      "start": "2026-05-26T10:00:00+02:00",
+      "end": "2026-05-26T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -12128,8 +12128,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-27T07:00:00+01:00",
-      "end": "2026-05-27T15:00:00+01:00",
+      "start": "2026-05-27T07:00:00+02:00",
+      "end": "2026-05-27T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -12249,8 +12249,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-27T10:00:00+01:00",
-      "end": "2026-05-27T16:00:00+01:00",
+      "start": "2026-05-27T10:00:00+02:00",
+      "end": "2026-05-27T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -12381,8 +12381,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-28T07:00:00+01:00",
-      "end": "2026-05-28T15:00:00+01:00",
+      "start": "2026-05-28T07:00:00+02:00",
+      "end": "2026-05-28T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -12502,8 +12502,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-28T10:00:00+01:00",
-      "end": "2026-05-28T16:00:00+01:00",
+      "start": "2026-05-28T10:00:00+02:00",
+      "end": "2026-05-28T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -12678,8 +12678,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-05-29T07:00:00+01:00",
-      "end": "2026-05-29T12:30:00+01:00",
+      "start": "2026-05-29T07:00:00+02:00",
+      "end": "2026-05-29T12:30:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -12711,8 +12711,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-05-29T10:00:00+01:00",
-      "end": "2026-05-29T14:00:00+01:00",
+      "start": "2026-05-29T10:00:00+02:00",
+      "end": "2026-05-29T14:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -13008,8 +13008,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-06-01T07:00:00+01:00",
-      "end": "2026-06-01T15:00:00+01:00",
+      "start": "2026-06-01T07:00:00+02:00",
+      "end": "2026-06-01T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -13085,8 +13085,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-06-01T10:00:00+01:00",
-      "end": "2026-06-01T16:00:00+01:00",
+      "start": "2026-06-01T10:00:00+02:00",
+      "end": "2026-06-01T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -13173,8 +13173,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-06-02T07:00:00+01:00",
-      "end": "2026-06-02T15:00:00+01:00",
+      "start": "2026-06-02T07:00:00+02:00",
+      "end": "2026-06-02T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -13272,8 +13272,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-06-02T10:00:00+01:00",
-      "end": "2026-06-02T16:00:00+01:00",
+      "start": "2026-06-02T10:00:00+02:00",
+      "end": "2026-06-02T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -13382,8 +13382,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-06-03T07:00:00+01:00",
-      "end": "2026-06-03T15:00:00+01:00",
+      "start": "2026-06-03T07:00:00+02:00",
+      "end": "2026-06-03T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -13514,8 +13514,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-06-03T10:00:00+01:00",
-      "end": "2026-06-03T16:00:00+01:00",
+      "start": "2026-06-03T10:00:00+02:00",
+      "end": "2026-06-03T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -13679,8 +13679,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-06-04T07:00:00+01:00",
-      "end": "2026-06-04T15:00:00+01:00",
+      "start": "2026-06-04T07:00:00+02:00",
+      "end": "2026-06-04T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -13789,8 +13789,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-06-04T10:00:00+01:00",
-      "end": "2026-06-04T16:00:00+01:00",
+      "start": "2026-06-04T10:00:00+02:00",
+      "end": "2026-06-04T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -13921,8 +13921,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-06-05T07:00:00+01:00",
-      "end": "2026-06-05T12:30:00+01:00",
+      "start": "2026-06-05T07:00:00+02:00",
+      "end": "2026-06-05T12:30:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -14009,8 +14009,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-06-05T10:00:00+01:00",
-      "end": "2026-06-05T14:00:00+01:00",
+      "start": "2026-06-05T10:00:00+02:00",
+      "end": "2026-06-05T14:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -14218,8 +14218,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-06-08T07:00:00+01:00",
-      "end": "2026-06-08T15:00:00+01:00",
+      "start": "2026-06-08T07:00:00+02:00",
+      "end": "2026-06-08T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -14295,8 +14295,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-06-08T10:00:00+01:00",
-      "end": "2026-06-08T16:00:00+01:00",
+      "start": "2026-06-08T10:00:00+02:00",
+      "end": "2026-06-08T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -14405,8 +14405,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-06-09T07:00:00+01:00",
-      "end": "2026-06-09T15:00:00+01:00",
+      "start": "2026-06-09T07:00:00+02:00",
+      "end": "2026-06-09T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -14493,8 +14493,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-06-09T10:00:00+01:00",
-      "end": "2026-06-09T16:00:00+01:00",
+      "start": "2026-06-09T10:00:00+02:00",
+      "end": "2026-06-09T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -14559,8 +14559,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-06-10T07:00:00+01:00",
-      "end": "2026-06-10T15:00:00+01:00",
+      "start": "2026-06-10T07:00:00+02:00",
+      "end": "2026-06-10T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -14680,8 +14680,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-06-10T10:00:00+01:00",
-      "end": "2026-06-10T16:00:00+01:00",
+      "start": "2026-06-10T10:00:00+02:00",
+      "end": "2026-06-10T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -14790,8 +14790,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-06-11T07:00:00+01:00",
-      "end": "2026-06-11T15:00:00+01:00",
+      "start": "2026-06-11T07:00:00+02:00",
+      "end": "2026-06-11T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -14922,8 +14922,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-06-11T10:00:00+01:00",
-      "end": "2026-06-11T16:00:00+01:00",
+      "start": "2026-06-11T10:00:00+02:00",
+      "end": "2026-06-11T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -15087,8 +15087,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-06-12T07:00:00+01:00",
-      "end": "2026-06-12T12:30:00+01:00",
+      "start": "2026-06-12T07:00:00+02:00",
+      "end": "2026-06-12T12:30:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -15120,8 +15120,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-06-12T10:00:00+01:00",
-      "end": "2026-06-12T14:00:00+01:00",
+      "start": "2026-06-12T10:00:00+02:00",
+      "end": "2026-06-12T14:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -15428,8 +15428,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-06-15T07:00:00+01:00",
-      "end": "2026-06-15T15:00:00+01:00",
+      "start": "2026-06-15T07:00:00+02:00",
+      "end": "2026-06-15T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -15505,8 +15505,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-06-15T10:00:00+01:00",
-      "end": "2026-06-15T16:00:00+01:00",
+      "start": "2026-06-15T10:00:00+02:00",
+      "end": "2026-06-15T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -15593,8 +15593,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-06-16T07:00:00+01:00",
-      "end": "2026-06-16T15:00:00+01:00",
+      "start": "2026-06-16T07:00:00+02:00",
+      "end": "2026-06-16T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -15692,8 +15692,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-06-16T10:00:00+01:00",
-      "end": "2026-06-16T16:00:00+01:00",
+      "start": "2026-06-16T10:00:00+02:00",
+      "end": "2026-06-16T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -15780,8 +15780,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-06-17T07:00:00+01:00",
-      "end": "2026-06-17T15:00:00+01:00",
+      "start": "2026-06-17T07:00:00+02:00",
+      "end": "2026-06-17T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -15934,8 +15934,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-06-17T10:00:00+01:00",
-      "end": "2026-06-17T16:00:00+01:00",
+      "start": "2026-06-17T10:00:00+02:00",
+      "end": "2026-06-17T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -16099,8 +16099,8 @@
       "services": [
         "provtagning"
       ],
-      "start": "2026-06-18T07:00:00+01:00",
-      "end": "2026-06-18T15:00:00+01:00",
+      "start": "2026-06-18T07:00:00+02:00",
+      "end": "2026-06-18T15:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
@@ -16209,8 +16209,8 @@
       "services": [
         "vaccin"
       ],
-      "start": "2026-06-18T10:00:00+01:00",
-      "end": "2026-06-18T16:00:00+01:00",
+      "start": "2026-06-18T10:00:00+02:00",
+      "end": "2026-06-18T16:00:00+02:00",
       "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
       "status": "scheduled"
     },
