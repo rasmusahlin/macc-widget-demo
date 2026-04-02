@@ -1946,10 +1946,10 @@
       "services": [
         "vaccin"
       ],
-      "lat": null,
-      "lon": null,
+      "lat": 57.713257,
+      "lon": 12.865963,
       "bookVaccinUrl": "https://www.maccpeople.se/17/226/boras-viared/#bokning",
-      "bookProvtagningUrl": null,
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/226/boras-viared/#bokning",
       "readMoreUrl": "https://www.maccpeople.se/17/226/boras-viared/",
       "searchTerms": [
         "borås",
