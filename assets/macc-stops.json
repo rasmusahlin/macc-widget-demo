@@ -683,21 +683,10 @@
       "status": "scheduled"
     },
     {
-      "id": "kungalv-p-2026-03-10-0800",
+      "id": "kungalv-bada-2026-03-10-0800",
       "locationId": "kungalv",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-03-10T08:00:00+01:00",
-      "end": "2026-03-10T11:00:00+01:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "kungalv-v-2026-03-10-0800",
-      "locationId": "kungalv",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-03-10T08:00:00+01:00",
       "end": "2026-03-10T11:00:00+01:00",
@@ -815,21 +804,10 @@
       "status": "scheduled"
     },
     {
-      "id": "uddevalla-p-2026-03-11-0800",
+      "id": "uddevalla-bada-2026-03-11-0800",
       "locationId": "uddevalla",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-03-11T08:00:00+01:00",
-      "end": "2026-03-11T11:00:00+01:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "uddevalla-v-2026-03-11-0800",
-      "locationId": "uddevalla",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-03-11T08:00:00+01:00",
       "end": "2026-03-11T11:00:00+01:00",
@@ -1354,17 +1332,6 @@
       "status": "scheduled"
     },
     {
-      "id": "stenungsund-2026-03-16-1100",
-      "locationId": "stenungsund",
-      "services": [
-        "bada"
-      ],
-      "start": "2026-03-16T11:00:00+01:00",
-      "end": "2026-03-16T14:00:00+01:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
       "id": "lerum-2026-03-16-1200",
       "locationId": "lerum",
       "services": [
@@ -1486,21 +1453,10 @@
       "status": "scheduled"
     },
     {
-      "id": "kungalv-p-2026-03-17-0800",
+      "id": "kungalv-bada-2026-03-17-0800",
       "locationId": "kungalv",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-03-17T08:00:00+01:00",
-      "end": "2026-03-17T11:00:00+01:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "kungalv-v-2026-03-17-0800",
-      "locationId": "kungalv",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-03-17T08:00:00+01:00",
       "end": "2026-03-17T11:00:00+01:00",
@@ -1607,21 +1563,10 @@
       "status": "scheduled"
     },
     {
-      "id": "uddevalla-p-2026-03-18-0800",
+      "id": "uddevalla-bada-2026-03-18-0800",
       "locationId": "uddevalla",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-03-18T08:00:00+01:00",
-      "end": "2026-03-18T11:00:00+01:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "uddevalla-v-2026-03-18-0800",
-      "locationId": "uddevalla",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-03-18T08:00:00+01:00",
       "end": "2026-03-18T11:00:00+01:00",
@@ -2245,21 +2190,10 @@
       "status": "scheduled"
     },
     {
-      "id": "kungalv-p-2026-03-24-0800",
+      "id": "kungalv-bada-2026-03-24-0800",
       "locationId": "kungalv",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-03-24T08:00:00+01:00",
-      "end": "2026-03-24T11:00:00+01:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "kungalv-v-2026-03-24-0800",
-      "locationId": "kungalv",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-03-24T08:00:00+01:00",
       "end": "2026-03-24T11:00:00+01:00",
@@ -2377,21 +2311,10 @@
       "status": "scheduled"
     },
     {
-      "id": "uddevalla-p-2026-03-25-0800",
+      "id": "uddevalla-bada-2026-03-25-0800",
       "locationId": "uddevalla",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-03-25T08:00:00+01:00",
-      "end": "2026-03-25T11:00:00+01:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "uddevalla-v-2026-03-25-0800",
-      "locationId": "uddevalla",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-03-25T08:00:00+01:00",
       "end": "2026-03-25T11:00:00+01:00",
@@ -3389,21 +3312,10 @@
       "status": "scheduled"
     },
     {
-      "id": "boras-p-2026-04-02-0800",
+      "id": "boras-bada-2026-04-02-0800",
       "locationId": "boras",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-04-02T08:00:00+02:00",
-      "end": "2026-04-02T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "boras-v-2026-04-02-0800",
-      "locationId": "boras",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-04-02T08:00:00+02:00",
       "end": "2026-04-02T11:00:00+02:00",
@@ -3539,8 +3451,8 @@
       ],
       "start": "2026-04-02T15:00:00+02:00",
       "end": "2026-04-02T16:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
+      "displayNote": "Inställt",
+      "status": "cancelled"
     },
     {
       "id": "kungalv-v-2026-04-02-1500",
@@ -3796,21 +3708,10 @@
       "status": "scheduled"
     },
     {
-      "id": "kungalv-p-2026-04-07-0800",
+      "id": "kungalv-bada-2026-04-07-0800",
       "locationId": "kungalv",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-04-07T08:00:00+02:00",
-      "end": "2026-04-07T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "kungalv-v-2026-04-07-0800",
-      "locationId": "kungalv",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-04-07T08:00:00+02:00",
       "end": "2026-04-07T11:00:00+02:00",
@@ -4005,21 +3906,10 @@
       "status": "scheduled"
     },
     {
-      "id": "uddevalla-p-2026-04-08-0800",
+      "id": "uddevalla-bada-2026-04-08-0800",
       "locationId": "uddevalla",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-04-08T08:00:00+02:00",
-      "end": "2026-04-08T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "uddevalla-v-2026-04-08-0800",
-      "locationId": "uddevalla",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-04-08T08:00:00+02:00",
       "end": "2026-04-08T11:00:00+02:00",
@@ -4236,21 +4126,10 @@
       "status": "scheduled"
     },
     {
-      "id": "boras-p-2026-04-09-0800",
+      "id": "boras-bada-2026-04-09-0800",
       "locationId": "boras",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-04-09T08:00:00+02:00",
-      "end": "2026-04-09T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "boras-v-2026-04-09-0800",
-      "locationId": "boras",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-04-09T08:00:00+02:00",
       "end": "2026-04-09T11:00:00+02:00",
@@ -5028,21 +4907,10 @@
       "status": "scheduled"
     },
     {
-      "id": "kungalv-p-2026-04-14-0800",
+      "id": "kungalv-bada-2026-04-14-0800",
       "locationId": "kungalv",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-04-14T08:00:00+02:00",
-      "end": "2026-04-14T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "kungalv-v-2026-04-14-0800",
-      "locationId": "kungalv",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-04-14T08:00:00+02:00",
       "end": "2026-04-14T11:00:00+02:00",
@@ -5226,21 +5094,10 @@
       "status": "scheduled"
     },
     {
-      "id": "uddevalla-p-2026-04-15-0800",
+      "id": "uddevalla-bada-2026-04-15-0800",
       "locationId": "uddevalla",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-04-15T08:00:00+02:00",
-      "end": "2026-04-15T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "uddevalla-v-2026-04-15-0800",
-      "locationId": "uddevalla",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-04-15T08:00:00+02:00",
       "end": "2026-04-15T11:00:00+02:00",
@@ -5347,21 +5204,10 @@
       "status": "scheduled"
     },
     {
-      "id": "boras-p-2026-04-16-0800",
+      "id": "boras-bada-2026-04-16-0800",
       "locationId": "boras",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-04-16T08:00:00+02:00",
-      "end": "2026-04-16T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "boras-v-2026-04-16-0800",
-      "locationId": "boras",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-04-16T08:00:00+02:00",
       "end": "2026-04-16T11:00:00+02:00",
@@ -6062,21 +5908,10 @@
       "status": "scheduled"
     },
     {
-      "id": "kungalv-p-2026-04-21-0800",
+      "id": "kungalv-bada-2026-04-21-0800",
       "locationId": "kungalv",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-04-21T08:00:00+02:00",
-      "end": "2026-04-21T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "kungalv-v-2026-04-21-0800",
-      "locationId": "kungalv",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-04-21T08:00:00+02:00",
       "end": "2026-04-21T11:00:00+02:00",
@@ -6282,21 +6117,10 @@
       "status": "scheduled"
     },
     {
-      "id": "uddevalla-p-2026-04-22-0800",
+      "id": "uddevalla-bada-2026-04-22-0800",
       "locationId": "uddevalla",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-04-22T08:00:00+02:00",
-      "end": "2026-04-22T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "uddevalla-v-2026-04-22-0800",
-      "locationId": "uddevalla",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-04-22T08:00:00+02:00",
       "end": "2026-04-22T11:00:00+02:00",
@@ -6524,21 +6348,10 @@
       "status": "scheduled"
     },
     {
-      "id": "boras-p-2026-04-23-0800",
+      "id": "boras-bada-2026-04-23-0800",
       "locationId": "boras",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-04-23T08:00:00+02:00",
-      "end": "2026-04-23T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "boras-v-2026-04-23-0800",
-      "locationId": "boras",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-04-23T08:00:00+02:00",
       "end": "2026-04-23T11:00:00+02:00",
@@ -7349,21 +7162,10 @@
       "status": "scheduled"
     },
     {
-      "id": "kungalv-p-2026-04-28-0800",
+      "id": "kungalv-bada-2026-04-28-0800",
       "locationId": "kungalv",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-04-28T08:00:00+02:00",
-      "end": "2026-04-28T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "kungalv-v-2026-04-28-0800",
-      "locationId": "kungalv",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-04-28T08:00:00+02:00",
       "end": "2026-04-28T11:00:00+02:00",
@@ -7547,21 +7349,10 @@
       "status": "scheduled"
     },
     {
-      "id": "uddevalla-p-2026-04-29-0800",
+      "id": "uddevalla-bada-2026-04-29-0800",
       "locationId": "uddevalla",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-04-29T08:00:00+02:00",
-      "end": "2026-04-29T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "uddevalla-v-2026-04-29-0800",
-      "locationId": "uddevalla",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-04-29T08:00:00+02:00",
       "end": "2026-04-29T11:00:00+02:00",
@@ -7734,21 +7525,10 @@
       "status": "scheduled"
     },
     {
-      "id": "boras-p-2026-04-30-0800",
+      "id": "boras-bada-2026-04-30-0800",
       "locationId": "boras",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-04-30T08:00:00+02:00",
-      "end": "2026-04-30T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "boras-v-2026-04-30-0800",
-      "locationId": "boras",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-04-30T08:00:00+02:00",
       "end": "2026-04-30T11:00:00+02:00",
@@ -8504,21 +8284,10 @@
       "status": "scheduled"
     },
     {
-      "id": "kungalv-p-2026-05-05-0800",
+      "id": "kungalv-bada-2026-05-05-0800",
       "locationId": "kungalv",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-05-05T08:00:00+02:00",
-      "end": "2026-05-05T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "kungalv-v-2026-05-05-0800",
-      "locationId": "kungalv",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-05-05T08:00:00+02:00",
       "end": "2026-05-05T11:00:00+02:00",
@@ -8735,21 +8504,10 @@
       "status": "scheduled"
     },
     {
-      "id": "uddevalla-p-2026-05-06-0800",
+      "id": "uddevalla-bada-2026-05-06-0800",
       "locationId": "uddevalla",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-05-06T08:00:00+02:00",
-      "end": "2026-05-06T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "uddevalla-v-2026-05-06-0800",
-      "locationId": "uddevalla",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-05-06T08:00:00+02:00",
       "end": "2026-05-06T11:00:00+02:00",
@@ -8988,21 +8746,10 @@
       "status": "scheduled"
     },
     {
-      "id": "boras-p-2026-05-07-0800",
+      "id": "boras-bada-2026-05-07-0800",
       "locationId": "boras",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-05-07T08:00:00+02:00",
-      "end": "2026-05-07T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "boras-v-2026-05-07-0800",
-      "locationId": "boras",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-05-07T08:00:00+02:00",
       "end": "2026-05-07T11:00:00+02:00",
@@ -9846,21 +9593,10 @@
       "status": "scheduled"
     },
     {
-      "id": "kungalv-p-2026-05-12-0800",
+      "id": "kungalv-bada-2026-05-12-0800",
       "locationId": "kungalv",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-05-12T08:00:00+02:00",
-      "end": "2026-05-12T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "kungalv-v-2026-05-12-0800",
-      "locationId": "kungalv",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-05-12T08:00:00+02:00",
       "end": "2026-05-12T11:00:00+02:00",
@@ -10055,21 +9791,10 @@
       "status": "scheduled"
     },
     {
-      "id": "uddevalla-p-2026-05-13-0800",
+      "id": "uddevalla-bada-2026-05-13-0800",
       "locationId": "uddevalla",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-05-13T08:00:00+02:00",
-      "end": "2026-05-13T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "uddevalla-v-2026-05-13-0800",
-      "locationId": "uddevalla",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-05-13T08:00:00+02:00",
       "end": "2026-05-13T11:00:00+02:00",
@@ -10748,21 +10473,10 @@
       "status": "scheduled"
     },
     {
-      "id": "kungalv-p-2026-05-19-0800",
+      "id": "kungalv-bada-2026-05-19-0800",
       "locationId": "kungalv",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-05-19T08:00:00+02:00",
-      "end": "2026-05-19T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "kungalv-v-2026-05-19-0800",
-      "locationId": "kungalv",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-05-19T08:00:00+02:00",
       "end": "2026-05-19T11:00:00+02:00",
@@ -10968,21 +10682,10 @@
       "status": "scheduled"
     },
     {
-      "id": "uddevalla-p-2026-05-20-0800",
+      "id": "uddevalla-bada-2026-05-20-0800",
       "locationId": "uddevalla",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-05-20T08:00:00+02:00",
-      "end": "2026-05-20T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "uddevalla-v-2026-05-20-0800",
-      "locationId": "uddevalla",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-05-20T08:00:00+02:00",
       "end": "2026-05-20T11:00:00+02:00",
@@ -11210,21 +10913,10 @@
       "status": "scheduled"
     },
     {
-      "id": "boras-p-2026-05-21-0800",
+      "id": "boras-bada-2026-05-21-0800",
       "locationId": "boras",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-05-21T08:00:00+02:00",
-      "end": "2026-05-21T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "boras-v-2026-05-21-0800",
-      "locationId": "boras",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-05-21T08:00:00+02:00",
       "end": "2026-05-21T11:00:00+02:00",
@@ -11947,21 +11639,10 @@
       "status": "scheduled"
     },
     {
-      "id": "kungalv-p-2026-05-26-0800",
+      "id": "kungalv-bada-2026-05-26-0800",
       "locationId": "kungalv",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-05-26T08:00:00+02:00",
-      "end": "2026-05-26T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "kungalv-v-2026-05-26-0800",
-      "locationId": "kungalv",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-05-26T08:00:00+02:00",
       "end": "2026-05-26T11:00:00+02:00",
@@ -12145,21 +11826,10 @@
       "status": "scheduled"
     },
     {
-      "id": "uddevalla-p-2026-05-27-0800",
+      "id": "uddevalla-bada-2026-05-27-0800",
       "locationId": "uddevalla",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-05-27T08:00:00+02:00",
-      "end": "2026-05-27T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "uddevalla-v-2026-05-27-0800",
-      "locationId": "uddevalla",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-05-27T08:00:00+02:00",
       "end": "2026-05-27T11:00:00+02:00",
@@ -12343,21 +12013,10 @@
       "status": "scheduled"
     },
     {
-      "id": "boras-p-2026-05-28-0800",
+      "id": "boras-bada-2026-05-28-0800",
       "locationId": "boras",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-05-28T08:00:00+02:00",
-      "end": "2026-05-28T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "boras-v-2026-05-28-0800",
-      "locationId": "boras",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-05-28T08:00:00+02:00",
       "end": "2026-05-28T11:00:00+02:00",
@@ -13146,21 +12805,10 @@
       "status": "scheduled"
     },
     {
-      "id": "kungalv-p-2026-06-02-0800",
+      "id": "kungalv-bada-2026-06-02-0800",
       "locationId": "kungalv",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-06-02T08:00:00+02:00",
-      "end": "2026-06-02T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "kungalv-v-2026-06-02-0800",
-      "locationId": "kungalv",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-06-02T08:00:00+02:00",
       "end": "2026-06-02T11:00:00+02:00",
@@ -13388,21 +13036,10 @@
       "status": "scheduled"
     },
     {
-      "id": "uddevalla-p-2026-06-03-0800",
+      "id": "uddevalla-bada-2026-06-03-0800",
       "locationId": "uddevalla",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-06-03T08:00:00+02:00",
-      "end": "2026-06-03T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "uddevalla-v-2026-06-03-0800",
-      "locationId": "uddevalla",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-06-03T08:00:00+02:00",
       "end": "2026-06-03T11:00:00+02:00",
@@ -13630,21 +13267,10 @@
       "status": "scheduled"
     },
     {
-      "id": "boras-p-2026-06-04-0800",
+      "id": "boras-bada-2026-06-04-0800",
       "locationId": "boras",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-06-04T08:00:00+02:00",
-      "end": "2026-06-04T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "boras-v-2026-06-04-0800",
-      "locationId": "boras",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-06-04T08:00:00+02:00",
       "end": "2026-06-04T11:00:00+02:00",
@@ -14400,21 +14026,10 @@
       "status": "scheduled"
     },
     {
-      "id": "kungalv-p-2026-06-09-0800",
+      "id": "kungalv-bada-2026-06-09-0800",
       "locationId": "kungalv",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-06-09T08:00:00+02:00",
-      "end": "2026-06-09T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "kungalv-v-2026-06-09-0800",
-      "locationId": "kungalv",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-06-09T08:00:00+02:00",
       "end": "2026-06-09T11:00:00+02:00",
@@ -14587,21 +14202,10 @@
       "status": "scheduled"
     },
     {
-      "id": "uddevalla-p-2026-06-10-0800",
+      "id": "uddevalla-bada-2026-06-10-0800",
       "locationId": "uddevalla",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-06-10T08:00:00+02:00",
-      "end": "2026-06-10T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "uddevalla-v-2026-06-10-0800",
-      "locationId": "uddevalla",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-06-10T08:00:00+02:00",
       "end": "2026-06-10T11:00:00+02:00",
@@ -14774,21 +14378,10 @@
       "status": "scheduled"
     },
     {
-      "id": "boras-p-2026-06-11-0800",
+      "id": "boras-bada-2026-06-11-0800",
       "locationId": "boras",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-06-11T08:00:00+02:00",
-      "end": "2026-06-11T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "boras-v-2026-06-11-0800",
-      "locationId": "boras",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-06-11T08:00:00+02:00",
       "end": "2026-06-11T11:00:00+02:00",
@@ -15588,21 +15181,10 @@
       "status": "scheduled"
     },
     {
-      "id": "kungalv-p-2026-06-16-0800",
+      "id": "kungalv-bada-2026-06-16-0800",
       "locationId": "kungalv",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-06-16T08:00:00+02:00",
-      "end": "2026-06-16T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "kungalv-v-2026-06-16-0800",
-      "locationId": "kungalv",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-06-16T08:00:00+02:00",
       "end": "2026-06-16T11:00:00+02:00",
@@ -15819,21 +15401,10 @@
       "status": "scheduled"
     },
     {
-      "id": "uddevalla-p-2026-06-17-0800",
+      "id": "uddevalla-bada-2026-06-17-0800",
       "locationId": "uddevalla",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-06-17T08:00:00+02:00",
-      "end": "2026-06-17T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "uddevalla-v-2026-06-17-0800",
-      "locationId": "uddevalla",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-06-17T08:00:00+02:00",
       "end": "2026-06-17T11:00:00+02:00",
@@ -16072,21 +15643,10 @@
       "status": "scheduled"
     },
     {
-      "id": "boras-p-2026-06-18-0800",
+      "id": "boras-bada-2026-06-18-0800",
       "locationId": "boras",
       "services": [
-        "provtagning"
-      ],
-      "start": "2026-06-18T08:00:00+02:00",
-      "end": "2026-06-18T11:00:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
-    },
-    {
-      "id": "boras-v-2026-06-18-0800",
-      "locationId": "boras",
-      "services": [
-        "vaccin"
+        "bada"
       ],
       "start": "2026-06-18T08:00:00+02:00",
       "end": "2026-06-18T11:00:00+02:00",
