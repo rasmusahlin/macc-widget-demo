@@ -601,9 +601,9 @@
       ],
       "lat": 56.6650447,
       "lon": 16.3431284,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/46/kalmar/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/46/kalmar/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/46/kalmar/",
+      "bookVaccinUrl": "https://www.maccpeople.se/17/198/kalmar/#bokning",
+      "bookProvtagningUrl": "https://www.maccpeople.se/17/198/kalmar/#bokning",
+      "readMoreUrl": "https://www.maccpeople.se/17/198/kalmar/",
       "searchTerms": [
         "kalmar",
         "stronger performance",
@@ -1032,8 +1032,7 @@
       "address": "Bifrostgatan 48",
       "region": "Västra Götaland",
       "services": [
-        "vaccin",
-        "provtagning"
+        "vaccin"
       ],
       "lat": 57.6511892,
       "lon": 11.9876548,
@@ -1934,6 +1933,32 @@
         "uddevalla rotvik",
         "rotvik",
         "45196"
+      ],
+      "active": true
+    },
+    {
+      "id": "boras-viared",
+      "name": "Borås Viared",
+      "city": "Borås",
+      "postalCode": "504 63",
+      "address": "Arken Zoo, Göteborgsvägen 187",
+      "region": "Västra Götaland",
+      "services": [
+        "vaccin"
+      ],
+      "lat": null,
+      "lon": null,
+      "bookVaccinUrl": "https://www.maccpeople.se/17/226/boras-viared/#bokning",
+      "bookProvtagningUrl": null,
+      "readMoreUrl": "https://www.maccpeople.se/17/226/boras-viared/",
+      "searchTerms": [
+        "borås",
+        "boras",
+        "viared",
+        "50463",
+        "arken zoo",
+        "göteborgsvägen",
+        "goteborgsvagen"
       ],
       "active": true
     }
