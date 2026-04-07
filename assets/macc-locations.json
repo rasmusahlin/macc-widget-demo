@@ -1935,32 +1935,6 @@
         "45196"
       ],
       "active": true
-    },
-    {
-      "id": "boras-viared",
-      "name": "Borås Viared",
-      "city": "Borås",
-      "postalCode": "504 63",
-      "address": "Arken Zoo, Göteborgsvägen 187",
-      "region": "Västra Götaland",
-      "services": [
-        "vaccin"
-      ],
-      "lat": 57.713257,
-      "lon": 12.865963,
-      "bookVaccinUrl": "https://www.maccpeople.se/17/226/boras-viared/#bokning",
-      "bookProvtagningUrl": "https://www.maccpeople.se/17/226/boras-viared/#bokning",
-      "readMoreUrl": "https://www.maccpeople.se/17/226/boras-viared/",
-      "searchTerms": [
-        "borås",
-        "boras",
-        "viared",
-        "50463",
-        "arken zoo",
-        "göteborgsvägen",
-        "goteborgsvagen"
-      ],
-      "active": true
     }
   ]
 }
