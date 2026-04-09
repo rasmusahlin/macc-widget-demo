@@ -108,7 +108,7 @@
     const hoursToNext = next ? Math.max(0, (next._start - n) / 36e5) : 9999;
     const distanceKm = center ? haversineKm(center.lat, center.lon, l.lat, l.lon) : null;
     const score = center ? (distanceKm ?? 999) : hoursToNext;
-    return { ...l, _distanceKm: distanceKm, _next: next, _upcomingStops: stopsForLoc.slice(0,8), _upcomingStopsTotal: stopsForLoc.length, _score: score };
+    return { ...l, _distanceKm: distanceKm, _next: next, _upcomingStops: stopsForLoc.slice(0,5), _upcomingStopsTotal: stopsForLoc.length, _score: score };
   }
 
   function rankLocations(forceAll = false) {
