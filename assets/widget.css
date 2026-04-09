@@ -427,12 +427,3 @@ body {
   .mw-accordion-cta { align-items: flex-start; }
   .mw-upcoming-item { flex-direction: column; gap: 2px; }
 }
-
-
-.mw-upcoming-right { display:flex; align-items:center; gap:8px; flex-shrink:0; }
-.mw-status { display:inline-flex; align-items:center; height:24px; padding:0 8px; border-radius:999px; font-size:11px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; }
-.mw-status--cancelled { background:#fdecee; color:#a51d2d; border:1px solid #f5c2c7; }
-.mw-upcoming-item--cancelled { background:#fff5f6; border-color:#f5cfd4; }
-.mw-upcoming-item--cancelled .mw-upcoming-date, .mw-upcoming-item--cancelled .mw-upcoming-time { color:#7a2a33; }
-.mw-upcoming-note { font-size:12px; color:#a51d2d; font-weight:700; }
-.mw-popup-cancelled { margin:-2px 0 10px; font-size:12px; color:#a51d2d; display:grid; gap:4px; }
