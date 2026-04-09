@@ -416,6 +416,9 @@ body {
 .mw-upcoming-item--empty { color: var(--mw-muted); }
 .mw-upcoming-date { font-weight: 700; }
 .mw-upcoming-time { color: var(--mw-muted); font-weight: 600; }
+.mw-upcoming-item--grouped { align-items: flex-start; }
+.mw-upcoming-group-times { display: grid; gap: 8px; flex: 1; width: 100%; }
+.mw-upcoming-slot { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .mw-popup-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 .mw-popup-actions button, .mw-popup-actions a { appearance: none; border: 1px solid var(--mw-border); background: #fff; color: var(--mw-primary); padding: 8px 10px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; cursor: pointer; }
 .mw-popup-actions a:first-child { background: var(--mw-primary); color: #fff; border-color: var(--mw-primary); }
