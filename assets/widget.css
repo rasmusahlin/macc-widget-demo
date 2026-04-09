@@ -427,3 +427,26 @@ body {
   .mw-accordion-cta { align-items: flex-start; }
   .mw-upcoming-item { flex-direction: column; gap: 2px; }
 }
+
+
+.mw-badge--cancelled {
+  background: #fff1f2;
+  color: #b42318;
+  border: 1px solid #f3b7bd;
+}
+
+.mw-next--cancelled {
+  background: #fff8f8;
+  border-color: #f3d0d4;
+}
+
+.mw-upcoming-item--cancelled {
+  background: #fff8f8;
+  border-color: #f3d0d4;
+}
+
+.mw-upcoming-item--cancelled .mw-upcoming-date,
+.mw-upcoming-item--cancelled .mw-upcoming-time {
+  color: #8a2d35;
+  text-decoration: line-through;
+}

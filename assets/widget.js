@@ -37,6 +37,11 @@
     return `<span class="mw-badge mw-badge--${key}">${servicePill(key)}</span>`;
   }
 
+  function stopStatusBadge(status = 'scheduled') {
+    if (status !== 'cancelled') return '';
+    return `<span class="mw-badge mw-badge--cancelled">Inställt</span>`;
+  }
+
   function now() { return new Date(); }
   function fmtDateLine(start) { return fmtDate.format(start).replace('.', ''); }
   function fmtTimeLine(start, end) { return `kl ${fmtTime.format(start)}–${fmtTime.format(end)}`; }
@@ -64,6 +69,15 @@
     const n = now();
     return stops
       .filter(s => s.locationId === locId && s.status === 'scheduled' && stopMatchesFilter(s.services || []))
+      .map(s => ({ ...s, _start: new Date(s.start), _end: new Date(s.end) }))
+      .filter(s => s._end >= n)
+      .sort((a, b) => a._start - b._start);
+  }
+
+  function getUpcomingStops(locId) {
+    const n = now();
+    return stops
+      .filter(s => s.locationId === locId && ['scheduled', 'cancelled'].includes(s.status) && stopMatchesFilter(s.services || []))
       .map(s => ({ ...s, _start: new Date(s.start), _end: new Date(s.end) }))
       .filter(s => s._end >= n)
       .sort((a, b) => a._start - b._start);
@@ -103,12 +117,13 @@
   function getRankCenter() { return state.mapCenter || state.searchPoint; }
 
   function enrichLocation(l, center, n = now()) {
-    const stopsForLoc = getRelevantStops(l.id);
-    const next = stopsForLoc[0] || null;
+    const scheduledStops = getRelevantStops(l.id);
+    const upcomingStops = getUpcomingStops(l.id);
+    const next = scheduledStops[0] || null;
     const hoursToNext = next ? Math.max(0, (next._start - n) / 36e5) : 9999;
     const distanceKm = center ? haversineKm(center.lat, center.lon, l.lat, l.lon) : null;
     const score = center ? (distanceKm ?? 999) : hoursToNext;
-    return { ...l, _distanceKm: distanceKm, _next: next, _upcomingStops: stopsForLoc.slice(0,5), _score: score };
+    return { ...l, _distanceKm: distanceKm, _next: next, _upcomingStops: upcomingStops.slice(0,5), _score: score };
   }
 
   function rankLocations(forceAll = false) {
@@ -180,13 +195,16 @@
     const addressHtml = loc.address ? `<div class="mw-card-address">${esc(loc.address)}</div>` : '';
     const svcBadges = (loc.services || []).filter(s => s !== 'bada').map(s => `<span class="mw-badge mw-badge--${s}">${servicePill(s)}</span>`).join('');
 
+    const firstUpcoming = loc._upcomingStops[0] || null;
     const nextHtml = loc._next
       ? `<div class="mw-next"><div class="mw-next-label">Nästa öppettid</div><div class="mw-next-service">${stopServiceBadge(loc._next.services)}</div><div class="mw-next-main">${esc(fmtDateLine(loc._next._start))}</div><div class="mw-next-sub">${esc(fmtTimeLine(loc._next._start, loc._next._end))}</div></div>`
-      : `<div class="mw-next mw-next--empty"><div class="mw-next-label">Nästa öppettid</div><div class="mw-next-main">Ingen planerad tid just nu</div></div>`;
+      : firstUpcoming && firstUpcoming.status === 'cancelled'
+        ? `<div class="mw-next mw-next--cancelled"><div class="mw-next-label">Närmaste tid</div><div class="mw-next-service">${stopStatusBadge(firstUpcoming.status)}${stopServiceBadge(firstUpcoming.services)}</div><div class="mw-next-main">${esc(fmtDateLine(firstUpcoming._start))}</div><div class="mw-next-sub">${esc(fmtTimeLine(firstUpcoming._start, firstUpcoming._end))}</div></div>`
+        : `<div class="mw-next mw-next--empty"><div class="mw-next-label">Nästa öppettid</div><div class="mw-next-main">Ingen planerad tid just nu</div></div>`;
 
     const countText = loc._upcomingStops.length ? `${loc._upcomingStops.length} kommande tider` : 'Inga kommande tider';
     const detailRows = loc._upcomingStops.length
-      ? loc._upcomingStops.map(s => `<li class="mw-upcoming-item"><div class="mw-upcoming-primary"><span class="mw-upcoming-date">${esc(fmtDateLine(s._start))}</span><span class="mw-upcoming-time">${esc(fmtTimeLine(s._start, s._end))}</span></div><div class="mw-upcoming-service">${stopServiceBadge(s.services)}</div></li>`).join('')
+      ? loc._upcomingStops.map(s => `<li class="mw-upcoming-item${s.status === 'cancelled' ? ' mw-upcoming-item--cancelled' : ''}"><div class="mw-upcoming-primary"><span class="mw-upcoming-date">${esc(fmtDateLine(s._start))}</span><span class="mw-upcoming-time">${esc(fmtTimeLine(s._start, s._end))}</span></div><div class="mw-upcoming-service">${stopStatusBadge(s.status)}${stopServiceBadge(s.services)}</div></li>`).join('')
       : `<li class="mw-upcoming-item mw-upcoming-item--empty">Ingen planerad tid just nu.</li>`;
 
     return `<article class="mw-card${expanded ? ' is-expanded' : ''}" data-location-id="${esc(loc.id)}"><button class="mw-card-toggle" type="button" data-toggle-card="${esc(loc.id)}" aria-expanded="${expanded ? 'true' : 'false'}"><div class="mw-card-top"><div class="mw-card-title-wrap"><h3 class="mw-card-title">${esc(loc.name)}</h3>${addressHtml}<div class="mw-card-meta">${distHtml}<div class="mw-badges">${svcBadges}</div></div></div><div class="mw-card-right">${nextHtml}<div class="mw-accordion-cta">${expanded ? 'Dölj tider' : 'Visa fler tider'}<span class="mw-accordion-count">${esc(countText)}</span></div></div></div></button><div class="mw-card-inline-actions">${buildQuickActions(loc)}</div><div class="mw-card-details"${expanded ? '' : ' hidden'}><div class="mw-card-details-inner"><div class="mw-upcoming-block"><div class="mw-upcoming-title">Kommande tider</div><ul class="mw-upcoming-list">${detailRows}</ul></div></div></div></article>`;
