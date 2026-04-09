@@ -38,6 +38,14 @@
     return `<span class="mw-badge mw-badge--${key}">${servicePill(key)}</span>`;
   }
 
+  function getDisplayNote(stop) {
+    if (!stop || stop.status === 'cancelled') return '';
+    const service = normalizeStopService(stop.services || []);
+    if (service === 'provtagning') return 'Drop-in i mån av tid erbjuds under öppettiderna.';
+    if (service === 'vaccin' || service === 'bada') return 'Välkommen på drop-in eller tidsbokning!';
+    return '';
+  }
+
   function now() { return new Date(); }
   function fmtDateLine(start) { return fmtDate.format(start).replace('.', ''); }
   function fmtTimeLine(start, end) { return `kl ${fmtTime.format(start)}–${fmtTime.format(end)}`; }
@@ -199,7 +207,8 @@
     const detailRows = displayStops.length
       ? displayStops.map(s => {
           const statusHtml = s.status === 'cancelled' ? `<span class="mw-status mw-status--cancelled">${esc(statusLabel(s.status))}</span>` : '';
-          const noteHtml = s.status === 'cancelled' || s.displayNote ? `<span class="mw-upcoming-note">${esc(s.status === 'cancelled' ? (s.displayNote || 'Inställt') : s.displayNote || '')}</span>` : '';
+          const note = getDisplayNote(s);
+          const noteHtml = note ? `<span class="mw-upcoming-note">${esc(note)}</span>` : '';
           return `<li class="mw-upcoming-item${s.status === 'cancelled' ? ' mw-upcoming-item--cancelled' : ''}"><div class="mw-upcoming-primary"><span class="mw-upcoming-date">${esc(fmtDateLine(s._start))}</span><span class="mw-upcoming-time">${esc(fmtTimeLine(s._start, s._end))}</span>${noteHtml}</div><div class="mw-upcoming-right">${statusHtml}<div class="mw-upcoming-service">${stopServiceBadge(s.services)}</div></div></li>`;
         }).join('')
       : `<li class="mw-upcoming-item mw-upcoming-item--empty">Ingen planerad tid just nu.</li>`;
