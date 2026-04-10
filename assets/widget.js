@@ -105,12 +105,13 @@
 
   function enrichLocation(l, center, n = now()) {
     const stopsForLoc = getRelevantStops(l.id);
-    const next = stopsForLoc[0] || null;
-    const hoursToNext = next ? Math.max(0, (next._start - n) / 36e5) : 9999;
+    const nextScheduled = stopsForLoc.find(s => s.status === 'scheduled') || null;
+    const hoursToNext = nextScheduled ? Math.max(0, (nextScheduled._start - n) / 36e5) : 9999;
     const distanceKm = center ? haversineKm(center.lat, center.lon, l.lat, l.lon) : null;
     const score = center ? (distanceKm ?? 999) : hoursToNext;
     const limit = state.showAllStopsIds.has(l.id) ? stopsForLoc.length : 5;
-    return { ...l, _distanceKm: distanceKm, _next: next, _upcomingStops: stopsForLoc.slice(0,limit), _upcomingStopsTotal: stopsForLoc.length, _score: score };
+    const hasCancelledSoon = stopsForLoc.slice(0, limit).some(s => s.status === 'cancelled');
+    return { ...l, _distanceKm: distanceKm, _next: nextScheduled, _upcomingStops: stopsForLoc.slice(0,limit), _upcomingStopsTotal: stopsForLoc.length, _score: score, _hasCancelledSoon: hasCancelledSoon };
   }
 
   function rankLocations(forceAll = false) {
@@ -149,7 +150,7 @@
   }
 
   function buildQuickActions(loc) {
-    const hasNext = loc._upcomingStops.length > 0;
+    const hasNext = loc._upcomingStops.some(s => s.status !== 'cancelled');
     const hasVaccin = (loc.services || []).includes('vaccin') || (loc.services || []).includes('bada');
     const hasProv   = (loc.services || []).includes('provtagning') || (loc.services || []).includes('bada');
 
@@ -183,6 +184,10 @@
     const svcBadges = (loc.services || []).filter(s => s !== 'bada').map(s => `<span class="mw-badge mw-badge--${s}">${servicePill(s)}</span>`).join('');
 
     const nextScheduled = loc._upcomingStops.find(s => s.status !== 'cancelled') || null;
+    const cancelledSoon = loc._upcomingStops.filter(s => s.status === 'cancelled');
+    const cancelledBanner = cancelledSoon.length
+      ? `<div class="mw-cancelled-banner">⚠️ <strong>Inställt:</strong> ${cancelledSoon.map(s => esc(fmtDateLine(s._start))).join(', ')}</div>`
+      : '';
     const nextHtml = nextScheduled
       ? `<div class="mw-next"><div class="mw-next-label">Nästa öppettid</div><div class="mw-next-service">${stopServiceBadge(nextScheduled.services)}</div><div class="mw-next-main">${esc(fmtDateLine(nextScheduled._start))}</div><div class="mw-next-sub">${esc(fmtTimeLine(nextScheduled._start, nextScheduled._end))}</div></div>`
       : `<div class="mw-next mw-next--empty"><div class="mw-next-label">Nästa öppettid</div><div class="mw-next-main">Ingen planerad tid just nu</div></div>`;
@@ -198,7 +203,7 @@
       : `<li class="mw-upcoming-item mw-upcoming-item--empty">Ingen planerad tid just nu.</li>`;
     const showAllBtn = hasMore ? `<button class="mw-btn mw-btn--ghost" style="margin-top:8px;width:100%;font-size:13px;" type="button" data-show-all-stops="${esc(loc.id)}">Visa alla ${loc._upcomingStopsTotal} tider</button>` : '';
 
-    return `<article class="mw-card${expanded ? ' is-expanded' : ''}" data-location-id="${esc(loc.id)}"><button class="mw-card-toggle" type="button" data-toggle-card="${esc(loc.id)}" aria-expanded="${expanded ? 'true' : 'false'}"><div class="mw-card-top"><div class="mw-card-title-wrap"><h3 class="mw-card-title">${esc(loc.name)}</h3>${addressHtml}<div class="mw-card-meta">${distHtml}<div class="mw-badges">${svcBadges}</div></div></div><div class="mw-card-right">${nextHtml}<div class="mw-accordion-cta">${expanded ? 'Dölj tider' : 'Visa fler tider'}<span class="mw-accordion-count">${esc(countText)}</span></div></div></div></button><div class="mw-card-inline-actions">${buildQuickActions(loc)}</div><div class="mw-card-details"${expanded ? '' : ' hidden'}><div class="mw-card-details-inner"><div class="mw-upcoming-block"><div class="mw-upcoming-title">Kommande tider</div><ul class="mw-upcoming-list">${detailRows}</ul>${showAllBtn}</div></div></div></article>`;
+    return `<article class="mw-card${expanded ? ' is-expanded' : ''}" data-location-id="${esc(loc.id)}"><button class="mw-card-toggle" type="button" data-toggle-card="${esc(loc.id)}" aria-expanded="${expanded ? 'true' : 'false'}"><div class="mw-card-top"><div class="mw-card-title-wrap"><h3 class="mw-card-title">${esc(loc.name)}</h3>${addressHtml}<div class="mw-card-meta">${distHtml}<div class="mw-badges">${svcBadges}</div></div></div><div class="mw-card-right">${nextHtml}<div class="mw-accordion-cta">${expanded ? 'Dölj tider' : 'Visa fler tider'}<span class="mw-accordion-count">${esc(countText)}</span></div></div></div></button><div class="mw-card-inline-actions">${buildQuickActions(loc)}</div>${cancelledBanner}<div class="mw-card-details"${expanded ? '' : ' hidden'}><div class="mw-card-details-inner"><div class="mw-upcoming-block"><div class="mw-upcoming-title">Kommande tider</div><ul class="mw-upcoming-list">${detailRows}</ul>${showAllBtn}</div></div></div></article>`;
   }
 
   function popupHtml(loc) {

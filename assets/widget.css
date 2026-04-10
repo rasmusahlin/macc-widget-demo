@@ -445,3 +445,19 @@ body {
   color: var(--mw-accent);
   font-weight: 700;
 }
+
+/* ── Cancelled banner (synlig direkt på kortet) ── */
+.mw-cancelled-banner {
+  margin: 0 18px 14px;
+  padding: 10px 14px;
+  background: #fff0f1;
+  border: 1.5px solid #f5c2c7;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #a0001a;
+  line-height: 1.4;
+}
+.mw-cancelled-banner strong {
+  font-weight: 800;
+}
