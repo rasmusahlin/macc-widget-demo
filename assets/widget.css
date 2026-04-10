@@ -430,3 +430,18 @@ body {
   .mw-accordion-cta { align-items: flex-start; }
   .mw-upcoming-item { flex-direction: column; gap: 2px; }
 }
+
+/* ── Cancelled stop ── */
+.mw-upcoming-item--cancelled {
+  background: #fff5f5;
+  border-color: #f5c2c7;
+  opacity: .85;
+}
+.mw-upcoming-item--cancelled .mw-upcoming-date {
+  text-decoration: line-through;
+  color: var(--mw-muted);
+}
+.mw-upcoming-item--cancelled .mw-upcoming-time {
+  color: var(--mw-accent);
+  font-weight: 700;
+}

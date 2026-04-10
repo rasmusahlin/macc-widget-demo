@@ -64,7 +64,7 @@
   function getRelevantStops(locId) {
     const n = now();
     return stops
-      .filter(s => s.locationId === locId && s.status === 'scheduled' && stopMatchesFilter(s.services || []))
+      .filter(s => s.locationId === locId && (s.status === 'scheduled' || s.status === 'cancelled') && stopMatchesFilter(s.services || []))
       .map(s => ({ ...s, _start: new Date(s.start), _end: new Date(s.end) }))
       .filter(s => s._end >= n)
       .sort((a, b) => a._start - b._start);
@@ -182,15 +182,19 @@
     const addressHtml = loc.address ? `<div class="mw-card-address">${esc(loc.address)}</div>` : '';
     const svcBadges = (loc.services || []).filter(s => s !== 'bada').map(s => `<span class="mw-badge mw-badge--${s}">${servicePill(s)}</span>`).join('');
 
-    const nextHtml = loc._next
-      ? `<div class="mw-next"><div class="mw-next-label">Nästa öppettid</div><div class="mw-next-service">${stopServiceBadge(loc._next.services)}</div><div class="mw-next-main">${esc(fmtDateLine(loc._next._start))}</div><div class="mw-next-sub">${esc(fmtTimeLine(loc._next._start, loc._next._end))}</div></div>`
+    const nextScheduled = loc._upcomingStops.find(s => s.status !== 'cancelled') || null;
+    const nextHtml = nextScheduled
+      ? `<div class="mw-next"><div class="mw-next-label">Nästa öppettid</div><div class="mw-next-service">${stopServiceBadge(nextScheduled.services)}</div><div class="mw-next-main">${esc(fmtDateLine(nextScheduled._start))}</div><div class="mw-next-sub">${esc(fmtTimeLine(nextScheduled._start, nextScheduled._end))}</div></div>`
       : `<div class="mw-next mw-next--empty"><div class="mw-next-label">Nästa öppettid</div><div class="mw-next-main">Ingen planerad tid just nu</div></div>`;
 
     const showingAll = state.showAllStopsIds.has(loc.id);
     const hasMore = !showingAll && loc._upcomingStopsTotal > loc._upcomingStops.length;
     const countText = loc._upcomingStopsTotal ? (hasMore ? `${loc._upcomingStops.length} av ${loc._upcomingStopsTotal} tider` : `${loc._upcomingStopsTotal} kommande tider`) : 'Inga kommande tider';
     const detailRows = loc._upcomingStops.length
-      ? loc._upcomingStops.map(s => `<li class="mw-upcoming-item"><div class="mw-upcoming-primary"><span class="mw-upcoming-date">${esc(fmtDateLine(s._start))}</span><span class="mw-upcoming-time">${esc(fmtTimeLine(s._start, s._end))}</span></div><div class="mw-upcoming-service">${stopServiceBadge(s.services)}</div></li>`).join('')
+      ? loc._upcomingStops.map(s => {
+          const isCancelled = s.status === 'cancelled';
+          return `<li class="mw-upcoming-item${isCancelled ? ' mw-upcoming-item--cancelled' : ''}"><div class="mw-upcoming-primary"><span class="mw-upcoming-date">${esc(fmtDateLine(s._start))}</span><span class="mw-upcoming-time">${isCancelled ? '⚠️ Inställt' : esc(fmtTimeLine(s._start, s._end))}</span></div><div class="mw-upcoming-service">${stopServiceBadge(s.services)}</div></li>`;
+        }).join('')
       : `<li class="mw-upcoming-item mw-upcoming-item--empty">Ingen planerad tid just nu.</li>`;
     const showAllBtn = hasMore ? `<button class="mw-btn mw-btn--ghost" style="margin-top:8px;width:100%;font-size:13px;" type="button" data-show-all-stops="${esc(loc.id)}">Visa alla ${loc._upcomingStopsTotal} tider</button>` : '';
 
