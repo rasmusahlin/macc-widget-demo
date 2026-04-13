@@ -4804,8 +4804,8 @@
       ],
       "start": "2026-04-13T15:00:00+02:00",
       "end": "2026-04-13T18:30:00+02:00",
-      "displayNote": "Drop-in i mån av tid erbjuds under öppettiderna.",
-      "status": "scheduled"
+      "displayNote": "Inställt",
+      "status": "cancelled"
     },
     {
       "id": "boras-v-2026-04-13-1500",

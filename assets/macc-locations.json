@@ -2,7 +2,7 @@
   "locations": [
     {
       "id": "ale",
-      "name": "Ale",
+      "name": "Ale Torg",
       "city": "Nödinge",
       "postalCode": "449 31",
       "address": "Ale Torg 7, Blomsterriket/Cederleüfs",
@@ -29,7 +29,7 @@
     },
     {
       "id": "alingsas",
-      "name": "Alingsås",
+      "name": "Alingsås Stora torget",
       "city": "Alingsås",
       "postalCode": "441 30",
       "address": "Stora torget",
@@ -47,13 +47,15 @@
         "alingsås",
         "alingsas",
         "44130",
-        "stora torget"
+        "stora torget",
+        "alingsås stora torget",
+        "alingsas stora torget"
       ],
       "active": true
     },
     {
       "id": "angelholm",
-      "name": "Ängelholm",
+      "name": "Ängelholm Valhall",
       "city": "Ängelholm",
       "postalCode": "262 75",
       "address": "Stjernsvärds Allé 59",
@@ -71,13 +73,15 @@
         "ängelholm",
         "angelholm",
         "stjernsvärds allé",
-        "stjernsvards alle"
+        "stjernsvards alle",
+        "ängelholm valhall",
+        "angelholm valhall"
       ],
       "active": true
     },
     {
       "id": "bara",
-      "name": "Bara",
+      "name": "Bara Värbytorget",
       "city": "Bara",
       "postalCode": "233 61",
       "address": "Värbytorget, Torggatan 24",
@@ -96,13 +100,15 @@
         "23361",
         "värbytorget",
         "varbytorget",
-        "torggatan"
+        "torggatan",
+        "bara värbytorget",
+        "bara varbytorget"
       ],
       "active": true
     },
     {
       "id": "bastad",
-      "name": "Båstad",
+      "name": "Båstad Torget",
       "city": "Båstad",
       "postalCode": "269 33",
       "address": "Torget",
@@ -120,13 +126,15 @@
         "båstad",
         "bastad",
         "26933",
-        "torget"
+        "torget",
+        "båstad torget",
+        "bastad torget"
       ],
       "active": true
     },
     {
       "id": "bjarnum",
-      "name": "Bjärnum",
+      "name": "Bjärnum ICA Supermarket",
       "city": "Bjärnum",
       "postalCode": "282 61",
       "address": "Järnvägsgatan 2",
@@ -145,13 +153,15 @@
         "bjarnum",
         "28261",
         "järnvägsgatan",
-        "jarnvagsgatan"
+        "jarnvagsgatan",
+        "bjärnum ica supermarket",
+        "bjarnum ica supermarket"
       ],
       "active": true
     },
     {
       "id": "bjuv",
-      "name": "Bjuv",
+      "name": "Bjuv Coop",
       "city": "Bjuv",
       "postalCode": "",
       "address": "Norra Storgatan 20",
@@ -168,13 +178,14 @@
       "searchTerms": [
         "bjuv",
         "norra storgatan",
-        "coop"
+        "coop",
+        "bjuv coop"
       ],
       "active": true
     },
     {
       "id": "bollebygd",
-      "name": "Bollebygd",
+      "name": "Bollebygd Alfredssons Blommor",
       "city": "Bollebygd",
       "postalCode": "517 91",
       "address": "Rävlandavägen 33",
@@ -192,7 +203,8 @@
         "bollebygd",
         "51791",
         "rävlandavägen",
-        "ravlandavagen"
+        "ravlandavagen",
+        "bollebygd alfredssons blommor"
       ],
       "active": true
     },
@@ -219,7 +231,9 @@
         "allégatan",
         "allegatan",
         "högskolan",
-        "hogskolaan"
+        "hogskolaan",
+        "borås högskolan",
+        "boras hogskolan"
       ],
       "active": true
     },
@@ -243,7 +257,9 @@
         "boras",
         "50750",
         "hulta",
-        "hultagatan"
+        "hultagatan",
+        "borås hulta",
+        "boras hulta"
       ],
       "active": true
     },
@@ -269,13 +285,15 @@
         "50630",
         "knalleland",
         "ålgårdsvägen",
-        "algardsvagen"
+        "algardsvagen",
+        "borås knalleland",
+        "boras knalleland"
       ],
       "active": true
     },
     {
       "id": "broby",
-      "name": "Broby",
+      "name": "Broby Coop",
       "city": "Broby",
       "postalCode": "",
       "address": "Östra Järnvägsgatan 7, Coop",
@@ -293,13 +311,14 @@
         "broby",
         "östra järnvägsgatan",
         "ostra jarnvagsgatan",
-        "coop"
+        "coop",
+        "broby coop"
       ],
       "active": true
     },
     {
       "id": "bromolla",
-      "name": "Bromölla",
+      "name": "Bromölla Ifötorget",
       "city": "Bromölla",
       "postalCode": "295 31",
       "address": "Ifötorget",
@@ -318,13 +337,15 @@
         "bromolla",
         "29531",
         "ifötorget",
-        "ifotorget"
+        "ifotorget",
+        "bromölla ifötorget",
+        "bromolla ifotorget"
       ],
       "active": true
     },
     {
       "id": "eslov",
-      "name": "Eslöv",
+      "name": "Eslöv Stora torg",
       "city": "Eslöv",
       "postalCode": "241 30",
       "address": "Stora torg",
@@ -343,13 +364,15 @@
         "eslov",
         "24130",
         "stora torg",
-        "stortorg"
+        "stortorg",
+        "eslöv stora torg",
+        "eslov stora torg"
       ],
       "active": true
     },
     {
       "id": "gislaved",
-      "name": "Gislaved",
+      "name": "Gislaved Elgiganten",
       "city": "Gislaved",
       "postalCode": "332 38",
       "address": "Ljungvägen 27",
@@ -367,13 +390,14 @@
         "gislaved",
         "33238",
         "ljungvägen",
-        "ljungvagen"
+        "ljungvagen",
+        "gislaved elgiganten"
       ],
       "active": true
     },
     {
       "id": "grebbestad",
-      "name": "Grebbestad",
+      "name": "Grebbestad ICA Hamnplan",
       "city": "Grebbestad",
       "postalCode": "457 72",
       "address": "Hamnplan",
@@ -390,13 +414,14 @@
       "searchTerms": [
         "grebbestad",
         "45772",
-        "hamnplan"
+        "hamnplan",
+        "grebbestad ica hamnplan"
       ],
       "active": true
     },
     {
       "id": "halmstad",
-      "name": "Halmstad",
+      "name": "Halmstad Actic Simhallsbadet",
       "city": "Halmstad",
       "postalCode": "302 32",
       "address": "Actic Simhallsbadet, Karlsbergsvägen 2A",
@@ -415,13 +440,14 @@
         "actic",
         "simhallsbadet",
         "karlsbergsvägen",
-        "karlsbergsvagen"
+        "karlsbergsvagen",
+        "halmstad actic simhallsbadet"
       ],
       "active": true
     },
     {
       "id": "hassleholm",
-      "name": "Hässleholm",
+      "name": "Hässleholm Stortorget",
       "city": "Hässleholm",
       "postalCode": "281 30",
       "address": "Frykholmsgatan 13",
@@ -440,13 +466,15 @@
         "hassleholm",
         "centrum",
         "stortorget",
-        "statt hotell"
+        "statt hotell",
+        "hässleholm stortorget",
+        "hassleholm stortorget"
       ],
       "active": true
     },
     {
       "id": "helsingborg",
-      "name": "Helsingborg",
+      "name": "Helsingborg Filborna Arena",
       "city": "Helsingborg",
       "postalCode": "256 61",
       "address": "Filborna Arena, Filbornavägen 105",
@@ -465,7 +493,8 @@
         "25661",
         "filborna arena",
         "filbornavägen",
-        "filbornavagen"
+        "filbornavagen",
+        "helsingborg filborna arena"
       ],
       "active": true
     },
@@ -488,13 +517,14 @@
         "helsingborg",
         "fria bad",
         "25433",
-        "drottninggatan"
+        "drottninggatan",
+        "helsingborg fria bad"
       ],
       "active": true
     },
     {
       "id": "herrljunga",
-      "name": "Herrljunga",
+      "name": "Herrljunga ICA Supermarket",
       "city": "Herrljunga",
       "postalCode": "524 30",
       "address": "Magasinsgatan 6",
@@ -510,13 +540,14 @@
       "searchTerms": [
         "herrljunga",
         "52430",
-        "magasinsgatan"
+        "magasinsgatan",
+        "herrljunga ica supermarket"
       ],
       "active": true
     },
     {
       "id": "hoganas",
-      "name": "Höganäs",
+      "name": "Höganäs Kyrkplatsen",
       "city": "Höganäs",
       "postalCode": "263 31",
       "address": "Kyrkplatsen",
@@ -535,13 +566,15 @@
         "hoganas",
         "26339",
         "sundstorget",
-        "kyrkplatsen"
+        "kyrkplatsen",
+        "höganäs kyrkplatsen",
+        "hoganas kyrkplatsen"
       ],
       "active": true
     },
     {
       "id": "hoor",
-      "name": "Höör",
+      "name": "Höör Coop",
       "city": "Höör",
       "postalCode": "243 30",
       "address": "Mejerigatan 2, Coop",
@@ -560,13 +593,15 @@
         "hoor",
         "24330",
         "mejerigatan",
-        "coop"
+        "coop",
+        "höör coop",
+        "hoor coop"
       ],
       "active": true
     },
     {
       "id": "horby",
-      "name": "Hörby",
+      "name": "Hörby Gamla torg",
       "city": "Hörby",
       "postalCode": "242 31",
       "address": "Gamla torget",
@@ -584,13 +619,15 @@
         "hörby",
         "horby",
         "24231",
-        "gamla torget"
+        "gamla torget",
+        "hörby gamla torg",
+        "horby gamla torg"
       ],
       "active": true
     },
     {
       "id": "kalmar",
-      "name": "Kalmar",
+      "name": "Kalmar Stronger Performance",
       "city": "Kalmar",
       "postalCode": "392 39",
       "address": "Lorensbergsleden 3",
@@ -607,13 +644,14 @@
       "searchTerms": [
         "kalmar",
         "stronger performance",
-        "lorensbergsleden"
+        "lorensbergsleden",
+        "kalmar stronger performance"
       ],
       "active": true
     },
     {
       "id": "klippan",
-      "name": "Klippan",
+      "name": "Klippan Hembygdsgatan",
       "city": "Klippan",
       "postalCode": "264 36",
       "address": "Hembygdsgatan 2",
@@ -630,13 +668,14 @@
       "searchTerms": [
         "klippan",
         "26436",
-        "hembygdsgatan"
+        "hembygdsgatan",
+        "klippan hembygdsgatan"
       ],
       "active": true
     },
     {
       "id": "kristianstad",
-      "name": "Kristianstad",
+      "name": "Kristianstad Bilcentrum",
       "city": "Kristianstad",
       "postalCode": "291 54",
       "address": "Snapphanevägen",
@@ -654,7 +693,8 @@
         "kristianstad",
         "bilcentrum",
         "snapphanevägen",
-        "snapphanevagen"
+        "snapphanevagen",
+        "kristianstad bilcentrum"
       ],
       "active": true
     },
@@ -686,7 +726,7 @@
     },
     {
       "id": "kungsbacka",
-      "name": "Kungsbacka",
+      "name": "Kungsbacka Lindens torg",
       "city": "Kungsbacka",
       "postalCode": "434 30",
       "address": "Lindens torg",
@@ -703,13 +743,14 @@
       "searchTerms": [
         "kungsbacka",
         "43430",
-        "lindens torg"
+        "lindens torg",
+        "kungsbacka lindens torg"
       ],
       "active": true
     },
     {
       "id": "landskrona",
-      "name": "Landskrona",
+      "name": "Landskrona Burger King",
       "city": "Landskrona",
       "postalCode": "261 51",
       "address": "Österleden 180",
@@ -728,13 +769,14 @@
         "österleden",
         "osterleden",
         "burger king",
-        "26151"
+        "26151",
+        "landskrona burger king"
       ],
       "active": true
     },
     {
       "id": "landvetter",
-      "name": "Landvetter",
+      "name": "Landvetter Centrum",
       "city": "Landvetter",
       "postalCode": "438 32",
       "address": "Landvetter Centrum, Brattåsvägen",
@@ -759,7 +801,7 @@
     },
     {
       "id": "lerum",
-      "name": "Lerum",
+      "name": "Lerum ICA Servett",
       "city": "Lerum",
       "postalCode": "443 39",
       "address": "Almekärrsvägen 11",
@@ -778,13 +820,14 @@
         "44339",
         "almekärrsvägen",
         "almekarrsvagen",
-        "ica supermarket"
+        "ica supermarket",
+        "lerum ica servett"
       ],
       "active": true
     },
     {
       "id": "lilla-edet",
-      "name": "Lilla Edet",
+      "name": "Lilla Edet ICA Supermarket",
       "city": "Lilla Edet",
       "postalCode": "463 30",
       "address": "Göteborgsvägen 49",
@@ -800,13 +843,14 @@
       "readMoreUrl": "https://www.maccpeople.se/17/128/lilla-edet/",
       "searchTerms": [
         "lilla edet",
-        "lilla-edet"
+        "lilla-edet",
+        "lilla edet ica supermarket"
       ],
       "active": true
     },
     {
       "id": "limhamn",
-      "name": "Limhamn",
+      "name": "Limhamn Colorama",
       "city": "Limhamn",
       "postalCode": "216 15",
       "address": "Linnégatan 85, vid Liljekvist Bilverkstad",
@@ -824,13 +868,14 @@
         "21615",
         "linnégatan",
         "linnegatan",
-        "liljekvist bilverkstad"
+        "liljekvist bilverkstad",
+        "limhamn colorama"
       ],
       "active": true
     },
     {
       "id": "ljungbyhed",
-      "name": "Ljungbyhed",
+      "name": "Ljungbyhed Storgatan",
       "city": "Ljungbyhed",
       "postalCode": "264 52",
       "address": "Storgatan 4",
@@ -846,13 +891,14 @@
       "searchTerms": [
         "ljungbyhed",
         "26452",
-        "storgatan"
+        "storgatan",
+        "ljungbyhed storgatan"
       ],
       "active": true
     },
     {
       "id": "loddekopinge",
-      "name": "Löddeköpinge",
+      "name": "Löddeköpinge Max parkering",
       "city": "Löddeköpinge",
       "postalCode": "246 42",
       "address": "Handelsvägen 1, Max Parkering",
@@ -872,7 +918,9 @@
         "24642",
         "handelsvägen",
         "handelsvagen",
-        "max parkering"
+        "max parkering",
+        "löddeköpinge max parkering",
+        "loddekopinge max parkering"
       ],
       "active": true
     },
@@ -902,7 +950,7 @@
     },
     {
       "id": "lomma-skolskeppsgatan",
-      "name": "Lomma Skolskeppsgatan",
+      "name": "Lomma ICA Skolskeppsgatan",
       "city": "Lomma",
       "postalCode": "234 43",
       "address": "Skolskeppsgatan 2, ICA Supermarket",
@@ -921,13 +969,14 @@
         "23443",
         "skolskeppsgatan",
         "ica supermarket",
-        "lomma skolskeppsgatan"
+        "lomma skolskeppsgatan",
+        "lomma ica skolskeppsgatan"
       ],
       "active": true
     },
     {
       "id": "lund-centrum",
-      "name": "Lund – Centrum",
+      "name": "Lund Centrum",
       "city": "Lund",
       "postalCode": "222 29",
       "address": "Trollebergsvägen 5",
@@ -945,13 +994,14 @@
         "lund",
         "centrum",
         "trollebergsvägen",
-        "trollebergsvagen"
+        "trollebergsvagen",
+        "lund centrum"
       ],
       "active": true
     },
     {
       "id": "lysekil",
-      "name": "Lysekil",
+      "name": "Lysekil Coop",
       "city": "Lysekil",
       "postalCode": "453 37",
       "address": "Ekgatan 1",
@@ -966,13 +1016,14 @@
       "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7794",
       "readMoreUrl": "https://www.maccpeople.se/17/117/lysekil/",
       "searchTerms": [
-        "lysekil"
+        "lysekil",
+        "lysekil coop"
       ],
       "active": true
     },
     {
       "id": "malmo-centrum",
-      "name": "Malmö – Centrum",
+      "name": "Malmö Centrum",
       "city": "Malmö",
       "postalCode": "211 28",
       "address": "Östra tullgatan 6 E",
@@ -992,13 +1043,15 @@
         "centrum",
         "drottningtorget",
         "östra tullgatan",
-        "ostra tullgatan"
+        "ostra tullgatan",
+        "malmö centrum",
+        "malmo centrum"
       ],
       "active": true
     },
     {
       "id": "malmo-jagersro",
-      "name": "Malmö – Jägersro",
+      "name": "Malmö Jägersro",
       "city": "Malmö",
       "postalCode": "212 35",
       "address": "Derbyvägen 6E, Hus E2",
@@ -1020,7 +1073,9 @@
         "derbyvägen",
         "21235",
         "jägersrohälsan",
-        "jagersrohalsan"
+        "jagersrohalsan",
+        "malmö jägersro",
+        "malmo jagersro"
       ],
       "active": true
     },
@@ -1051,7 +1106,7 @@
     },
     {
       "id": "molnlycke",
-      "name": "Mölnlycke",
+      "name": "Mölnlycke ICA Djupedalsäng",
       "city": "Mölnlycke",
       "postalCode": "435 41",
       "address": "Råstensvägen 1",
@@ -1071,13 +1126,15 @@
         "43541",
         "råstensvägen",
         "rastensvagen",
-        "ica nära"
+        "ica nära",
+        "mölnlycke ica djupedalsäng",
+        "molnlycke ica djupedalsang"
       ],
       "active": true
     },
     {
       "id": "munkedal",
-      "name": "Munkedal",
+      "name": "Munkedal Centrumtorget",
       "city": "Munkedal",
       "postalCode": "455 30",
       "address": "Centrumvägen 4B",
@@ -1092,13 +1149,14 @@
       "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7796",
       "readMoreUrl": "https://www.maccpeople.se/17/118/munkedal/",
       "searchTerms": [
-        "munkedal"
+        "munkedal",
+        "munkedal centrumtorget"
       ],
       "active": true
     },
     {
       "id": "ockero",
-      "name": "Öckerö",
+      "name": "Hönö ICA Supermarket",
       "city": "Öckerö",
       "postalCode": "475 41",
       "address": "Lökholmsvägen 2",
@@ -1113,13 +1171,15 @@
       "readMoreUrl": "https://www.maccpeople.se/17/129/ockero/",
       "searchTerms": [
         "öckerö",
-        "ockero"
+        "ockero",
+        "hönö ica supermarket",
+        "hono ica supermarket"
       ],
       "active": true
     },
     {
       "id": "orebro",
-      "name": "Örebro",
+      "name": "Örebro Actic Slottsgatan",
       "city": "Örebro",
       "postalCode": "703 61",
       "address": "ACTIC, Slottsgatan 17 A",
@@ -1137,13 +1197,15 @@
         "orebro",
         "70361",
         "actic",
-        "slottsgatan"
+        "slottsgatan",
+        "örebro actic slottsgatan",
+        "orebro actic slottsgatan"
       ],
       "active": true
     },
     {
       "id": "orust",
-      "name": "Orust",
+      "name": "Orust Göksäter",
       "city": "Orust",
       "postalCode": "473 96",
       "address": "Göksäter 365",
@@ -1158,13 +1220,15 @@
       "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7795",
       "readMoreUrl": "https://www.maccpeople.se/17/114/orust/",
       "searchTerms": [
-        "orust"
+        "orust",
+        "orust göksäter",
+        "orust goksater"
       ],
       "active": true
     },
     {
       "id": "osby",
-      "name": "Osby",
+      "name": "Osby X:tra",
       "city": "Osby",
       "postalCode": "283 44",
       "address": "Teodor Kvants väg 2, X:-tra-Coop parkering",
@@ -1183,13 +1247,14 @@
         "28344",
         "teodor kvants väg",
         "teodor kvants vag",
-        "x:-tra-coop parkering"
+        "x:-tra-coop parkering",
+        "osby x:tra"
       ],
       "active": true
     },
     {
       "id": "oxie",
-      "name": "Oxie",
+      "name": "Oxie ICA",
       "city": "Oxie",
       "postalCode": "238 34",
       "address": "Oxie Kyrkoväg 212",
@@ -1207,13 +1272,14 @@
         "oxie",
         "23834",
         "oxie kyrkoväg",
-        "oxie kyrksvag"
+        "oxie kyrksvag",
+        "oxie ica"
       ],
       "active": true
     },
     {
       "id": "partille",
-      "name": "Partille",
+      "name": "Partille Kyrkan",
       "city": "Partille",
       "postalCode": "433 33",
       "address": "Gamla Kronvägen 36",
@@ -1231,13 +1297,14 @@
         "partille",
         "43333",
         "gamla kronvägen",
-        "gamla kronvagen"
+        "gamla kronvagen",
+        "partille kyrkan"
       ],
       "active": true
     },
     {
       "id": "simrishamn",
-      "name": "Simrishamn",
+      "name": "Simrishamn Circle K",
       "city": "Simrishamn",
       "postalCode": "272 36",
       "address": "Fabriksgatan 21",
@@ -1254,13 +1321,14 @@
       "searchTerms": [
         "simrishamn",
         "27236",
-        "fabriksgatan"
+        "fabriksgatan",
+        "simrishamn circle k"
       ],
       "active": true
     },
     {
       "id": "sjobo",
-      "name": "Sjöbo",
+      "name": "Sjöbo Coop Såggatan",
       "city": "Sjöbo",
       "postalCode": "275 39",
       "address": "Såggatan 2",
@@ -1279,13 +1347,15 @@
         "sjobo",
         "27539",
         "såggatan",
-        "saggatan"
+        "saggatan",
+        "sjöbo coop såggatan",
+        "sjobo coop saggatan"
       ],
       "active": true
     },
     {
       "id": "skene",
-      "name": "Skene",
+      "name": "Skene Kungsfors",
       "city": "Skene",
       "postalCode": "511 62",
       "address": "Håvengatan 3D",
@@ -1301,13 +1371,14 @@
       "readMoreUrl": "https://www.maccpeople.se/17/137/skene/",
       "searchTerms": [
         "skene",
-        "mark"
+        "mark",
+        "skene kungsfors"
       ],
       "active": true
     },
     {
       "id": "skurup",
-      "name": "Skurup",
+      "name": "Skurup Coop",
       "city": "Skurup",
       "postalCode": "274 34",
       "address": "Södergatan 31, Coop parkering",
@@ -1326,13 +1397,14 @@
         "27434",
         "södergatan",
         "sodergatan",
-        "coop parkering"
+        "coop parkering",
+        "skurup coop"
       ],
       "active": true
     },
     {
       "id": "smogen",
-      "name": "Smögen",
+      "name": "Smögen ICA Ankaret",
       "city": "Smögen",
       "postalCode": "456 50",
       "address": "Hasselösundsvägen 1D",
@@ -1350,13 +1422,15 @@
         "smögen",
         "smogen",
         "sotenäs",
-        "sotenas"
+        "sotenas",
+        "smögen ica ankaret",
+        "smogen ica ankaret"
       ],
       "active": true
     },
     {
       "id": "sodra-sandby",
-      "name": "Södra Sandby",
+      "name": "Södra Sandby ICA",
       "city": "Södra Sandby",
       "postalCode": "247 31",
       "address": "Revingevägen 2",
@@ -1374,13 +1448,15 @@
         "sodra sandby",
         "24731",
         "revingevägen",
-        "revingevagen"
+        "revingevagen",
+        "södra sandby ica",
+        "sodra sandby ica"
       ],
       "active": true
     },
     {
       "id": "staffanstorp",
-      "name": "Staffanstorp",
+      "name": "Staffanstorp Citygross",
       "city": "Staffanstorp",
       "postalCode": "245 44",
       "address": "Klågerupsvägen 1, Citygross Parkering",
@@ -1400,13 +1476,14 @@
         "klågerupsvägen",
         "klagerupsvagen",
         "citygross",
-        "parkering"
+        "parkering",
+        "staffanstorp citygross"
       ],
       "active": true
     },
     {
       "id": "stenungsund",
-      "name": "Stenungsund",
+      "name": "Stenungsund McDonalds",
       "city": "Stenungsund",
       "postalCode": "444 30",
       "address": "Stenunge Allé 1",
@@ -1421,13 +1498,14 @@
       "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7805",
       "readMoreUrl": "https://www.maccpeople.se/17/115/stenungssund/",
       "searchTerms": [
-        "stenungssund"
+        "stenungssund",
+        "stenungsund mcdonalds"
       ],
       "active": true
     },
     {
       "id": "stromstad",
-      "name": "Strömstad",
+      "name": "Strömstad ICA Kvantum",
       "city": "Strömstad",
       "postalCode": "452 33",
       "address": "Prästängsvägen 2",
@@ -1442,13 +1520,15 @@
       "readMoreUrl": "https://www.maccpeople.se/17/112/stromstad/",
       "searchTerms": [
         "strömstad",
-        "stromstad"
+        "stromstad",
+        "strömstad ica kvantum",
+        "stromstad ica kvantum"
       ],
       "active": true
     },
     {
       "id": "svalov",
-      "name": "Svalöv",
+      "name": "Svalöv Torgplats",
       "city": "Svalöv",
       "postalCode": "268 31",
       "address": "Herrevadsgatan 10B",
@@ -1466,13 +1546,15 @@
         "svalöv",
         "svalov",
         "herrevadsgatan",
-        "torgplats"
+        "torgplats",
+        "svalöv torgplats",
+        "svalov torgplats"
       ],
       "active": true
     },
     {
       "id": "svedala-ellenborgsgatan",
-      "name": "Svedala Ellenborgsgatan",
+      "name": "Svedala Stora Coop",
       "city": "Svedala",
       "postalCode": "233 51",
       "address": "Norra Ellenborgsgatan 1",
@@ -1490,7 +1572,8 @@
         "svedala",
         "23351",
         "ellenborgsgatan",
-        "norra ellenborgsgatan"
+        "norra ellenborgsgatan",
+        "svedala stora coop"
       ],
       "active": true
     },
@@ -1520,7 +1603,7 @@
     },
     {
       "id": "svenljunga",
-      "name": "Svenljunga",
+      "name": "Svenljunga ICA",
       "city": "Svenljunga",
       "postalCode": "512 51",
       "address": "Kinnagatan 3",
@@ -1535,13 +1618,14 @@
       "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7801",
       "readMoreUrl": "https://www.maccpeople.se/17/123/svenljunga/",
       "searchTerms": [
-        "svenljunga"
+        "svenljunga",
+        "svenljunga ica"
       ],
       "active": true
     },
     {
       "id": "tanum",
-      "name": "Tanum",
+      "name": "Tanum Shoppingcenter",
       "city": "Tanumshede",
       "postalCode": "457 32",
       "address": "Tanum Shoppingcenter",
@@ -1567,7 +1651,7 @@
     },
     {
       "id": "tjorn",
-      "name": "Tjörn",
+      "name": "Tjörn ICA Kållekärr",
       "city": "Tjörn",
       "postalCode": "471 93",
       "address": "Kållekärr 50",
@@ -1583,13 +1667,15 @@
       "readMoreUrl": "https://www.maccpeople.se/17/116/tjorn/",
       "searchTerms": [
         "tjörn",
-        "tjorn"
+        "tjorn",
+        "tjörn ica kållekärr",
+        "tjorn ica kallekarr"
       ],
       "active": true
     },
     {
       "id": "tomelilla",
-      "name": "Tomelilla",
+      "name": "Tomelilla Bo Ohlsson",
       "city": "Tomelilla",
       "postalCode": "273 34",
       "address": "Malmövägen 12",
@@ -1608,13 +1694,14 @@
         "27334",
         "malmövägen",
         "malmovagen",
-        "bo ohlsson"
+        "bo ohlsson",
+        "tomelilla bo ohlsson"
       ],
       "active": true
     },
     {
       "id": "torslanda",
-      "name": "Torslanda",
+      "name": "Torslanda Torg",
       "city": "Torslanda",
       "postalCode": "423 32",
       "address": "Torslanda Torg",
@@ -1637,7 +1724,7 @@
     },
     {
       "id": "tranemo",
-      "name": "Tranemo",
+      "name": "Tranemo ICA",
       "city": "Tranemo",
       "postalCode": "514 34",
       "address": "Storgatan 32",
@@ -1652,13 +1739,14 @@
       "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7802",
       "readMoreUrl": "https://www.maccpeople.se/17/124/tranemo/",
       "searchTerms": [
-        "tranemo"
+        "tranemo",
+        "tranemo ica"
       ],
       "active": true
     },
     {
       "id": "trelleborg",
-      "name": "Trelleborg",
+      "name": "Trelleborg Beijer",
       "city": "Trelleborg",
       "postalCode": "231 66",
       "address": "Hedvägen 121",
@@ -1667,8 +1755,8 @@
         "vaccin",
         "provtagning"
       ],
-      "lat": 55.3865998,
-      "lon": 13.110696,
+      "lat": 55.38173910467734,
+      "lon": 13.14559615329497,
       "bookVaccinUrl": "https://www.maccpeople.se/17/72/trelleborg/#bokning",
       "bookProvtagningUrl": "https://www.maccpeople.se/17/72/trelleborg/#bokning",
       "readMoreUrl": "https://www.maccpeople.se/17/72/trelleborg/",
@@ -1676,7 +1764,8 @@
         "trelleborg",
         "23166",
         "hedvägen",
-        "hedvagen"
+        "hedvagen",
+        "trelleborg beijer"
       ],
       "active": true
     },
@@ -1704,7 +1793,9 @@
         "högskolan",
         "hogskolan",
         "framgången",
-        "framgangen"
+        "framgangen",
+        "trollhättan högskolan",
+        "trollhattan hogskolan"
       ],
       "active": true
     },
@@ -1727,13 +1818,14 @@
       "searchTerms": [
         "uddevalla",
         "norra drottninggatan",
-        "45131"
+        "45131",
+        "uddevalla norra drottninggatan"
       ],
       "active": true
     },
     {
       "id": "ulricehamn",
-      "name": "Ulricehamn",
+      "name": "Ulricehamn ICA Tornet",
       "city": "Ulricehamn",
       "postalCode": "523 31",
       "address": "ICA Tornet, Strandgatan 6",
@@ -1748,13 +1840,14 @@
       "bookProvtagningUrl": "https://mittvaccin.se/mottagning/7803",
       "readMoreUrl": "https://www.maccpeople.se/17/125/ulricehamn/",
       "searchTerms": [
-        "ulricehamn"
+        "ulricehamn",
+        "ulricehamn ica tornet"
       ],
       "active": true
     },
     {
       "id": "vanersborg",
-      "name": "Vänersborg",
+      "name": "Vänersborg Quality Hotel",
       "city": "Vänersborg",
       "postalCode": "462 40",
       "address": "Nabbensbergsvägen 2, Quality Hotel",
@@ -1773,13 +1866,15 @@
         "vanersborg",
         "46240",
         "nabbensbergsvägen",
-        "quality hotel"
+        "quality hotel",
+        "vänersborg quality hotel",
+        "vanersborg quality hotel"
       ],
       "active": true
     },
     {
       "id": "vargarda",
-      "name": "Vårgårda",
+      "name": "Vårgårda XL Bygg",
       "city": "Vårgårda",
       "postalCode": "447 37",
       "address": "Wallentinsvägen 28",
@@ -1794,13 +1889,15 @@
       "readMoreUrl": "https://www.maccpeople.se/17/126/vargarda/",
       "searchTerms": [
         "vårgårda",
-        "vargarda"
+        "vargarda",
+        "vårgårda xl bygg",
+        "vargarda xl bygg"
       ],
       "active": true
     },
     {
       "id": "varnamo",
-      "name": "Värnamo",
+      "name": "Värnamo Hemmahallen",
       "city": "Värnamo",
       "postalCode": "331 42",
       "address": "Hemmahallen, Malmövägen 12",
@@ -1820,13 +1917,15 @@
         "33142",
         "hemmahallen",
         "malmövägen",
-        "malmovagen"
+        "malmovagen",
+        "värnamo hemmahallen",
+        "varnamo hemmahallen"
       ],
       "active": true
     },
     {
       "id": "vellinge",
-      "name": "Vellinge",
+      "name": "Vellinge Stortorget",
       "city": "Vellinge",
       "postalCode": "235 31",
       "address": "Stortorget",
@@ -1842,13 +1941,14 @@
       "searchTerms": [
         "vellinge",
         "23531",
-        "stortorget"
+        "stortorget",
+        "vellinge stortorget"
       ],
       "active": true
     },
     {
       "id": "ystad",
-      "name": "Ystad",
+      "name": "Ystad Stortorget",
       "city": "Ystad",
       "postalCode": "271 43",
       "address": "Stortorget",
@@ -1865,13 +1965,14 @@
       "searchTerms": [
         "ystad",
         "27143",
-        "stortorget"
+        "stortorget",
+        "ystad stortorget"
       ],
       "active": true
     },
     {
       "id": "viken",
-      "name": "Viken",
+      "name": "Viken ICA U P Hallen",
       "city": "Viken",
       "postalCode": "263 63",
       "address": "Björkvägen 21",
@@ -1887,13 +1988,14 @@
       "searchTerms": [
         "viken",
         "26363",
-        "björkvägen"
+        "björkvägen",
+        "viken ica u p hallen"
       ],
       "active": true
     },
     {
       "id": "torekov",
-      "name": "Torekov",
+      "name": "Torekov ICA",
       "city": "Torekov",
       "postalCode": "269 77",
       "address": "Litorinavägen 12",
@@ -1909,7 +2011,8 @@
       "searchTerms": [
         "torekov",
         "26977",
-        "litorinavägen"
+        "litorinavägen",
+        "torekov ica"
       ],
       "active": true
     },
