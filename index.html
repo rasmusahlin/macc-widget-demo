@@ -6,73 +6,122 @@
 <title>MACC Öppettider — lokal testmiljö</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Inter', system-ui, sans-serif; background: #f4f7f7; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #f6f5f2; }
 
-  /* ── TEST NOTE ───────────────────────────────── */
+  /* ── TEST BAR ─────────────────────────────────── */
   .test-bar {
-    background: #1a1a1a;
-    color: #888;
-    font-size: 11px;
-    padding: 8px 24px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
+    background: #1a1a1a; color: #888; font-size: 11px;
+    padding: 8px 24px; display: flex; gap: 20px; align-items: center;
   }
   .test-bar strong { color: #7dd4b8; }
   .test-bar code { background: #333; color: #ccc; padding: 1px 6px; border-radius: 3px; font-size: 11px; }
 
-  /* ── HERO (sidmall, Webbess ansvar) ──────────── */
+  /* ── HERO — teal bakgrund, sträcker sig ned och omsluter widget-kontrollsektionen ── */
   .page-hero {
     background: #0d5a6b;
-    padding: 40px 40px 32px;
+    padding: 40px 40px 0;   /* ingen padding-bottom — widgetens kontrollsektion tar vid */
     color: #fff;
   }
-  .page-hero h1 {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 10px;
-  }
+  .page-hero h1 { font-size: 30px; font-weight: 700; line-height: 1.2; margin-bottom: 10px; }
   .page-hero h1 em { color: #7dd4b8; font-style: normal; }
   .page-hero p {
-    font-size: 15px;
-    color: rgba(255,255,255,0.75);
-    line-height: 1.6;
-    max-width: 500px;
+    font-size: 15px; color: rgba(255,255,255,0.75);
+    line-height: 1.6; max-width: 500px; margin-bottom: 28px;
   }
+
+  /* ── OVERRIDE: widget-kontrollsektionen smälter in i hero ── */
+  /* Bakgrund transparent = hero-teal syns igenom */
+  #macc-booking-widget .mw-controls {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 0 24px 0 !important;
+  }
+
+  /* Sökfält: vit bakgrund på teal */
+  #macc-booking-widget .mw-search-input {
+    background: #fff !important;
+    border-color: transparent !important;
+    color: #1a1a1a !important;
+  }
+  #macc-booking-widget .mw-search-input::placeholder { color: #888 !important; }
+
+  /* Filterknappar: pill-stil på teal-bakgrund */
+  #macc-booking-widget .mw-filter-btn {
+    background: rgba(255,255,255,0.12) !important;
+    border-color: rgba(255,255,255,0.3) !important;
+    color: rgba(255,255,255,0.85) !important;
+  }
+  #macc-booking-widget .mw-filter-btn:hover {
+    background: rgba(255,255,255,0.2) !important;
+    border-color: rgba(255,255,255,0.5) !important;
+    color: #fff !important;
+  }
+  #macc-booking-widget .mw-filter-btn.is-active {
+    background: rgba(255,255,255,0.22) !important;
+    border-color: rgba(255,255,255,0.6) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+  }
+
+  /* Sök-knapp och Nära mig: accent-färg */
+  #macc-booking-widget .mw-search-btn {
+    background: #7dd4b8 !important;
+    border-color: #7dd4b8 !important;
+    color: #0a3d47 !important;
+  }
+  #macc-booking-widget .mw-search-btn:hover {
+    background: #6bc4a8 !important;
+    border-color: #6bc4a8 !important;
+  }
+  #macc-booking-widget .mw-geo-btn--labeled {
+    background: rgba(255,255,255,0.12) !important;
+    border-color: rgba(255,255,255,0.3) !important;
+    color: #fff !important;
+  }
+  #macc-booking-widget .mw-geo-btn--labeled:hover {
+    background: rgba(255,255,255,0.2) !important;
+  }
+
+  /* Sökikon-färg på teal */
+  #macc-booking-widget .mw-search-icon { color: #888 !important; }
+
+  /* Resten av widgeten (lista + karta) har ljus bakgrund */
+  #macc-booking-widget .mw-main {
+    background: #f6f5f2;
+    padding: 20px 40px 40px;
+  }
+
+  /* ── MACC FÄRGER: override widgetens primärfärg till MACC:s faktiska teal ── */
+  #macc-booking-widget { --mw-primary: #0d5a6b !important; --mw-primary-hover: #0a4857 !important; }
 </style>
 </head>
 <body>
 
-<!-- Test info bar -->
 <div class="test-bar">
   <span><strong>Testmiljö</strong> — widget.js</span>
-  <span>Notis styrs av <code>macc-config.json</code> → sätt <code>"notice": ""</code> för att dölja</span>
-  <span>Filer som behövs i samma mapp: <code>widget.js</code> · <code>macc-config.json</code> · <code>macc-locations.json</code> · <code>macc-stops.json</code></span>
+  <span>Notis styrs av <code>assets/macc-config.json</code> → sätt <code>"notice": ""</code> för att dölja</span>
+  <span>Filer: <code>widget.js</code> + <code>assets/macc-config.json</code> + <code>assets/macc-locations.json</code> + <code>assets/macc-stops.json</code></span>
 </div>
 
-<!-- Hero — sidmall (Webbess) -->
 <div class="page-hero">
   <h1>Hitta din närmaste<br><em>MACC-mottagning</em></h1>
   <p>Vi kommer till dig med MACC-bilen — vaccination och provtagning i Skåne och Västra Götaland. Drop-in välkommen, tidsbokning rekommenderas.</p>
+
+  <!-- Widget startar här inne i hero — kontrollsektionen smälter visuellt in -->
+  <div id="macc-booking-widget" data-base="."></div>
 </div>
 
-<!-- Widget — Webbess lägger in denna div en gång, inget mer att underhålla -->
-<div id="macc-booking-widget" data-base="."></div>
-
 <!--
-  Mappstruktur för test:
-    index.html          ← den här filen
-    widget.js           ← i roten (samma nivå som index.html)
+  Mappstruktur:
+    index.html
+    widget.js
     assets/
       macc-config.json
       macc-locations.json
       macc-stops.json   ← hämta från https://maccpeople.com/widget/assets/macc-stops.json
-
-  CSS behövs inte separat — widget.js injicerar all CSS automatiskt.
-
-  I produktion ersätts src="widget.js" med:
-  <script src="https://maccpeople.com/widget/widget.js" defer></script>
 -->
 <script src="widget.js" defer></script>
 
