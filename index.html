@@ -1,29 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MACC Widget Prototype v4</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-  <link rel="stylesheet" href="./assets/widget.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MACC Öppettider — lokal testmiljö</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #f4f7f7; }
+
+  /* ── TEST NOTE ───────────────────────────────── */
+  .test-bar {
+    background: #1a1a1a;
+    color: #888;
+    font-size: 11px;
+    padding: 8px 24px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .test-bar strong { color: #7dd4b8; }
+  .test-bar code { background: #333; color: #ccc; padding: 1px 6px; border-radius: 3px; font-size: 11px; }
+
+  /* ── HERO (sidmall, Webbess ansvar) ──────────── */
+  .page-hero {
+    background: #0d5a6b;
+    padding: 40px 40px 32px;
+    color: #fff;
+  }
+  .page-hero h1 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .page-hero h1 em { color: #7dd4b8; font-style: normal; }
+  .page-hero p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    max-width: 500px;
+  }
+</style>
 </head>
 <body>
-  <section class="demo-shell">
-    <div class="demo-hero">
-      <p class="demo-eyebrow">Prototyp v4</p>
-      <h1>Vaccination och provtagning nära dig</h1>
-      <p class="demo-intro">Sök ort, postnummer eller mottagning för att se när vi finns nära dig. Tidsbokning rekommenderas, men drop-in erbjuds i mån av tid under öppettiderna.</p>
-    </div>
-    <div id="macc-booking-widget"></div>
-  </section>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
-  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" defer></script>
-  <script src="./assets/widget.js" defer></script>
+<!-- Test info bar -->
+<div class="test-bar">
+  <span><strong>Testmiljö</strong> — widget.js</span>
+  <span>Notis styrs av <code>macc-config.json</code> → sätt <code>"notice": ""</code> för att dölja</span>
+  <span>Filer som behövs i samma mapp: <code>widget.js</code> · <code>macc-config.json</code> · <code>macc-locations.json</code> · <code>macc-stops.json</code></span>
+</div>
+
+<!-- Hero — sidmall (Webbess) -->
+<div class="page-hero">
+  <h1>Hitta din närmaste<br><em>MACC-mottagning</em></h1>
+  <p>Vi kommer till dig med MACC-bilen — vaccination och provtagning i Skåne och Västra Götaland. Drop-in välkommen, tidsbokning rekommenderas.</p>
+</div>
+
+<!-- Widget — Webbess lägger in denna div en gång, inget mer att underhålla -->
+<div id="macc-booking-widget" data-base="."></div>
+
+<!--
+  Mappstruktur för test:
+    index.html          ← den här filen
+    widget.js           ← i roten (samma nivå som index.html)
+    assets/
+      macc-config.json
+      macc-locations.json
+      macc-stops.json   ← hämta från https://maccpeople.com/widget/assets/macc-stops.json
+
+  CSS behövs inte separat — widget.js injicerar all CSS automatiskt.
+
+  I produktion ersätts src="widget.js" med:
+  <script src="https://maccpeople.com/widget/widget.js" defer></script>
+-->
+<script src="widget.js" defer></script>
+
 </body>
 </html>
